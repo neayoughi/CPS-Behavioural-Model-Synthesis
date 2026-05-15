@@ -1,0 +1,28 @@
+input,State
+p:med t:high,Critical
+"p:med t:high,p:med t:high",Critical
+"p:med t:high,p:med t:high,p:med t:high",Critical
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high",Critical
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Critical
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med",Critical
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Caution
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:med",Nominal
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:med,p:high t:med",Nominal
+"p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:med,p:high t:med,p:low t:med",Nominal

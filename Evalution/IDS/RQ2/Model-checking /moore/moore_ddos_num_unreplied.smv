@@ -1,0 +1,187 @@
+MODULE main
+
+VAR
+  state : {s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16};
+  input : {DH, DL, DM, NH, NL, NM, NO_INPUT};
+
+DEFINE
+  Alert := 0;
+  None := 1;
+  Safe := 2;
+  TAlert := 3;
+  TWarning := 4;
+  Warning := 5;
+
+  output := case
+    state = s0 : Safe;
+    state = s1 : Warning;
+    state = s2 : Warning;
+    state = s3 : Alert;
+    state = s4 : Safe;
+    state = s5 : Warning;
+    state = s6 : Warning;
+    state = s7 : Alert;
+    state = s8 : Safe;
+    state = s9 : Warning;
+    state = s10 : Warning;
+    state = s11 : Alert;
+    state = s12 : Safe;
+    state = s13 : Warning;
+    state = s14 : Warning;
+    state = s15 : Alert;
+    state = s16 : Warning;
+  esac;
+
+ASSIGN
+  init(state) := s0;
+
+INVAR
+  case
+    state = s0 : (input = DL | input = DM | input = NL);
+    state = s1 : (input = DH | input = DM | input = NL | input = NM);
+    state = s2 : (input = DH | input = DM | input = NL | input = NM);
+    state = s3 : (input = DH | input = DM);
+    state = s4 : (input = DL | input = DM | input = NL);
+    state = s5 : (input = DH | input = DM | input = NL | input = NM);
+    state = s6 : (input = DH | input = DM | input = NL | input = NM);
+    state = s7 : (input = DH | input = DM);
+    state = s8 : (input = DL | input = DM | input = NL);
+    state = s9 : (input = DH | input = DM | input = NM);
+    state = s10 : (input = DH | input = DM);
+    state = s11 : (input = DH | input = DM);
+    state = s12 : (input = DL | input = DM | input = NL);
+    state = s13 : (input = DH | input = DM);
+    state = s14 : (input = DH | input = DM);
+    state = s15 : (input = DH | input = DM);
+    state = s16 : (input = DH | input = DM);
+  esac;
+
+TRANS
+  case
+    state = s0 & input = NL : next(state) = s0;
+    state = s0 & input = DL : next(state) = s0;
+    state = s0 & input = DM : next(state) = s1;
+    state = s1 & input = DM : next(state) = s1;
+    state = s1 & input = DH : next(state) = s2;
+    state = s1 & input = NM : next(state) = s1;
+    state = s1 & input = NL : next(state) = s2;
+    state = s2 & input = DH : next(state) = s3;
+    state = s2 & input = NL : next(state) = s4;
+    state = s2 & input = DM : next(state) = s5;
+    state = s2 & input = NM : next(state) = s5;
+    state = s3 & input = DH : next(state) = s3;
+    state = s3 & input = DM : next(state) = s1;
+    state = s4 & input = NL : next(state) = s4;
+    state = s4 & input = DL : next(state) = s4;
+    state = s4 & input = DM : next(state) = s2;
+    state = s5 & input = DM : next(state) = s2;
+    state = s5 & input = DH : next(state) = s6;
+    state = s5 & input = NM : next(state) = s2;
+    state = s5 & input = NL : next(state) = s8;
+    state = s6 & input = DH : next(state) = s7;
+    state = s6 & input = DM : next(state) = s9;
+    state = s6 & input = NM : next(state) = s6;
+    state = s6 & input = NL : next(state) = s12;
+    state = s7 & input = DH : next(state) = s7;
+    state = s7 & input = DM : next(state) = s2;
+    state = s8 & input = NL : next(state) = s8;
+    state = s8 & input = DL : next(state) = s8;
+    state = s8 & input = DM : next(state) = s6;
+    state = s9 & input = DM : next(state) = s9;
+    state = s9 & input = DH : next(state) = s10;
+    state = s9 & input = NM : next(state) = s6;
+    state = s10 & input = DH : next(state) = s11;
+    state = s10 & input = DM : next(state) = s13;
+    state = s11 & input = DH : next(state) = s11;
+    state = s11 & input = DM : next(state) = s6;
+    state = s12 & input = NL : next(state) = s12;
+    state = s12 & input = DL : next(state) = s12;
+    state = s12 & input = DM : next(state) = s10;
+    state = s13 & input = DM : next(state) = s13;
+    state = s13 & input = DH : next(state) = s14;
+    state = s14 & input = DH : next(state) = s15;
+    state = s14 & input = DM : next(state) = s16;
+    state = s15 & input = DH : next(state) = s15;
+    state = s15 & input = DM : next(state) = s14;
+    state = s16 & input = DM : next(state) = s16;
+    state = s16 & input = DH : next(state) = s1;
+    TRUE : FALSE;
+  esac;
+
+-- Low P1 AG
+SPEC AG ((input = DL & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- Low P1 EF-vacuity
+SPEC EF (input = DL & output = Safe)
+-- Low P2 AG
+SPEC AG ((input = DL & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- Low P2 EF-vacuity
+SPEC EF (input = DL & output = Warning)
+-- Low P3 AG
+SPEC AG ((input = DL & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- Low P3 EF-vacuity
+SPEC EF (input = DL & output = Alert)
+-- Low P4 AG
+SPEC AG ((input = NL & output = Safe) -> AX (output = Safe))
+-- Low P4 EF-vacuity
+SPEC EF (input = NL & output = Safe)
+-- Low P5 AG
+SPEC AG ((input = NL & output = Warning) -> AX (output = Safe))
+-- Low P5 EF-vacuity
+SPEC EF (input = NL & output = Warning)
+-- Low P6 AG
+SPEC AG ((input = NL & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- Low P6 EF-vacuity
+SPEC EF (input = NL & output = Alert)
+-- Med P1 AG
+SPEC AG ((input = DM & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- Med P1 EF-vacuity
+SPEC EF (input = DM & output = Safe)
+-- Med P2 AG
+SPEC AG ((input = DM & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- Med P2 EF-vacuity
+SPEC EF (input = DM & output = Warning)
+-- Med P3 AG
+SPEC AG ((input = DM & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- Med P3 EF-vacuity
+SPEC EF (input = DM & output = Alert)
+-- Med P4 AG
+SPEC AG ((input = NM & output = Safe) -> AX (output = Safe))
+-- Med P4 EF-vacuity
+SPEC EF (input = NM & output = Safe)
+-- Med P5 AG
+SPEC AG ((input = NM & output = Warning) -> AX (output = Safe))
+-- Med P5 EF-vacuity
+SPEC EF (input = NM & output = Warning)
+-- Med P6 AG
+SPEC AG ((input = NM & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- Med P6 EF-vacuity
+SPEC EF (input = NM & output = Alert)
+-- High P1 AG
+SPEC AG ((input = DH & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- High P1 EF-vacuity
+SPEC EF (input = DH & output = Safe)
+-- High P2 AG
+SPEC AG ((input = DH & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- High P2 EF-vacuity
+SPEC EF (input = DH & output = Warning)
+-- High P3 AG
+SPEC AG ((input = DH & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- High P3 EF-vacuity
+SPEC EF (input = DH & output = Alert)
+-- High P4 AG
+SPEC AG ((input = NH & output = Safe) -> AX (output = Safe))
+-- High P4 EF-vacuity
+SPEC EF (input = NH & output = Safe)
+-- High P5 AG
+SPEC AG ((input = NH & output = Warning) -> AX (output = Safe))
+-- High P5 EF-vacuity
+SPEC EF (input = NH & output = Warning)
+-- High P6 AG
+SPEC AG ((input = NH & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- High P6 EF-vacuity
+SPEC EF (input = NH & output = Alert)
+
+-- MAPPINGS
+-- state_map: {"s0": "s0", "s1": "s1", "s10": "s10", "s11": "s11", "s12": "s12", "s13": "s13", "s14": "s14", "s15": "s15", "s16": "s16", "s2": "s2", "s3": "s3", "s4": "s4", "s5": "s5", "s6": "s6", "s7": "s7", "s8": "s8", "s9": "s9"}
+-- input_map: {"DH": "DH", "DL": "DL", "DM": "DM", "NH": "NH", "NL": "NL", "NM": "NM", "NO_INPUT": "NO_INPUT"}
+-- output_map: {"Alert": "Alert", "None": "None", "Safe": "Safe", "TAlert": "TAlert", "TWarning": "TWarning", "Warning": "Warning"}

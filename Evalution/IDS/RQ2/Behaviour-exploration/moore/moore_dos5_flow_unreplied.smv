@@ -1,0 +1,916 @@
+MODULE main
+
+VAR
+  state : {s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30, s31, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41, s42, s43, s44, s45};
+  input : {D_HU_HF, D_HU_LF, D_HU_MF, D_LU_HF, D_LU_LF, D_LU_MF, D_MU_HF, D_MU_LF, D_MU_MF, NO_INPUT, N_HU_HF, N_HU_LF, N_HU_MF, N_LU_HF, N_LU_LF, N_LU_MF, N_MU_HF, N_MU_LF, N_MU_MF};
+
+DEFINE
+  Alert := 0;
+  None := 1;
+  Safe := 2;
+  TAlert := 3;
+  TWarning := 4;
+  Warning := 5;
+
+  output := case
+    state = s0 : Safe;
+    state = s1 : Warning;
+    state = s2 : Alert;
+    state = s3 : Safe;
+    state = s4 : Warning;
+    state = s5 : Warning;
+    state = s6 : Alert;
+    state = s7 : Safe;
+    state = s8 : Warning;
+    state = s9 : Alert;
+    state = s10 : Warning;
+    state = s11 : Warning;
+    state = s12 : Warning;
+    state = s13 : Warning;
+    state = s14 : Warning;
+    state = s15 : TWarning;
+    state = s16 : TAlert;
+    state = s17 : TAlert;
+    state = s18 : TAlert;
+    state = s19 : TAlert;
+    state = s20 : TAlert;
+    state = s21 : TAlert;
+    state = s22 : TAlert;
+    state = s23 : Alert;
+    state = s24 : Warning;
+    state = s25 : Warning;
+    state = s26 : TWarning;
+    state = s27 : TAlert;
+    state = s28 : Alert;
+    state = s29 : Warning;
+    state = s30 : Warning;
+    state = s31 : Warning;
+    state = s32 : TWarning;
+    state = s33 : TAlert;
+    state = s34 : TAlert;
+    state = s35 : TAlert;
+    state = s36 : TAlert;
+    state = s37 : Alert;
+    state = s38 : Warning;
+    state = s39 : Warning;
+    state = s40 : Warning;
+    state = s41 : Warning;
+    state = s42 : TWarning;
+    state = s43 : TAlert;
+    state = s44 : TAlert;
+    state = s45 : TAlert;
+  esac;
+
+ASSIGN
+  init(state) := s0;
+
+INVAR
+  case
+    state = s0 : (input = D_LU_LF | input = D_MU_LF | input = D_MU_MF | input = N_LU_LF);
+    state = s1 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_HF | input = D_MU_MF | input = N_LU_LF | input = N_MU_MF);
+    state = s2 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_HF | input = D_MU_MF);
+    state = s3 : (input = D_LU_LF | input = D_MU_MF | input = N_LU_LF);
+    state = s4 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF | input = N_LU_LF | input = N_MU_MF);
+    state = s5 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF);
+    state = s6 : (input = D_HU_HF | input = D_MU_HF | input = D_MU_MF);
+    state = s7 : input = D_MU_MF;
+    state = s8 : (input = D_HU_HF | input = D_MU_MF);
+    state = s9 : (input = D_HU_HF | input = D_MU_HF | input = D_MU_MF);
+    state = s10 : (input = D_HU_HF | input = D_MU_MF);
+    state = s11 : input = D_MU_MF;
+    state = s12 : input = D_MU_MF;
+    state = s13 : input = D_MU_MF;
+    state = s14 : input = D_MU_MF;
+    state = s15 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF);
+    state = s16 : (input = D_HU_HF | input = D_MU_MF);
+    state = s17 : input = D_HU_HF;
+    state = s18 : input = D_HU_HF;
+    state = s19 : input = D_HU_HF;
+    state = s20 : input = D_HU_HF;
+    state = s21 : input = D_HU_HF;
+    state = s22 : input = D_HU_HF;
+    state = s23 : (input = D_HU_HF | input = D_MU_HF | input = D_MU_MF);
+    state = s24 : input = D_MU_MF;
+    state = s25 : input = D_MU_MF;
+    state = s26 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF);
+    state = s27 : input = D_HU_HF;
+    state = s28 : (input = D_HU_HF | input = D_MU_MF);
+    state = s29 : input = D_MU_MF;
+    state = s30 : input = D_MU_MF;
+    state = s31 : input = D_MU_MF;
+    state = s32 : (input = D_HU_HF | input = D_MU_MF);
+    state = s33 : input = D_HU_HF;
+    state = s34 : input = D_HU_HF;
+    state = s35 : input = D_HU_HF;
+    state = s36 : input = D_HU_HF;
+    state = s37 : (input = D_HU_HF | input = D_MU_HF | input = D_MU_MF);
+    state = s38 : input = D_MU_MF;
+    state = s39 : input = D_MU_MF;
+    state = s40 : input = D_MU_MF;
+    state = s41 : input = D_MU_MF;
+    state = s42 : (input = D_HU_HF | input = D_MU_MF);
+    state = s43 : input = D_HU_HF;
+    state = s44 : input = D_HU_HF;
+    state = s45 : input = D_HU_HF;
+  esac;
+
+TRANS
+  case
+    state = s0 & input = N_LU_LF : next(state) = s0;
+    state = s0 & input = D_LU_LF : next(state) = s0;
+    state = s0 & input = D_MU_MF : next(state) = s1;
+    state = s0 & input = D_MU_LF : next(state) = s3;
+    state = s1 & input = D_MU_MF : next(state) = s1;
+    state = s1 & input = D_HU_MF : next(state) = s1;
+    state = s1 & input = D_HU_HF : next(state) = s2;
+    state = s1 & input = D_MU_HF : next(state) = s2;
+    state = s1 & input = N_MU_MF : next(state) = s1;
+    state = s1 & input = N_LU_LF : next(state) = s0;
+    state = s2 & input = D_HU_HF : next(state) = s2;
+    state = s2 & input = D_HU_MF : next(state) = s1;
+    state = s2 & input = D_MU_HF : next(state) = s2;
+    state = s2 & input = D_MU_MF : next(state) = s1;
+    state = s3 & input = D_MU_MF : next(state) = s4;
+    state = s3 & input = N_LU_LF : next(state) = s3;
+    state = s3 & input = D_LU_LF : next(state) = s7;
+    state = s4 & input = D_MU_MF : next(state) = s4;
+    state = s4 & input = D_HU_HF : next(state) = s2;
+    state = s4 & input = D_HU_MF : next(state) = s5;
+    state = s4 & input = N_MU_MF : next(state) = s4;
+    state = s4 & input = N_LU_LF : next(state) = s3;
+    state = s5 & input = D_HU_HF : next(state) = s6;
+    state = s5 & input = D_MU_MF : next(state) = s5;
+    state = s5 & input = D_HU_MF : next(state) = s10;
+    state = s6 & input = D_HU_HF : next(state) = s6;
+    state = s6 & input = D_MU_HF : next(state) = s6;
+    state = s6 & input = D_MU_MF : next(state) = s4;
+    state = s7 & input = D_MU_MF : next(state) = s8;
+    state = s8 & input = D_MU_MF : next(state) = s8;
+    state = s8 & input = D_HU_HF : next(state) = s9;
+    state = s9 & input = D_HU_HF : next(state) = s9;
+    state = s9 & input = D_MU_HF : next(state) = s9;
+    state = s9 & input = D_MU_MF : next(state) = s10;
+    state = s10 & input = D_MU_MF : next(state) = s11;
+    state = s10 & input = D_HU_HF : next(state) = s28;
+    state = s11 & input = D_MU_MF : next(state) = s12;
+    state = s12 & input = D_MU_MF : next(state) = s13;
+    state = s13 & input = D_MU_MF : next(state) = s14;
+    state = s14 & input = D_MU_MF : next(state) = s15;
+    state = s15 & input = D_MU_MF : next(state) = s15;
+    state = s15 & input = D_HU_MF : next(state) = s15;
+    state = s15 & input = D_HU_HF : next(state) = s16;
+    state = s16 & input = D_HU_HF : next(state) = s17;
+    state = s16 & input = D_MU_MF : next(state) = s24;
+    state = s17 & input = D_HU_HF : next(state) = s18;
+    state = s18 & input = D_HU_HF : next(state) = s19;
+    state = s19 & input = D_HU_HF : next(state) = s20;
+    state = s20 & input = D_HU_HF : next(state) = s21;
+    state = s21 & input = D_HU_HF : next(state) = s22;
+    state = s22 & input = D_HU_HF : next(state) = s23;
+    state = s23 & input = D_HU_HF : next(state) = s23;
+    state = s23 & input = D_MU_HF : next(state) = s16;
+    state = s23 & input = D_MU_MF : next(state) = s5;
+    state = s24 & input = D_MU_MF : next(state) = s25;
+    state = s25 & input = D_MU_MF : next(state) = s26;
+    state = s26 & input = D_MU_MF : next(state) = s26;
+    state = s26 & input = D_HU_HF : next(state) = s27;
+    state = s26 & input = D_HU_MF : next(state) = s32;
+    state = s27 & input = D_HU_HF : next(state) = s16;
+    state = s28 & input = D_HU_HF : next(state) = s28;
+    state = s28 & input = D_MU_MF : next(state) = s29;
+    state = s29 & input = D_MU_MF : next(state) = s30;
+    state = s30 & input = D_MU_MF : next(state) = s31;
+    state = s31 & input = D_MU_MF : next(state) = s24;
+    state = s32 & input = D_MU_MF : next(state) = s32;
+    state = s32 & input = D_HU_HF : next(state) = s33;
+    state = s33 & input = D_HU_HF : next(state) = s34;
+    state = s34 & input = D_HU_HF : next(state) = s35;
+    state = s35 & input = D_HU_HF : next(state) = s36;
+    state = s36 & input = D_HU_HF : next(state) = s37;
+    state = s37 & input = D_HU_HF : next(state) = s37;
+    state = s37 & input = D_MU_MF : next(state) = s38;
+    state = s37 & input = D_MU_HF : next(state) = s2;
+    state = s38 & input = D_MU_MF : next(state) = s39;
+    state = s39 & input = D_MU_MF : next(state) = s40;
+    state = s40 & input = D_MU_MF : next(state) = s41;
+    state = s41 & input = D_MU_MF : next(state) = s42;
+    state = s42 & input = D_MU_MF : next(state) = s42;
+    state = s42 & input = D_HU_HF : next(state) = s43;
+    state = s43 & input = D_HU_HF : next(state) = s44;
+    state = s44 & input = D_HU_HF : next(state) = s45;
+    state = s45 & input = D_HU_HF : next(state) = s33;
+    TRUE : FALSE;
+  esac;
+
+-- (LU,LF) P1 AG
+SPEC AG ((input = D_LU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,LF) P1 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Safe)
+-- (LU,LF) P2 AG
+SPEC AG ((input = D_LU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,LF) P2 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Warning)
+-- (LU,LF) P3 AG
+SPEC AG ((input = D_LU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,LF) P3 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Alert)
+-- (LU,LF) P4 AG
+SPEC AG ((input = N_LU_LF & output = Safe) -> AX (output = Safe))
+-- (LU,LF) P4 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Safe)
+-- (LU,LF) P5 AG
+SPEC AG ((input = N_LU_LF & output = Warning) -> AX (output = Safe))
+-- (LU,LF) P5 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Warning)
+-- (LU,LF) P6 AG
+SPEC AG ((input = N_LU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,LF) P6 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Alert)
+-- (LU,MF) P1 AG
+SPEC AG ((input = D_LU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,MF) P1 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Safe)
+-- (LU,MF) P2 AG
+SPEC AG ((input = D_LU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,MF) P2 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Warning)
+-- (LU,MF) P3 AG
+SPEC AG ((input = D_LU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,MF) P3 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Alert)
+-- (LU,MF) P4 AG
+SPEC AG ((input = N_LU_MF & output = Safe) -> AX (output = Safe))
+-- (LU,MF) P4 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Safe)
+-- (LU,MF) P5 AG
+SPEC AG ((input = N_LU_MF & output = Warning) -> AX (output = Safe))
+-- (LU,MF) P5 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Warning)
+-- (LU,MF) P6 AG
+SPEC AG ((input = N_LU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,MF) P6 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Alert)
+-- (LU,HF) P1 AG
+SPEC AG ((input = D_LU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,HF) P1 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Safe)
+-- (LU,HF) P2 AG
+SPEC AG ((input = D_LU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,HF) P2 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Warning)
+-- (LU,HF) P3 AG
+SPEC AG ((input = D_LU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,HF) P3 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Alert)
+-- (LU,HF) P4 AG
+SPEC AG ((input = N_LU_HF & output = Safe) -> AX (output = Safe))
+-- (LU,HF) P4 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Safe)
+-- (LU,HF) P5 AG
+SPEC AG ((input = N_LU_HF & output = Warning) -> AX (output = Safe))
+-- (LU,HF) P5 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Warning)
+-- (LU,HF) P6 AG
+SPEC AG ((input = N_LU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,HF) P6 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Alert)
+-- (MU,LF) P1 AG
+SPEC AG ((input = D_MU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,LF) P1 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Safe)
+-- (MU,LF) P2 AG
+SPEC AG ((input = D_MU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,LF) P2 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Warning)
+-- (MU,LF) P3 AG
+SPEC AG ((input = D_MU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,LF) P3 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Alert)
+-- (MU,LF) P4 AG
+SPEC AG ((input = N_MU_LF & output = Safe) -> AX (output = Safe))
+-- (MU,LF) P4 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Safe)
+-- (MU,LF) P5 AG
+SPEC AG ((input = N_MU_LF & output = Warning) -> AX (output = Safe))
+-- (MU,LF) P5 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Warning)
+-- (MU,LF) P6 AG
+SPEC AG ((input = N_MU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,LF) P6 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Alert)
+-- (MU,MF) P1 AG
+SPEC AG ((input = D_MU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,MF) P1 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Safe)
+-- (MU,MF) P2 AG
+SPEC AG ((input = D_MU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,MF) P2 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Warning)
+-- (MU,MF) P3 AG
+SPEC AG ((input = D_MU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,MF) P3 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Alert)
+-- (MU,MF) P4 AG
+SPEC AG ((input = N_MU_MF & output = Safe) -> AX (output = Safe))
+-- (MU,MF) P4 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Safe)
+-- (MU,MF) P5 AG
+SPEC AG ((input = N_MU_MF & output = Warning) -> AX (output = Safe))
+-- (MU,MF) P5 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Warning)
+-- (MU,MF) P6 AG
+SPEC AG ((input = N_MU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,MF) P6 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Alert)
+-- (MU,HF) P1 AG
+SPEC AG ((input = D_MU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,HF) P1 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Safe)
+-- (MU,HF) P2 AG
+SPEC AG ((input = D_MU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,HF) P2 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Warning)
+-- (MU,HF) P3 AG
+SPEC AG ((input = D_MU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,HF) P3 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Alert)
+-- (MU,HF) P4 AG
+SPEC AG ((input = N_MU_HF & output = Safe) -> AX (output = Safe))
+-- (MU,HF) P4 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Safe)
+-- (MU,HF) P5 AG
+SPEC AG ((input = N_MU_HF & output = Warning) -> AX (output = Safe))
+-- (MU,HF) P5 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Warning)
+-- (MU,HF) P6 AG
+SPEC AG ((input = N_MU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,HF) P6 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Alert)
+-- (HU,LF) P1 AG
+SPEC AG ((input = D_HU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,LF) P1 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Safe)
+-- (HU,LF) P2 AG
+SPEC AG ((input = D_HU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,LF) P2 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Warning)
+-- (HU,LF) P3 AG
+SPEC AG ((input = D_HU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,LF) P3 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Alert)
+-- (HU,LF) P4 AG
+SPEC AG ((input = N_HU_LF & output = Safe) -> AX (output = Safe))
+-- (HU,LF) P4 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Safe)
+-- (HU,LF) P5 AG
+SPEC AG ((input = N_HU_LF & output = Warning) -> AX (output = Safe))
+-- (HU,LF) P5 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Warning)
+-- (HU,LF) P6 AG
+SPEC AG ((input = N_HU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,LF) P6 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Alert)
+-- (HU,MF) P1 AG
+SPEC AG ((input = D_HU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,MF) P1 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Safe)
+-- (HU,MF) P2 AG
+SPEC AG ((input = D_HU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,MF) P2 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Warning)
+-- (HU,MF) P3 AG
+SPEC AG ((input = D_HU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,MF) P3 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Alert)
+-- (HU,MF) P4 AG
+SPEC AG ((input = N_HU_MF & output = Safe) -> AX (output = Safe))
+-- (HU,MF) P4 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Safe)
+-- (HU,MF) P5 AG
+SPEC AG ((input = N_HU_MF & output = Warning) -> AX (output = Safe))
+-- (HU,MF) P5 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Warning)
+-- (HU,MF) P6 AG
+SPEC AG ((input = N_HU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,MF) P6 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Alert)
+-- (HU,HF) P1 AG
+SPEC AG ((input = D_HU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,HF) P1 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Safe)
+-- (HU,HF) P2 AG
+SPEC AG ((input = D_HU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,HF) P2 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Warning)
+-- (HU,HF) P3 AG
+SPEC AG ((input = D_HU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,HF) P3 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Alert)
+-- (HU,HF) P4 AG
+SPEC AG ((input = N_HU_HF & output = Safe) -> AX (output = Safe))
+-- (HU,HF) P4 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Safe)
+-- (HU,HF) P5 AG
+SPEC AG ((input = N_HU_HF & output = Warning) -> AX (output = Safe))
+-- (HU,HF) P5 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Warning)
+-- (HU,HF) P6 AG
+SPEC AG ((input = N_HU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,HF) P6 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Alert)
+
+-- MAPPINGS
+-- state_map: {"s0": "s0", "s1": "s1", "s10": "s10", "s11": "s11", "s12": "s12", "s13": "s13", "s14": "s14", "s15": "s15", "s16": "s16", "s17": "s17", "s18": "s18", "s19": "s19", "s2": "s2", "s20": "s20", "s21": "s21", "s22": "s22", "s23": "s23", "s24": "s24", "s25": "s25", "s26": "s26", "s27": "s27", "s28": "s28", "s29": "s29", "s3": "s3", "s30": "s30", "s31": "s31", "s32": "s32", "s33": "s33", "s34": "s34", "s35": "s35", "s36": "s36", "s37": "s37", "s38": "s38", "s39": "s39", "s4": "s4", "s40": "s40", "s41": "s41", "s42": "s42", "s43": "s43", "s44": "s44", "s45": "s45", "s5": "s5", "s6": "s6", "s7": "s7", "s8": "s8", "s9": "s9"}
+-- input_map: {"D_HU_HF": "D_HU_HF", "D_HU_LF": "D_HU_LF", "D_HU_MF": "D_HU_MF", "D_LU_HF": "D_LU_HF", "D_LU_LF": "D_LU_LF", "D_LU_MF": "D_LU_MF", "D_MU_HF": "D_MU_HF", "D_MU_LF": "D_MU_LF", "D_MU_MF": "D_MU_MF", "NO_INPUT": "NO_INPUT", "N_HU_HF": "N_HU_HF", "N_HU_LF": "N_HU_LF", "N_HU_MF": "N_HU_MF", "N_LU_HF": "N_LU_HF", "N_LU_LF": "N_LU_LF", "N_LU_MF": "N_LU_MF", "N_MU_HF": "N_MU_HF", "N_MU_LF": "N_MU_LF", "N_MU_MF": "N_MU_MF"}
+-- output_map: {"Alert": "Alert", "None": "None", "Safe": "Safe", "TAlert": "TAlert", "TWarning": "TWarning", "Warning": "Warning"}
+
+-- ============================================================
+-- Added CTL properties for TW/TA behavior table
+-- Symbol map:
+--   TW = TWarning, TA = TAlert, W = Warning, A = Alert, S = Safe
+-- Result interpretation:
+--   AG true and EF true  => Pass
+--   AG true and EF false => Vacuous
+--   AG false             => Fail
+-- ============================================================
+
+
+-- ===== Low level =====
+
+-- QC1_Low_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- QC2_Low_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- QC3_Low_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- QC4_Low_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- QC5_Low_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_LU_LF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_Low_EF: antecedent reachability check
+SPEC EF (input = N_LU_LF & output = TWarning)
+
+-- QC6_Low_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_LU_LF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_Low_EF: antecedent reachability check
+SPEC EF (input = N_LU_LF & output = TAlert)
+
+-- ===== Med level =====
+
+-- QC1_Med_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- QC2_Med_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- QC3_Med_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- QC4_Med_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- QC5_Med_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_MU_MF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_Med_EF: antecedent reachability check
+SPEC EF (input = N_MU_MF & output = TWarning)
+
+-- QC6_Med_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_MU_MF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_Med_EF: antecedent reachability check
+SPEC EF (input = N_MU_MF & output = TAlert)
+
+-- ===== High level =====
+
+-- QC1_High_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- QC2_High_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- QC3_High_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- QC4_High_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- QC5_High_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_HU_HF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_High_EF: antecedent reachability check
+SPEC EF (input = N_HU_HF & output = TWarning)
+
+-- QC6_High_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_HU_HF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_High_EF: antecedent reachability check
+SPEC EF (input = N_HU_HF & output = TAlert)
+-- === BEGIN AUTO-GENERATED ATTACK TW/TA ATOMIC CTL SPECS ===
+-- Attack-only CTL properties for atomic TW/TA next-state checks.
+-- Symbol map: TW=TWarning, TA=TAlert, W=Warning, A=Alert.
+-- Result interpretation: AG true + EF true = Pass; AG true + EF false = v; AG false = Fail.
+
+-- ----- Attack input: D_LU_LF -----
+
+-- D_LU_LF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TWarning))
+-- D_LU_LF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- D_LU_LF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = Warning))
+-- D_LU_LF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- D_LU_LF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TAlert))
+-- D_LU_LF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- D_LU_LF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = Alert))
+-- D_LU_LF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- D_LU_LF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TWarning))
+-- D_LU_LF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- D_LU_LF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = Warning))
+-- D_LU_LF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- D_LU_LF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TAlert))
+-- D_LU_LF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- D_LU_LF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = Alert))
+-- D_LU_LF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- ----- Attack input: D_LU_MF -----
+
+-- D_LU_MF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_LU_MF & output = TWarning) -> AX (output = TWarning))
+-- D_LU_MF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TWarning)
+
+-- D_LU_MF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_LU_MF & output = TWarning) -> AX (output = Warning))
+-- D_LU_MF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TWarning)
+
+-- D_LU_MF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_LU_MF & output = TWarning) -> AX (output = TAlert))
+-- D_LU_MF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TWarning)
+
+-- D_LU_MF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_LU_MF & output = TWarning) -> AX (output = Alert))
+-- D_LU_MF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TWarning)
+
+-- D_LU_MF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_LU_MF & output = TAlert) -> AX (output = TWarning))
+-- D_LU_MF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TAlert)
+
+-- D_LU_MF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_LU_MF & output = TAlert) -> AX (output = Warning))
+-- D_LU_MF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TAlert)
+
+-- D_LU_MF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_LU_MF & output = TAlert) -> AX (output = TAlert))
+-- D_LU_MF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TAlert)
+
+-- D_LU_MF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_LU_MF & output = TAlert) -> AX (output = Alert))
+-- D_LU_MF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_MF & output = TAlert)
+
+-- ----- Attack input: D_LU_HF -----
+
+-- D_LU_HF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_LU_HF & output = TWarning) -> AX (output = TWarning))
+-- D_LU_HF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TWarning)
+
+-- D_LU_HF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_LU_HF & output = TWarning) -> AX (output = Warning))
+-- D_LU_HF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TWarning)
+
+-- D_LU_HF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_LU_HF & output = TWarning) -> AX (output = TAlert))
+-- D_LU_HF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TWarning)
+
+-- D_LU_HF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_LU_HF & output = TWarning) -> AX (output = Alert))
+-- D_LU_HF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TWarning)
+
+-- D_LU_HF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_LU_HF & output = TAlert) -> AX (output = TWarning))
+-- D_LU_HF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TAlert)
+
+-- D_LU_HF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_LU_HF & output = TAlert) -> AX (output = Warning))
+-- D_LU_HF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TAlert)
+
+-- D_LU_HF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_LU_HF & output = TAlert) -> AX (output = TAlert))
+-- D_LU_HF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TAlert)
+
+-- D_LU_HF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_LU_HF & output = TAlert) -> AX (output = Alert))
+-- D_LU_HF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_LU_HF & output = TAlert)
+
+-- ----- Attack input: D_MU_LF -----
+
+-- D_MU_LF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_MU_LF & output = TWarning) -> AX (output = TWarning))
+-- D_MU_LF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TWarning)
+
+-- D_MU_LF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_MU_LF & output = TWarning) -> AX (output = Warning))
+-- D_MU_LF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TWarning)
+
+-- D_MU_LF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_MU_LF & output = TWarning) -> AX (output = TAlert))
+-- D_MU_LF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TWarning)
+
+-- D_MU_LF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_MU_LF & output = TWarning) -> AX (output = Alert))
+-- D_MU_LF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TWarning)
+
+-- D_MU_LF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_MU_LF & output = TAlert) -> AX (output = TWarning))
+-- D_MU_LF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TAlert)
+
+-- D_MU_LF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_MU_LF & output = TAlert) -> AX (output = Warning))
+-- D_MU_LF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TAlert)
+
+-- D_MU_LF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_MU_LF & output = TAlert) -> AX (output = TAlert))
+-- D_MU_LF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TAlert)
+
+-- D_MU_LF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_MU_LF & output = TAlert) -> AX (output = Alert))
+-- D_MU_LF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_LF & output = TAlert)
+
+-- ----- Attack input: D_MU_MF -----
+
+-- D_MU_MF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TWarning))
+-- D_MU_MF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- D_MU_MF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = Warning))
+-- D_MU_MF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- D_MU_MF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TAlert))
+-- D_MU_MF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- D_MU_MF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = Alert))
+-- D_MU_MF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- D_MU_MF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TWarning))
+-- D_MU_MF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- D_MU_MF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = Warning))
+-- D_MU_MF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- D_MU_MF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TAlert))
+-- D_MU_MF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- D_MU_MF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = Alert))
+-- D_MU_MF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- ----- Attack input: D_MU_HF -----
+
+-- D_MU_HF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_MU_HF & output = TWarning) -> AX (output = TWarning))
+-- D_MU_HF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TWarning)
+
+-- D_MU_HF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_MU_HF & output = TWarning) -> AX (output = Warning))
+-- D_MU_HF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TWarning)
+
+-- D_MU_HF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_MU_HF & output = TWarning) -> AX (output = TAlert))
+-- D_MU_HF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TWarning)
+
+-- D_MU_HF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_MU_HF & output = TWarning) -> AX (output = Alert))
+-- D_MU_HF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TWarning)
+
+-- D_MU_HF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_MU_HF & output = TAlert) -> AX (output = TWarning))
+-- D_MU_HF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TAlert)
+
+-- D_MU_HF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_MU_HF & output = TAlert) -> AX (output = Warning))
+-- D_MU_HF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TAlert)
+
+-- D_MU_HF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_MU_HF & output = TAlert) -> AX (output = TAlert))
+-- D_MU_HF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TAlert)
+
+-- D_MU_HF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_MU_HF & output = TAlert) -> AX (output = Alert))
+-- D_MU_HF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_MU_HF & output = TAlert)
+
+-- ----- Attack input: D_HU_LF -----
+
+-- D_HU_LF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_HU_LF & output = TWarning) -> AX (output = TWarning))
+-- D_HU_LF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TWarning)
+
+-- D_HU_LF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_HU_LF & output = TWarning) -> AX (output = Warning))
+-- D_HU_LF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TWarning)
+
+-- D_HU_LF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_HU_LF & output = TWarning) -> AX (output = TAlert))
+-- D_HU_LF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TWarning)
+
+-- D_HU_LF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_HU_LF & output = TWarning) -> AX (output = Alert))
+-- D_HU_LF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TWarning)
+
+-- D_HU_LF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_HU_LF & output = TAlert) -> AX (output = TWarning))
+-- D_HU_LF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TAlert)
+
+-- D_HU_LF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_HU_LF & output = TAlert) -> AX (output = Warning))
+-- D_HU_LF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TAlert)
+
+-- D_HU_LF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_HU_LF & output = TAlert) -> AX (output = TAlert))
+-- D_HU_LF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TAlert)
+
+-- D_HU_LF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_HU_LF & output = TAlert) -> AX (output = Alert))
+-- D_HU_LF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_LF & output = TAlert)
+
+-- ----- Attack input: D_HU_MF -----
+
+-- D_HU_MF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_HU_MF & output = TWarning) -> AX (output = TWarning))
+-- D_HU_MF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TWarning)
+
+-- D_HU_MF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_HU_MF & output = TWarning) -> AX (output = Warning))
+-- D_HU_MF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TWarning)
+
+-- D_HU_MF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_HU_MF & output = TWarning) -> AX (output = TAlert))
+-- D_HU_MF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TWarning)
+
+-- D_HU_MF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_HU_MF & output = TWarning) -> AX (output = Alert))
+-- D_HU_MF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TWarning)
+
+-- D_HU_MF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_HU_MF & output = TAlert) -> AX (output = TWarning))
+-- D_HU_MF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TAlert)
+
+-- D_HU_MF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_HU_MF & output = TAlert) -> AX (output = Warning))
+-- D_HU_MF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TAlert)
+
+-- D_HU_MF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_HU_MF & output = TAlert) -> AX (output = TAlert))
+-- D_HU_MF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TAlert)
+
+-- D_HU_MF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_HU_MF & output = TAlert) -> AX (output = Alert))
+-- D_HU_MF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_MF & output = TAlert)
+
+-- ----- Attack input: D_HU_HF -----
+
+-- D_HU_HF_TW_AX_TW_AG: TW -> AX(TW)
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TWarning))
+-- D_HU_HF_TW_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- D_HU_HF_TW_AX_W_AG: TW -> AX(W)
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = Warning))
+-- D_HU_HF_TW_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- D_HU_HF_TW_AX_TA_AG: TW -> AX(TA)
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TAlert))
+-- D_HU_HF_TW_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- D_HU_HF_TW_AX_A_AG: TW -> AX(A)
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = Alert))
+-- D_HU_HF_TW_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- D_HU_HF_TA_AX_TW_AG: TA -> AX(TW)
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TWarning))
+-- D_HU_HF_TA_AX_TW_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- D_HU_HF_TA_AX_W_AG: TA -> AX(W)
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = Warning))
+-- D_HU_HF_TA_AX_W_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- D_HU_HF_TA_AX_TA_AG: TA -> AX(TA)
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TAlert))
+-- D_HU_HF_TA_AX_TA_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- D_HU_HF_TA_AX_A_AG: TA -> AX(A)
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = Alert))
+-- D_HU_HF_TA_AX_A_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- === END AUTO-GENERATED ATTACK TW/TA ATOMIC CTL SPECS ===

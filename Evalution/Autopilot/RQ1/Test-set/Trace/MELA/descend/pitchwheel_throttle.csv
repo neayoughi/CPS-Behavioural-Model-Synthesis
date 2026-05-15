@@ -1,0 +1,24 @@
+input,State
+p:low t:high,Nominal
+"p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high",Nominal
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:high",Caution
+"p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:high,p:low t:med,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:med t:high,p:high t:high,p:high t:high",Critical

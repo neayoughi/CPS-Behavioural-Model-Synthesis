@@ -1,0 +1,4 @@
+mode,n_pairs,aggregate_accuracy_mela,aggregate_accuracy_manual,mean_accuracy_mela,mean_accuracy_manual,median_accuracy_mela,median_accuracy_manual,std_accuracy_mela,std_accuracy_manual,mela_higher_pairs,manual_higher_pairs,tied_pairs,mann_whitney_u_pvalue,A12_mela_vs_manual,effect_direction,effect_size_label
+pitchwheel,6,86.96,43.48,81.25,16.666666666666668,100.0,0.0,40.11701633970303,40.82482904638629,4,0,2,0.05000563560015016,0.8194444444444444,MELA > MANUAL,Large
+throttle,6,86.96,47.83,81.25,33.333333333333336,100.0,0.0,40.11701633970303,51.63977794943222,3,0,3,0.18144920772142048,0.7222222222222222,MELA > MANUAL,Large
+pitchwheel_throttle,6,86.96,43.48,81.25,16.666666666666668,100.0,0.0,40.11701633970303,40.82482904638629,4,0,2,0.05000563560015016,0.8194444444444444,MELA > MANUAL,Large

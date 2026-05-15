@@ -1,0 +1,2208 @@
+*** This is NuSMV 2.6.0 (compiled on Wed Oct 14 15:36:56 2015)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+-- specification AG ((input = DL & output = OUT_Safe) -> AX (output = OUT_Warning | output = OUT_TWarning))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 1.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 1.2 <-
+    state = q1
+    output = 2
+  -> State: 1.3 <-
+    state = q2
+  -> State: 1.4 <-
+    state = q3
+  -> State: 1.5 <-
+    state = q4
+  -> State: 1.6 <-
+    state = q5
+  -> State: 1.7 <-
+    state = q6
+  -> State: 1.8 <-
+    state = q7
+  -> State: 1.9 <-
+    state = q8
+  -> State: 1.10 <-
+    state = q9
+  -> State: 1.11 <-
+    state = q10
+  -> State: 1.12 <-
+    state = q11
+  -> State: 1.13 <-
+    state = q12
+  -> State: 1.14 <-
+    state = q13
+  -> State: 1.15 <-
+    state = q14
+  -> State: 1.16 <-
+    state = q15
+  -> State: 1.17 <-
+    state = q16
+  -> State: 1.18 <-
+    state = q17
+  -> State: 1.19 <-
+    state = q18
+  -> State: 1.20 <-
+    state = q19
+  -> State: 1.21 <-
+    state = q20
+  -> State: 1.22 <-
+    state = q21
+    input = DL
+  -> State: 1.23 <-
+    state = q22
+    input = DM
+-- specification EF (input = DL & output = OUT_Safe)  is true
+-- specification AG ((input = DL & output = OUT_Warning) -> AX (output = OUT_Alert | output = OUT_TAlert))  is true
+-- specification EF (input = DL & output = OUT_Warning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 2.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = DL & output = OUT_Alert) -> AX (output = OUT_Alert | output = OUT_TAlert))  is true
+-- specification EF (input = DL & output = OUT_Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 3.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = NL & output = OUT_Safe) -> AX output = OUT_Safe)  is true
+-- specification EF (input = NL & output = OUT_Safe)  is true
+-- specification AG ((input = NL & output = OUT_Warning) -> AX output = OUT_Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 4.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 4.2 <-
+    state = q1
+    output = 2
+  -> State: 4.3 <-
+    state = q2
+  -> State: 4.4 <-
+    state = q3
+  -> State: 4.5 <-
+    state = q4
+  -> State: 4.6 <-
+    state = q5
+  -> State: 4.7 <-
+    state = q6
+  -> State: 4.8 <-
+    state = q7
+  -> State: 4.9 <-
+    state = q8
+  -> State: 4.10 <-
+    state = q9
+  -> State: 4.11 <-
+    state = q10
+  -> State: 4.12 <-
+    state = q11
+  -> State: 4.13 <-
+    state = q12
+  -> State: 4.14 <-
+    state = q13
+  -> State: 4.15 <-
+    state = q14
+  -> State: 4.16 <-
+    state = q15
+  -> State: 4.17 <-
+    state = q16
+  -> State: 4.18 <-
+    state = q17
+  -> State: 4.19 <-
+    state = q18
+  -> State: 4.20 <-
+    state = q19
+  -> State: 4.21 <-
+    state = q20
+  -> State: 4.22 <-
+    state = q21
+    input = DL
+  -> State: 4.23 <-
+    state = q22
+    input = DM
+  -> State: 4.24 <-
+    state = q23
+    output = 5
+  -> State: 4.25 <-
+    state = q24
+  -> State: 4.26 <-
+    state = q25
+  -> State: 4.27 <-
+    state = q26
+  -> State: 4.28 <-
+    state = q27
+  -> State: 4.29 <-
+    state = q28
+  -> State: 4.30 <-
+    state = q29
+  -> State: 4.31 <-
+    state = q30
+    input = DH
+  -> State: 4.32 <-
+    state = q31
+  -> State: 4.33 <-
+    state = q32
+    output = 0
+  -> State: 4.34 <-
+    state = q33
+  -> State: 4.35 <-
+    state = q34
+  -> State: 4.36 <-
+    state = q35
+  -> State: 4.37 <-
+    state = q36
+  -> State: 4.38 <-
+    state = q37
+  -> State: 4.39 <-
+    state = q38
+  -> State: 4.40 <-
+    state = q39
+  -> State: 4.41 <-
+    state = q40
+  -> State: 4.42 <-
+    state = q41
+  -> State: 4.43 <-
+    state = q42
+  -> State: 4.44 <-
+    state = q43
+  -> State: 4.45 <-
+    state = q44
+  -> State: 4.46 <-
+    state = q45
+  -> State: 4.47 <-
+    state = q46
+  -> State: 4.48 <-
+    state = q47
+  -> State: 4.49 <-
+    state = q48
+  -> State: 4.50 <-
+    state = q49
+  -> State: 4.51 <-
+    state = q50
+  -> State: 4.52 <-
+    state = q51
+  -> State: 4.53 <-
+    state = q52
+  -> State: 4.54 <-
+    state = q53
+  -> State: 4.55 <-
+    state = q54
+  -> State: 4.56 <-
+    state = q55
+  -> State: 4.57 <-
+    state = q56
+  -> State: 4.58 <-
+    state = q57
+  -> State: 4.59 <-
+    state = q58
+  -> State: 4.60 <-
+    state = q59
+  -> State: 4.61 <-
+    state = q60
+  -> State: 4.62 <-
+    state = q61
+  -> State: 4.63 <-
+    state = q62
+  -> State: 4.64 <-
+    state = q63
+  -> State: 4.65 <-
+    state = q64
+  -> State: 4.66 <-
+    state = q65
+  -> State: 4.67 <-
+    state = q66
+  -> State: 4.68 <-
+    state = q67
+  -> State: 4.69 <-
+    state = q68
+  -> State: 4.70 <-
+    state = q69
+  -> State: 4.71 <-
+    state = q70
+  -> State: 4.72 <-
+    state = q71
+  -> State: 4.73 <-
+    state = q72
+  -> State: 4.74 <-
+    state = q73
+  -> State: 4.75 <-
+    state = q74
+  -> State: 4.76 <-
+    state = q75
+  -> State: 4.77 <-
+    state = q76
+  -> State: 4.78 <-
+    state = q77
+  -> State: 4.79 <-
+    state = q78
+  -> State: 4.80 <-
+    state = q79
+  -> State: 4.81 <-
+    state = q80
+  -> State: 4.82 <-
+    state = q81
+  -> State: 4.83 <-
+    state = q82
+  -> State: 4.84 <-
+    state = q83
+  -> State: 4.85 <-
+    state = q84
+  -> State: 4.86 <-
+    state = q85
+  -> State: 4.87 <-
+    state = q86
+  -> State: 4.88 <-
+    state = q87
+  -> State: 4.89 <-
+    state = q88
+  -> State: 4.90 <-
+    state = q89
+  -> State: 4.91 <-
+    state = q90
+  -> State: 4.92 <-
+    state = q91
+  -> State: 4.93 <-
+    state = q92
+  -> State: 4.94 <-
+    state = q93
+  -> State: 4.95 <-
+    state = q94
+  -> State: 4.96 <-
+    state = q95
+  -> State: 4.97 <-
+    state = q96
+  -> State: 4.98 <-
+    state = q97
+  -> State: 4.99 <-
+    state = q98
+  -> State: 4.100 <-
+    state = q99
+  -> State: 4.101 <-
+    state = q100
+  -> State: 4.102 <-
+    state = q101
+  -> State: 4.103 <-
+    state = q102
+  -> State: 4.104 <-
+    state = q103
+  -> State: 4.105 <-
+    state = q104
+  -> State: 4.106 <-
+    state = q105
+  -> State: 4.107 <-
+    state = q106
+  -> State: 4.108 <-
+    state = q107
+  -> State: 4.109 <-
+    state = q108
+  -> State: 4.110 <-
+    state = q109
+  -> State: 4.111 <-
+    state = q110
+  -> State: 4.112 <-
+    state = q111
+  -> State: 4.113 <-
+    state = q112
+  -> State: 4.114 <-
+    state = q113
+  -> State: 4.115 <-
+    state = q114
+  -> State: 4.116 <-
+    state = q115
+  -> State: 4.117 <-
+    state = q116
+  -> State: 4.118 <-
+    state = q117
+  -> State: 4.119 <-
+    state = q118
+  -> State: 4.120 <-
+    state = q119
+  -> State: 4.121 <-
+    state = q120
+    input = DM
+  -> State: 4.122 <-
+    state = q121
+    output = 5
+  -> State: 4.123 <-
+    state = q122
+  -> State: 4.124 <-
+    state = q123
+  -> State: 4.125 <-
+    state = q124
+  -> State: 4.126 <-
+    state = q125
+  -> State: 4.127 <-
+    state = q126
+  -> State: 4.128 <-
+    state = q127
+  -> State: 4.129 <-
+    state = q128
+  -> State: 4.130 <-
+    state = q129
+  -> State: 4.131 <-
+    state = q130
+  -> State: 4.132 <-
+    state = q131
+  -> State: 4.133 <-
+    state = q132
+  -> State: 4.134 <-
+    state = q133
+  -> State: 4.135 <-
+    state = q134
+  -> State: 4.136 <-
+    state = q135
+  -> State: 4.137 <-
+    state = q136
+  -> State: 4.138 <-
+    state = q137
+  -> State: 4.139 <-
+    state = q138
+  -> State: 4.140 <-
+    state = q139
+  -> State: 4.141 <-
+    state = q140
+  -> State: 4.142 <-
+    state = q141
+  -> State: 4.143 <-
+    state = q142
+  -> State: 4.144 <-
+    state = q143
+  -> State: 4.145 <-
+    state = q144
+  -> State: 4.146 <-
+    state = q145
+  -> State: 4.147 <-
+    state = q146
+  -> State: 4.148 <-
+    state = q147
+  -> State: 4.149 <-
+    state = q148
+  -> State: 4.150 <-
+    state = q149
+  -> State: 4.151 <-
+    state = q150
+  -> State: 4.152 <-
+    state = q151
+  -> State: 4.153 <-
+    state = q152
+  -> State: 4.154 <-
+    state = q153
+  -> State: 4.155 <-
+    state = q154
+  -> State: 4.156 <-
+    state = q155
+  -> State: 4.157 <-
+    state = q156
+  -> State: 4.158 <-
+    state = q157
+  -> State: 4.159 <-
+    state = q158
+  -> State: 4.160 <-
+    state = q159
+  -> State: 4.161 <-
+    state = q160
+  -> State: 4.162 <-
+    state = q161
+  -> State: 4.163 <-
+    state = q162
+  -> State: 4.164 <-
+    state = q163
+  -> State: 4.165 <-
+    state = q164
+  -> State: 4.166 <-
+    state = q165
+  -> State: 4.167 <-
+    state = q166
+  -> State: 4.168 <-
+    state = q167
+  -> State: 4.169 <-
+    state = q168
+  -> State: 4.170 <-
+    state = q169
+  -> State: 4.171 <-
+    state = q170
+  -> State: 4.172 <-
+    state = q171
+  -> State: 4.173 <-
+    state = q172
+  -> State: 4.174 <-
+    state = q173
+  -> State: 4.175 <-
+    state = q174
+  -> State: 4.176 <-
+    state = q175
+  -> State: 4.177 <-
+    state = q176
+  -> State: 4.178 <-
+    state = q177
+  -> State: 4.179 <-
+    state = q178
+  -> State: 4.180 <-
+    state = q179
+  -> State: 4.181 <-
+    state = q180
+  -> State: 4.182 <-
+    state = q181
+  -> State: 4.183 <-
+    state = q182
+  -> State: 4.184 <-
+    state = q183
+  -> State: 4.185 <-
+    state = q184
+  -> State: 4.186 <-
+    state = q185
+  -> State: 4.187 <-
+    state = q186
+  -> State: 4.188 <-
+    state = q187
+  -> State: 4.189 <-
+    state = q188
+  -> State: 4.190 <-
+    state = q189
+  -> State: 4.191 <-
+    state = q190
+  -> State: 4.192 <-
+    state = q191
+  -> State: 4.193 <-
+    state = q192
+  -> State: 4.194 <-
+    state = q193
+  -> State: 4.195 <-
+    state = q194
+  -> State: 4.196 <-
+    state = q195
+  -> State: 4.197 <-
+    state = q196
+  -> State: 4.198 <-
+    state = q197
+  -> State: 4.199 <-
+    state = q198
+  -> State: 4.200 <-
+    state = q199
+  -> State: 4.201 <-
+    state = q200
+  -> State: 4.202 <-
+    state = q201
+  -> State: 4.203 <-
+    state = q202
+  -> State: 4.204 <-
+    state = q203
+  -> State: 4.205 <-
+    state = q204
+  -> State: 4.206 <-
+    state = q205
+  -> State: 4.207 <-
+    state = q206
+  -> State: 4.208 <-
+    state = q207
+    input = DH
+  -> State: 4.209 <-
+    state = q208
+  -> State: 4.210 <-
+    state = q209
+    output = 0
+  -> State: 4.211 <-
+    state = q210
+  -> State: 4.212 <-
+    state = q211
+  -> State: 4.213 <-
+    state = q212
+  -> State: 4.214 <-
+    state = q213
+  -> State: 4.215 <-
+    state = q214
+  -> State: 4.216 <-
+    state = q215
+  -> State: 4.217 <-
+    state = q216
+  -> State: 4.218 <-
+    state = q217
+  -> State: 4.219 <-
+    state = q218
+  -> State: 4.220 <-
+    state = q219
+  -> State: 4.221 <-
+    state = q220
+  -> State: 4.222 <-
+    state = q221
+  -> State: 4.223 <-
+    state = q222
+  -> State: 4.224 <-
+    state = q223
+  -> State: 4.225 <-
+    state = q224
+  -> State: 4.226 <-
+    state = q225
+  -> State: 4.227 <-
+    state = q226
+  -> State: 4.228 <-
+    state = q227
+  -> State: 4.229 <-
+    state = q228
+  -> State: 4.230 <-
+    state = q229
+  -> State: 4.231 <-
+    state = q230
+  -> State: 4.232 <-
+    state = q231
+  -> State: 4.233 <-
+    state = q232
+  -> State: 4.234 <-
+    state = q233
+  -> State: 4.235 <-
+    state = q234
+  -> State: 4.236 <-
+    state = q235
+  -> State: 4.237 <-
+    state = q236
+  -> State: 4.238 <-
+    state = q237
+  -> State: 4.239 <-
+    state = q238
+  -> State: 4.240 <-
+    state = q239
+  -> State: 4.241 <-
+    state = q240
+  -> State: 4.242 <-
+    state = q241
+  -> State: 4.243 <-
+    state = q242
+  -> State: 4.244 <-
+    state = q243
+  -> State: 4.245 <-
+    state = q244
+  -> State: 4.246 <-
+    state = q245
+  -> State: 4.247 <-
+    state = q246
+  -> State: 4.248 <-
+    state = q247
+  -> State: 4.249 <-
+    state = q248
+  -> State: 4.250 <-
+    state = q249
+  -> State: 4.251 <-
+    state = q250
+  -> State: 4.252 <-
+    state = q251
+  -> State: 4.253 <-
+    state = q252
+  -> State: 4.254 <-
+    state = q253
+  -> State: 4.255 <-
+    state = q254
+  -> State: 4.256 <-
+    state = q255
+  -> State: 4.257 <-
+    state = q256
+  -> State: 4.258 <-
+    state = q257
+  -> State: 4.259 <-
+    state = q258
+  -> State: 4.260 <-
+    state = q259
+  -> State: 4.261 <-
+    state = q260
+  -> State: 4.262 <-
+    state = q261
+  -> State: 4.263 <-
+    state = q262
+  -> State: 4.264 <-
+    state = q263
+  -> State: 4.265 <-
+    state = q264
+  -> State: 4.266 <-
+    state = q265
+  -> State: 4.267 <-
+    state = q266
+  -> State: 4.268 <-
+    state = q267
+  -> State: 4.269 <-
+    state = q268
+  -> State: 4.270 <-
+    state = q269
+  -> State: 4.271 <-
+    state = q270
+  -> State: 4.272 <-
+    state = q271
+  -> State: 4.273 <-
+    state = q272
+  -> State: 4.274 <-
+    state = q273
+  -> State: 4.275 <-
+    state = q274
+  -> State: 4.276 <-
+    state = q275
+  -> State: 4.277 <-
+    state = q276
+  -> State: 4.278 <-
+    state = q277
+  -> State: 4.279 <-
+    state = q278
+  -> State: 4.280 <-
+    state = q279
+  -> State: 4.281 <-
+    state = q280
+  -> State: 4.282 <-
+    state = q281
+  -> State: 4.283 <-
+    state = q282
+  -> State: 4.284 <-
+    state = q283
+  -> State: 4.285 <-
+    state = q284
+  -> State: 4.286 <-
+    state = q285
+  -> State: 4.287 <-
+    state = q286
+  -> State: 4.288 <-
+    state = q287
+  -> State: 4.289 <-
+    state = q288
+  -> State: 4.290 <-
+    state = q289
+  -> State: 4.291 <-
+    state = q290
+  -> State: 4.292 <-
+    state = q291
+  -> State: 4.293 <-
+    state = q292
+  -> State: 4.294 <-
+    state = q293
+  -> State: 4.295 <-
+    state = q294
+  -> State: 4.296 <-
+    state = q295
+  -> State: 4.297 <-
+    state = q296
+    input = DM
+  -> State: 4.298 <-
+    state = q297
+    output = 5
+  -> State: 4.299 <-
+    state = q298
+  -> State: 4.300 <-
+    state = q299
+  -> State: 4.301 <-
+    state = q300
+  -> State: 4.302 <-
+    state = q301
+  -> State: 4.303 <-
+    state = q302
+  -> State: 4.304 <-
+    state = q303
+  -> State: 4.305 <-
+    state = q304
+  -> State: 4.306 <-
+    state = q305
+  -> State: 4.307 <-
+    state = q306
+  -> State: 4.308 <-
+    state = q307
+  -> State: 4.309 <-
+    state = q308
+  -> State: 4.310 <-
+    state = q309
+  -> State: 4.311 <-
+    state = q310
+  -> State: 4.312 <-
+    state = q311
+  -> State: 4.313 <-
+    state = q312
+  -> State: 4.314 <-
+    state = q313
+  -> State: 4.315 <-
+    state = q314
+  -> State: 4.316 <-
+    state = q315
+  -> State: 4.317 <-
+    state = q316
+  -> State: 4.318 <-
+    state = q317
+  -> State: 4.319 <-
+    state = q318
+  -> State: 4.320 <-
+    state = q319
+  -> State: 4.321 <-
+    state = q320
+  -> State: 4.322 <-
+    state = q321
+  -> State: 4.323 <-
+    state = q322
+  -> State: 4.324 <-
+    state = q323
+  -> State: 4.325 <-
+    state = q324
+  -> State: 4.326 <-
+    state = q325
+  -> State: 4.327 <-
+    state = q326
+  -> State: 4.328 <-
+    state = q327
+  -> State: 4.329 <-
+    state = q328
+  -> State: 4.330 <-
+    state = q329
+  -> State: 4.331 <-
+    state = q330
+  -> State: 4.332 <-
+    state = q331
+  -> State: 4.333 <-
+    state = q332
+  -> State: 4.334 <-
+    state = q333
+  -> State: 4.335 <-
+    state = q334
+  -> State: 4.336 <-
+    state = q335
+  -> State: 4.337 <-
+    state = q336
+  -> State: 4.338 <-
+    state = q337
+  -> State: 4.339 <-
+    state = q338
+  -> State: 4.340 <-
+    state = q339
+  -> State: 4.341 <-
+    state = q340
+  -> State: 4.342 <-
+    state = q341
+  -> State: 4.343 <-
+    state = q342
+  -> State: 4.344 <-
+    state = q343
+  -> State: 4.345 <-
+    state = q344
+  -> State: 4.346 <-
+    state = q345
+  -> State: 4.347 <-
+    state = q346
+  -> State: 4.348 <-
+    state = q347
+  -> State: 4.349 <-
+    state = q348
+  -> State: 4.350 <-
+    state = q349
+  -> State: 4.351 <-
+    state = q350
+  -> State: 4.352 <-
+    state = q351
+  -> State: 4.353 <-
+    state = q352
+  -> State: 4.354 <-
+    state = q353
+  -> State: 4.355 <-
+    state = q354
+  -> State: 4.356 <-
+    state = q355
+  -> State: 4.357 <-
+    state = q356
+  -> State: 4.358 <-
+    state = q357
+  -> State: 4.359 <-
+    state = q358
+  -> State: 4.360 <-
+    state = q359
+  -> State: 4.361 <-
+    state = q360
+  -> State: 4.362 <-
+    state = q361
+  -> State: 4.363 <-
+    state = q362
+  -> State: 4.364 <-
+    state = q363
+  -> State: 4.365 <-
+    state = q364
+  -> State: 4.366 <-
+    state = q365
+  -> State: 4.367 <-
+    state = q366
+  -> State: 4.368 <-
+    state = q367
+  -> State: 4.369 <-
+    state = q368
+  -> State: 4.370 <-
+    state = q369
+  -> State: 4.371 <-
+    state = q370
+  -> State: 4.372 <-
+    state = q371
+  -> State: 4.373 <-
+    state = q372
+  -> State: 4.374 <-
+    state = q373
+  -> State: 4.375 <-
+    state = q374
+  -> State: 4.376 <-
+    state = q375
+  -> State: 4.377 <-
+    state = q376
+    input = NM
+  -> State: 4.378 <-
+    state = q377
+  -> State: 4.379 <-
+    state = q378
+  -> State: 4.380 <-
+    state = q379
+  -> State: 4.381 <-
+    state = q380
+  -> State: 4.382 <-
+    state = q381
+    input = NL
+  -> State: 4.383 <-
+    state = q382
+-- specification EF (input = NL & output = OUT_Warning)  is true
+-- specification AG ((input = NL & output = OUT_Alert) -> AX (output = OUT_Warning | output = OUT_TWarning))  is true
+-- specification EF (input = NL & output = OUT_Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 5.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = DM & output = OUT_Safe) -> AX (output = OUT_Warning | output = OUT_TWarning))  is true
+-- specification EF (input = DM & output = OUT_Safe)  is true
+-- specification AG ((input = DM & output = OUT_Warning) -> AX (output = OUT_Alert | output = OUT_TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 6.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 6.2 <-
+    state = q1
+    output = 2
+  -> State: 6.3 <-
+    state = q2
+  -> State: 6.4 <-
+    state = q3
+  -> State: 6.5 <-
+    state = q4
+  -> State: 6.6 <-
+    state = q5
+  -> State: 6.7 <-
+    state = q6
+  -> State: 6.8 <-
+    state = q7
+  -> State: 6.9 <-
+    state = q8
+  -> State: 6.10 <-
+    state = q9
+  -> State: 6.11 <-
+    state = q10
+  -> State: 6.12 <-
+    state = q11
+  -> State: 6.13 <-
+    state = q12
+  -> State: 6.14 <-
+    state = q13
+  -> State: 6.15 <-
+    state = q14
+  -> State: 6.16 <-
+    state = q15
+  -> State: 6.17 <-
+    state = q16
+  -> State: 6.18 <-
+    state = q17
+  -> State: 6.19 <-
+    state = q18
+  -> State: 6.20 <-
+    state = q19
+  -> State: 6.21 <-
+    state = q20
+  -> State: 6.22 <-
+    state = q21
+    input = DL
+  -> State: 6.23 <-
+    state = q22
+    input = DM
+  -> State: 6.24 <-
+    state = q23
+    output = 5
+  -> State: 6.25 <-
+    state = q24
+-- specification EF (input = DM & output = OUT_Warning)  is true
+-- specification AG ((input = DM & output = OUT_Alert) -> AX (output = OUT_Alert | output = OUT_TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 7.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 7.2 <-
+    state = q1
+    output = 2
+  -> State: 7.3 <-
+    state = q2
+  -> State: 7.4 <-
+    state = q3
+  -> State: 7.5 <-
+    state = q4
+  -> State: 7.6 <-
+    state = q5
+  -> State: 7.7 <-
+    state = q6
+  -> State: 7.8 <-
+    state = q7
+  -> State: 7.9 <-
+    state = q8
+  -> State: 7.10 <-
+    state = q9
+  -> State: 7.11 <-
+    state = q10
+  -> State: 7.12 <-
+    state = q11
+  -> State: 7.13 <-
+    state = q12
+  -> State: 7.14 <-
+    state = q13
+  -> State: 7.15 <-
+    state = q14
+  -> State: 7.16 <-
+    state = q15
+  -> State: 7.17 <-
+    state = q16
+  -> State: 7.18 <-
+    state = q17
+  -> State: 7.19 <-
+    state = q18
+  -> State: 7.20 <-
+    state = q19
+  -> State: 7.21 <-
+    state = q20
+  -> State: 7.22 <-
+    state = q21
+    input = DL
+  -> State: 7.23 <-
+    state = q22
+    input = DM
+  -> State: 7.24 <-
+    state = q23
+    output = 5
+  -> State: 7.25 <-
+    state = q24
+  -> State: 7.26 <-
+    state = q25
+  -> State: 7.27 <-
+    state = q26
+  -> State: 7.28 <-
+    state = q27
+  -> State: 7.29 <-
+    state = q28
+  -> State: 7.30 <-
+    state = q29
+  -> State: 7.31 <-
+    state = q30
+    input = DH
+  -> State: 7.32 <-
+    state = q31
+  -> State: 7.33 <-
+    state = q32
+    output = 0
+  -> State: 7.34 <-
+    state = q33
+  -> State: 7.35 <-
+    state = q34
+  -> State: 7.36 <-
+    state = q35
+  -> State: 7.37 <-
+    state = q36
+  -> State: 7.38 <-
+    state = q37
+  -> State: 7.39 <-
+    state = q38
+  -> State: 7.40 <-
+    state = q39
+  -> State: 7.41 <-
+    state = q40
+  -> State: 7.42 <-
+    state = q41
+  -> State: 7.43 <-
+    state = q42
+  -> State: 7.44 <-
+    state = q43
+  -> State: 7.45 <-
+    state = q44
+  -> State: 7.46 <-
+    state = q45
+  -> State: 7.47 <-
+    state = q46
+  -> State: 7.48 <-
+    state = q47
+  -> State: 7.49 <-
+    state = q48
+  -> State: 7.50 <-
+    state = q49
+  -> State: 7.51 <-
+    state = q50
+  -> State: 7.52 <-
+    state = q51
+  -> State: 7.53 <-
+    state = q52
+  -> State: 7.54 <-
+    state = q53
+  -> State: 7.55 <-
+    state = q54
+  -> State: 7.56 <-
+    state = q55
+  -> State: 7.57 <-
+    state = q56
+  -> State: 7.58 <-
+    state = q57
+  -> State: 7.59 <-
+    state = q58
+  -> State: 7.60 <-
+    state = q59
+  -> State: 7.61 <-
+    state = q60
+  -> State: 7.62 <-
+    state = q61
+  -> State: 7.63 <-
+    state = q62
+  -> State: 7.64 <-
+    state = q63
+  -> State: 7.65 <-
+    state = q64
+  -> State: 7.66 <-
+    state = q65
+  -> State: 7.67 <-
+    state = q66
+  -> State: 7.68 <-
+    state = q67
+  -> State: 7.69 <-
+    state = q68
+  -> State: 7.70 <-
+    state = q69
+  -> State: 7.71 <-
+    state = q70
+  -> State: 7.72 <-
+    state = q71
+  -> State: 7.73 <-
+    state = q72
+  -> State: 7.74 <-
+    state = q73
+  -> State: 7.75 <-
+    state = q74
+  -> State: 7.76 <-
+    state = q75
+  -> State: 7.77 <-
+    state = q76
+  -> State: 7.78 <-
+    state = q77
+  -> State: 7.79 <-
+    state = q78
+  -> State: 7.80 <-
+    state = q79
+  -> State: 7.81 <-
+    state = q80
+  -> State: 7.82 <-
+    state = q81
+  -> State: 7.83 <-
+    state = q82
+  -> State: 7.84 <-
+    state = q83
+  -> State: 7.85 <-
+    state = q84
+  -> State: 7.86 <-
+    state = q85
+  -> State: 7.87 <-
+    state = q86
+  -> State: 7.88 <-
+    state = q87
+  -> State: 7.89 <-
+    state = q88
+  -> State: 7.90 <-
+    state = q89
+  -> State: 7.91 <-
+    state = q90
+  -> State: 7.92 <-
+    state = q91
+  -> State: 7.93 <-
+    state = q92
+  -> State: 7.94 <-
+    state = q93
+  -> State: 7.95 <-
+    state = q94
+  -> State: 7.96 <-
+    state = q95
+  -> State: 7.97 <-
+    state = q96
+  -> State: 7.98 <-
+    state = q97
+  -> State: 7.99 <-
+    state = q98
+  -> State: 7.100 <-
+    state = q99
+  -> State: 7.101 <-
+    state = q100
+  -> State: 7.102 <-
+    state = q101
+  -> State: 7.103 <-
+    state = q102
+  -> State: 7.104 <-
+    state = q103
+  -> State: 7.105 <-
+    state = q104
+  -> State: 7.106 <-
+    state = q105
+  -> State: 7.107 <-
+    state = q106
+  -> State: 7.108 <-
+    state = q107
+  -> State: 7.109 <-
+    state = q108
+  -> State: 7.110 <-
+    state = q109
+  -> State: 7.111 <-
+    state = q110
+  -> State: 7.112 <-
+    state = q111
+  -> State: 7.113 <-
+    state = q112
+  -> State: 7.114 <-
+    state = q113
+  -> State: 7.115 <-
+    state = q114
+  -> State: 7.116 <-
+    state = q115
+  -> State: 7.117 <-
+    state = q116
+  -> State: 7.118 <-
+    state = q117
+  -> State: 7.119 <-
+    state = q118
+  -> State: 7.120 <-
+    state = q119
+  -> State: 7.121 <-
+    state = q120
+    input = DM
+  -> State: 7.122 <-
+    state = q121
+    output = 5
+-- specification EF (input = DM & output = OUT_Alert)  is true
+-- specification AG ((input = NM & output = OUT_Safe) -> AX output = OUT_Safe)  is true
+-- specification EF (input = NM & output = OUT_Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 8.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = NM & output = OUT_Warning) -> AX output = OUT_Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 9.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 9.2 <-
+    state = q1
+    output = 2
+  -> State: 9.3 <-
+    state = q2
+  -> State: 9.4 <-
+    state = q3
+  -> State: 9.5 <-
+    state = q4
+  -> State: 9.6 <-
+    state = q5
+  -> State: 9.7 <-
+    state = q6
+  -> State: 9.8 <-
+    state = q7
+  -> State: 9.9 <-
+    state = q8
+  -> State: 9.10 <-
+    state = q9
+  -> State: 9.11 <-
+    state = q10
+  -> State: 9.12 <-
+    state = q11
+  -> State: 9.13 <-
+    state = q12
+  -> State: 9.14 <-
+    state = q13
+  -> State: 9.15 <-
+    state = q14
+  -> State: 9.16 <-
+    state = q15
+  -> State: 9.17 <-
+    state = q16
+  -> State: 9.18 <-
+    state = q17
+  -> State: 9.19 <-
+    state = q18
+  -> State: 9.20 <-
+    state = q19
+  -> State: 9.21 <-
+    state = q20
+  -> State: 9.22 <-
+    state = q21
+    input = DL
+  -> State: 9.23 <-
+    state = q22
+    input = DM
+  -> State: 9.24 <-
+    state = q23
+    output = 5
+  -> State: 9.25 <-
+    state = q24
+  -> State: 9.26 <-
+    state = q25
+  -> State: 9.27 <-
+    state = q26
+  -> State: 9.28 <-
+    state = q27
+  -> State: 9.29 <-
+    state = q28
+  -> State: 9.30 <-
+    state = q29
+  -> State: 9.31 <-
+    state = q30
+    input = DH
+  -> State: 9.32 <-
+    state = q31
+  -> State: 9.33 <-
+    state = q32
+    output = 0
+  -> State: 9.34 <-
+    state = q33
+  -> State: 9.35 <-
+    state = q34
+  -> State: 9.36 <-
+    state = q35
+  -> State: 9.37 <-
+    state = q36
+  -> State: 9.38 <-
+    state = q37
+  -> State: 9.39 <-
+    state = q38
+  -> State: 9.40 <-
+    state = q39
+  -> State: 9.41 <-
+    state = q40
+  -> State: 9.42 <-
+    state = q41
+  -> State: 9.43 <-
+    state = q42
+  -> State: 9.44 <-
+    state = q43
+  -> State: 9.45 <-
+    state = q44
+  -> State: 9.46 <-
+    state = q45
+  -> State: 9.47 <-
+    state = q46
+  -> State: 9.48 <-
+    state = q47
+  -> State: 9.49 <-
+    state = q48
+  -> State: 9.50 <-
+    state = q49
+  -> State: 9.51 <-
+    state = q50
+  -> State: 9.52 <-
+    state = q51
+  -> State: 9.53 <-
+    state = q52
+  -> State: 9.54 <-
+    state = q53
+  -> State: 9.55 <-
+    state = q54
+  -> State: 9.56 <-
+    state = q55
+  -> State: 9.57 <-
+    state = q56
+  -> State: 9.58 <-
+    state = q57
+  -> State: 9.59 <-
+    state = q58
+  -> State: 9.60 <-
+    state = q59
+  -> State: 9.61 <-
+    state = q60
+  -> State: 9.62 <-
+    state = q61
+  -> State: 9.63 <-
+    state = q62
+  -> State: 9.64 <-
+    state = q63
+  -> State: 9.65 <-
+    state = q64
+  -> State: 9.66 <-
+    state = q65
+  -> State: 9.67 <-
+    state = q66
+  -> State: 9.68 <-
+    state = q67
+  -> State: 9.69 <-
+    state = q68
+  -> State: 9.70 <-
+    state = q69
+  -> State: 9.71 <-
+    state = q70
+  -> State: 9.72 <-
+    state = q71
+  -> State: 9.73 <-
+    state = q72
+  -> State: 9.74 <-
+    state = q73
+  -> State: 9.75 <-
+    state = q74
+  -> State: 9.76 <-
+    state = q75
+  -> State: 9.77 <-
+    state = q76
+  -> State: 9.78 <-
+    state = q77
+  -> State: 9.79 <-
+    state = q78
+  -> State: 9.80 <-
+    state = q79
+  -> State: 9.81 <-
+    state = q80
+  -> State: 9.82 <-
+    state = q81
+  -> State: 9.83 <-
+    state = q82
+  -> State: 9.84 <-
+    state = q83
+  -> State: 9.85 <-
+    state = q84
+  -> State: 9.86 <-
+    state = q85
+  -> State: 9.87 <-
+    state = q86
+  -> State: 9.88 <-
+    state = q87
+  -> State: 9.89 <-
+    state = q88
+  -> State: 9.90 <-
+    state = q89
+  -> State: 9.91 <-
+    state = q90
+  -> State: 9.92 <-
+    state = q91
+  -> State: 9.93 <-
+    state = q92
+  -> State: 9.94 <-
+    state = q93
+  -> State: 9.95 <-
+    state = q94
+  -> State: 9.96 <-
+    state = q95
+  -> State: 9.97 <-
+    state = q96
+  -> State: 9.98 <-
+    state = q97
+  -> State: 9.99 <-
+    state = q98
+  -> State: 9.100 <-
+    state = q99
+  -> State: 9.101 <-
+    state = q100
+  -> State: 9.102 <-
+    state = q101
+  -> State: 9.103 <-
+    state = q102
+  -> State: 9.104 <-
+    state = q103
+  -> State: 9.105 <-
+    state = q104
+  -> State: 9.106 <-
+    state = q105
+  -> State: 9.107 <-
+    state = q106
+  -> State: 9.108 <-
+    state = q107
+  -> State: 9.109 <-
+    state = q108
+  -> State: 9.110 <-
+    state = q109
+  -> State: 9.111 <-
+    state = q110
+  -> State: 9.112 <-
+    state = q111
+  -> State: 9.113 <-
+    state = q112
+  -> State: 9.114 <-
+    state = q113
+  -> State: 9.115 <-
+    state = q114
+  -> State: 9.116 <-
+    state = q115
+  -> State: 9.117 <-
+    state = q116
+  -> State: 9.118 <-
+    state = q117
+  -> State: 9.119 <-
+    state = q118
+  -> State: 9.120 <-
+    state = q119
+  -> State: 9.121 <-
+    state = q120
+    input = DM
+  -> State: 9.122 <-
+    state = q121
+    output = 5
+  -> State: 9.123 <-
+    state = q122
+  -> State: 9.124 <-
+    state = q123
+  -> State: 9.125 <-
+    state = q124
+  -> State: 9.126 <-
+    state = q125
+  -> State: 9.127 <-
+    state = q126
+  -> State: 9.128 <-
+    state = q127
+  -> State: 9.129 <-
+    state = q128
+  -> State: 9.130 <-
+    state = q129
+  -> State: 9.131 <-
+    state = q130
+  -> State: 9.132 <-
+    state = q131
+  -> State: 9.133 <-
+    state = q132
+  -> State: 9.134 <-
+    state = q133
+  -> State: 9.135 <-
+    state = q134
+  -> State: 9.136 <-
+    state = q135
+  -> State: 9.137 <-
+    state = q136
+  -> State: 9.138 <-
+    state = q137
+  -> State: 9.139 <-
+    state = q138
+  -> State: 9.140 <-
+    state = q139
+  -> State: 9.141 <-
+    state = q140
+  -> State: 9.142 <-
+    state = q141
+  -> State: 9.143 <-
+    state = q142
+  -> State: 9.144 <-
+    state = q143
+  -> State: 9.145 <-
+    state = q144
+  -> State: 9.146 <-
+    state = q145
+  -> State: 9.147 <-
+    state = q146
+  -> State: 9.148 <-
+    state = q147
+  -> State: 9.149 <-
+    state = q148
+  -> State: 9.150 <-
+    state = q149
+  -> State: 9.151 <-
+    state = q150
+  -> State: 9.152 <-
+    state = q151
+  -> State: 9.153 <-
+    state = q152
+  -> State: 9.154 <-
+    state = q153
+  -> State: 9.155 <-
+    state = q154
+  -> State: 9.156 <-
+    state = q155
+  -> State: 9.157 <-
+    state = q156
+  -> State: 9.158 <-
+    state = q157
+  -> State: 9.159 <-
+    state = q158
+  -> State: 9.160 <-
+    state = q159
+  -> State: 9.161 <-
+    state = q160
+  -> State: 9.162 <-
+    state = q161
+  -> State: 9.163 <-
+    state = q162
+  -> State: 9.164 <-
+    state = q163
+  -> State: 9.165 <-
+    state = q164
+  -> State: 9.166 <-
+    state = q165
+  -> State: 9.167 <-
+    state = q166
+  -> State: 9.168 <-
+    state = q167
+  -> State: 9.169 <-
+    state = q168
+  -> State: 9.170 <-
+    state = q169
+  -> State: 9.171 <-
+    state = q170
+  -> State: 9.172 <-
+    state = q171
+  -> State: 9.173 <-
+    state = q172
+  -> State: 9.174 <-
+    state = q173
+  -> State: 9.175 <-
+    state = q174
+  -> State: 9.176 <-
+    state = q175
+  -> State: 9.177 <-
+    state = q176
+  -> State: 9.178 <-
+    state = q177
+  -> State: 9.179 <-
+    state = q178
+  -> State: 9.180 <-
+    state = q179
+  -> State: 9.181 <-
+    state = q180
+  -> State: 9.182 <-
+    state = q181
+  -> State: 9.183 <-
+    state = q182
+  -> State: 9.184 <-
+    state = q183
+  -> State: 9.185 <-
+    state = q184
+  -> State: 9.186 <-
+    state = q185
+  -> State: 9.187 <-
+    state = q186
+  -> State: 9.188 <-
+    state = q187
+  -> State: 9.189 <-
+    state = q188
+  -> State: 9.190 <-
+    state = q189
+  -> State: 9.191 <-
+    state = q190
+  -> State: 9.192 <-
+    state = q191
+  -> State: 9.193 <-
+    state = q192
+  -> State: 9.194 <-
+    state = q193
+  -> State: 9.195 <-
+    state = q194
+  -> State: 9.196 <-
+    state = q195
+  -> State: 9.197 <-
+    state = q196
+  -> State: 9.198 <-
+    state = q197
+  -> State: 9.199 <-
+    state = q198
+  -> State: 9.200 <-
+    state = q199
+  -> State: 9.201 <-
+    state = q200
+  -> State: 9.202 <-
+    state = q201
+  -> State: 9.203 <-
+    state = q202
+  -> State: 9.204 <-
+    state = q203
+  -> State: 9.205 <-
+    state = q204
+  -> State: 9.206 <-
+    state = q205
+  -> State: 9.207 <-
+    state = q206
+  -> State: 9.208 <-
+    state = q207
+    input = DH
+  -> State: 9.209 <-
+    state = q208
+  -> State: 9.210 <-
+    state = q209
+    output = 0
+  -> State: 9.211 <-
+    state = q210
+  -> State: 9.212 <-
+    state = q211
+  -> State: 9.213 <-
+    state = q212
+  -> State: 9.214 <-
+    state = q213
+  -> State: 9.215 <-
+    state = q214
+  -> State: 9.216 <-
+    state = q215
+  -> State: 9.217 <-
+    state = q216
+  -> State: 9.218 <-
+    state = q217
+  -> State: 9.219 <-
+    state = q218
+  -> State: 9.220 <-
+    state = q219
+  -> State: 9.221 <-
+    state = q220
+  -> State: 9.222 <-
+    state = q221
+  -> State: 9.223 <-
+    state = q222
+  -> State: 9.224 <-
+    state = q223
+  -> State: 9.225 <-
+    state = q224
+  -> State: 9.226 <-
+    state = q225
+  -> State: 9.227 <-
+    state = q226
+  -> State: 9.228 <-
+    state = q227
+  -> State: 9.229 <-
+    state = q228
+  -> State: 9.230 <-
+    state = q229
+  -> State: 9.231 <-
+    state = q230
+  -> State: 9.232 <-
+    state = q231
+  -> State: 9.233 <-
+    state = q232
+  -> State: 9.234 <-
+    state = q233
+  -> State: 9.235 <-
+    state = q234
+  -> State: 9.236 <-
+    state = q235
+  -> State: 9.237 <-
+    state = q236
+  -> State: 9.238 <-
+    state = q237
+  -> State: 9.239 <-
+    state = q238
+  -> State: 9.240 <-
+    state = q239
+  -> State: 9.241 <-
+    state = q240
+  -> State: 9.242 <-
+    state = q241
+  -> State: 9.243 <-
+    state = q242
+  -> State: 9.244 <-
+    state = q243
+  -> State: 9.245 <-
+    state = q244
+  -> State: 9.246 <-
+    state = q245
+  -> State: 9.247 <-
+    state = q246
+  -> State: 9.248 <-
+    state = q247
+  -> State: 9.249 <-
+    state = q248
+  -> State: 9.250 <-
+    state = q249
+  -> State: 9.251 <-
+    state = q250
+  -> State: 9.252 <-
+    state = q251
+  -> State: 9.253 <-
+    state = q252
+  -> State: 9.254 <-
+    state = q253
+  -> State: 9.255 <-
+    state = q254
+  -> State: 9.256 <-
+    state = q255
+  -> State: 9.257 <-
+    state = q256
+  -> State: 9.258 <-
+    state = q257
+  -> State: 9.259 <-
+    state = q258
+  -> State: 9.260 <-
+    state = q259
+  -> State: 9.261 <-
+    state = q260
+  -> State: 9.262 <-
+    state = q261
+  -> State: 9.263 <-
+    state = q262
+  -> State: 9.264 <-
+    state = q263
+  -> State: 9.265 <-
+    state = q264
+  -> State: 9.266 <-
+    state = q265
+  -> State: 9.267 <-
+    state = q266
+  -> State: 9.268 <-
+    state = q267
+  -> State: 9.269 <-
+    state = q268
+  -> State: 9.270 <-
+    state = q269
+  -> State: 9.271 <-
+    state = q270
+  -> State: 9.272 <-
+    state = q271
+  -> State: 9.273 <-
+    state = q272
+  -> State: 9.274 <-
+    state = q273
+  -> State: 9.275 <-
+    state = q274
+  -> State: 9.276 <-
+    state = q275
+  -> State: 9.277 <-
+    state = q276
+  -> State: 9.278 <-
+    state = q277
+  -> State: 9.279 <-
+    state = q278
+  -> State: 9.280 <-
+    state = q279
+  -> State: 9.281 <-
+    state = q280
+  -> State: 9.282 <-
+    state = q281
+  -> State: 9.283 <-
+    state = q282
+  -> State: 9.284 <-
+    state = q283
+  -> State: 9.285 <-
+    state = q284
+  -> State: 9.286 <-
+    state = q285
+  -> State: 9.287 <-
+    state = q286
+  -> State: 9.288 <-
+    state = q287
+  -> State: 9.289 <-
+    state = q288
+  -> State: 9.290 <-
+    state = q289
+  -> State: 9.291 <-
+    state = q290
+  -> State: 9.292 <-
+    state = q291
+  -> State: 9.293 <-
+    state = q292
+  -> State: 9.294 <-
+    state = q293
+  -> State: 9.295 <-
+    state = q294
+  -> State: 9.296 <-
+    state = q295
+  -> State: 9.297 <-
+    state = q296
+    input = DM
+  -> State: 9.298 <-
+    state = q297
+    output = 5
+  -> State: 9.299 <-
+    state = q298
+  -> State: 9.300 <-
+    state = q299
+  -> State: 9.301 <-
+    state = q300
+  -> State: 9.302 <-
+    state = q301
+  -> State: 9.303 <-
+    state = q302
+  -> State: 9.304 <-
+    state = q303
+  -> State: 9.305 <-
+    state = q304
+  -> State: 9.306 <-
+    state = q305
+  -> State: 9.307 <-
+    state = q306
+  -> State: 9.308 <-
+    state = q307
+  -> State: 9.309 <-
+    state = q308
+  -> State: 9.310 <-
+    state = q309
+  -> State: 9.311 <-
+    state = q310
+  -> State: 9.312 <-
+    state = q311
+  -> State: 9.313 <-
+    state = q312
+  -> State: 9.314 <-
+    state = q313
+  -> State: 9.315 <-
+    state = q314
+  -> State: 9.316 <-
+    state = q315
+  -> State: 9.317 <-
+    state = q316
+  -> State: 9.318 <-
+    state = q317
+  -> State: 9.319 <-
+    state = q318
+  -> State: 9.320 <-
+    state = q319
+  -> State: 9.321 <-
+    state = q320
+  -> State: 9.322 <-
+    state = q321
+  -> State: 9.323 <-
+    state = q322
+  -> State: 9.324 <-
+    state = q323
+  -> State: 9.325 <-
+    state = q324
+  -> State: 9.326 <-
+    state = q325
+  -> State: 9.327 <-
+    state = q326
+  -> State: 9.328 <-
+    state = q327
+  -> State: 9.329 <-
+    state = q328
+  -> State: 9.330 <-
+    state = q329
+  -> State: 9.331 <-
+    state = q330
+  -> State: 9.332 <-
+    state = q331
+  -> State: 9.333 <-
+    state = q332
+  -> State: 9.334 <-
+    state = q333
+  -> State: 9.335 <-
+    state = q334
+  -> State: 9.336 <-
+    state = q335
+  -> State: 9.337 <-
+    state = q336
+  -> State: 9.338 <-
+    state = q337
+  -> State: 9.339 <-
+    state = q338
+  -> State: 9.340 <-
+    state = q339
+  -> State: 9.341 <-
+    state = q340
+  -> State: 9.342 <-
+    state = q341
+  -> State: 9.343 <-
+    state = q342
+  -> State: 9.344 <-
+    state = q343
+  -> State: 9.345 <-
+    state = q344
+  -> State: 9.346 <-
+    state = q345
+  -> State: 9.347 <-
+    state = q346
+  -> State: 9.348 <-
+    state = q347
+  -> State: 9.349 <-
+    state = q348
+  -> State: 9.350 <-
+    state = q349
+  -> State: 9.351 <-
+    state = q350
+  -> State: 9.352 <-
+    state = q351
+  -> State: 9.353 <-
+    state = q352
+  -> State: 9.354 <-
+    state = q353
+  -> State: 9.355 <-
+    state = q354
+  -> State: 9.356 <-
+    state = q355
+  -> State: 9.357 <-
+    state = q356
+  -> State: 9.358 <-
+    state = q357
+  -> State: 9.359 <-
+    state = q358
+  -> State: 9.360 <-
+    state = q359
+  -> State: 9.361 <-
+    state = q360
+  -> State: 9.362 <-
+    state = q361
+  -> State: 9.363 <-
+    state = q362
+  -> State: 9.364 <-
+    state = q363
+  -> State: 9.365 <-
+    state = q364
+  -> State: 9.366 <-
+    state = q365
+  -> State: 9.367 <-
+    state = q366
+  -> State: 9.368 <-
+    state = q367
+  -> State: 9.369 <-
+    state = q368
+  -> State: 9.370 <-
+    state = q369
+  -> State: 9.371 <-
+    state = q370
+  -> State: 9.372 <-
+    state = q371
+  -> State: 9.373 <-
+    state = q372
+  -> State: 9.374 <-
+    state = q373
+  -> State: 9.375 <-
+    state = q374
+  -> State: 9.376 <-
+    state = q375
+  -> State: 9.377 <-
+    state = q376
+    input = NM
+  -> State: 9.378 <-
+    state = q377
+-- specification EF (input = NM & output = OUT_Warning)  is true
+-- specification AG ((input = NM & output = OUT_Alert) -> AX (output = OUT_Warning | output = OUT_TWarning))  is true
+-- specification EF (input = NM & output = OUT_Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 10.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = DH & output = OUT_Safe) -> AX (output = OUT_Warning | output = OUT_TWarning))  is true
+-- specification EF (input = DH & output = OUT_Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 11.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = DH & output = OUT_Warning) -> AX (output = OUT_Alert | output = OUT_TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 12.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+  -> State: 12.2 <-
+    state = q1
+    output = 2
+  -> State: 12.3 <-
+    state = q2
+  -> State: 12.4 <-
+    state = q3
+  -> State: 12.5 <-
+    state = q4
+  -> State: 12.6 <-
+    state = q5
+  -> State: 12.7 <-
+    state = q6
+  -> State: 12.8 <-
+    state = q7
+  -> State: 12.9 <-
+    state = q8
+  -> State: 12.10 <-
+    state = q9
+  -> State: 12.11 <-
+    state = q10
+  -> State: 12.12 <-
+    state = q11
+  -> State: 12.13 <-
+    state = q12
+  -> State: 12.14 <-
+    state = q13
+  -> State: 12.15 <-
+    state = q14
+  -> State: 12.16 <-
+    state = q15
+  -> State: 12.17 <-
+    state = q16
+  -> State: 12.18 <-
+    state = q17
+  -> State: 12.19 <-
+    state = q18
+  -> State: 12.20 <-
+    state = q19
+  -> State: 12.21 <-
+    state = q20
+  -> State: 12.22 <-
+    state = q21
+    input = DL
+  -> State: 12.23 <-
+    state = q22
+    input = DM
+  -> State: 12.24 <-
+    state = q23
+    output = 5
+  -> State: 12.25 <-
+    state = q24
+  -> State: 12.26 <-
+    state = q25
+  -> State: 12.27 <-
+    state = q26
+  -> State: 12.28 <-
+    state = q27
+  -> State: 12.29 <-
+    state = q28
+  -> State: 12.30 <-
+    state = q29
+  -> State: 12.31 <-
+    state = q30
+    input = DH
+  -> State: 12.32 <-
+    state = q31
+-- specification EF (input = DH & output = OUT_Warning)  is true
+-- specification AG ((input = DH & output = OUT_Alert) -> AX (output = OUT_Alert | output = OUT_TAlert))  is true
+-- specification EF (input = DH & output = OUT_Alert)  is true
+-- specification AG ((input = NH & output = OUT_Safe) -> AX output = OUT_Safe)  is true
+-- specification EF (input = NH & output = OUT_Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 13.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = NH & output = OUT_Warning) -> AX output = OUT_Safe)  is true
+-- specification EF (input = NH & output = OUT_Warning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 14.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0
+-- specification AG ((input = NH & output = OUT_Alert) -> AX (output = OUT_Warning | output = OUT_TWarning))  is true
+-- specification EF (input = NH & output = OUT_Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 15.1 <-
+    state = q0
+    input = NL
+    output = 1
+    OUT_Warning = 5
+    OUT_TWarning = 4
+    OUT_TAlert = 3
+    OUT_Safe = 2
+    OUT_None = 1
+    OUT_Alert = 0

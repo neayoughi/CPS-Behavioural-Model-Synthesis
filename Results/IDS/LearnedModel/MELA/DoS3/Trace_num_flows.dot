@@ -1,0 +1,16 @@
+digraph Trace_1st {
+s0 [label="s0|Safe", shape=record, style=rounded];
+s1 [label="s1|Warning", shape=record, style=rounded];
+s2 [label="s2|Alert", shape=record, style=rounded];
+s0 -> s0  [label="NL"];
+s0 -> s0  [label="DL"];
+s0 -> s1  [label="DM"];
+s1 -> s1  [label="DM"];
+s1 -> s2  [label="DH"];
+s1 -> s1  [label="NM"];
+s1 -> s0  [label="NL"];
+s2 -> s2  [label="DH"];
+s2 -> s1  [label="DM"];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

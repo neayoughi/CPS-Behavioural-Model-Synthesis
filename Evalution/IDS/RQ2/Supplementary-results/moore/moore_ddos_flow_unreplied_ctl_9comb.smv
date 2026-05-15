@@ -1,0 +1,280 @@
+MODULE main
+
+VAR
+  state : {s0, s1, s2};
+  input : {D_HU_HF, D_HU_LF, D_HU_MF, D_LU_HF, D_LU_LF, D_LU_MF, D_MU_HF, D_MU_LF, D_MU_MF, NO_INPUT, N_HU_HF, N_HU_LF, N_HU_MF, N_LU_HF, N_LU_LF, N_LU_MF, N_MU_HF, N_MU_LF, N_MU_MF};
+
+DEFINE
+  Alert := 0;
+  None := 1;
+  Safe := 2;
+  TAlert := 3;
+  TWarning := 4;
+  Warning := 5;
+
+  output := case
+    state = s0 : Safe;
+    state = s1 : Warning;
+    state = s2 : Alert;
+  esac;
+
+ASSIGN
+  init(state) := s0;
+
+INVAR
+  case
+    state = s0 : (input = D_LU_LF | input = D_MU_MF | input = N_LU_LF);
+    state = s1 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF | input = N_LU_LF | input = N_LU_MF | input = N_MU_MF);
+    state = s2 : (input = D_HU_HF | input = D_MU_MF);
+  esac;
+
+TRANS
+  case
+    state = s0 & input = D_LU_LF : next(state) = s0;
+    state = s0 & input = D_MU_MF : next(state) = s1;
+    state = s0 & input = N_LU_LF : next(state) = s0;
+    state = s1 & input = D_HU_HF : next(state) = s2;
+    state = s1 & input = D_HU_MF : next(state) = s1;
+    state = s1 & input = D_MU_MF : next(state) = s1;
+    state = s1 & input = N_LU_LF : next(state) = s0;
+    state = s1 & input = N_LU_MF : next(state) = s1;
+    state = s1 & input = N_MU_MF : next(state) = s1;
+    state = s2 & input = D_HU_HF : next(state) = s2;
+    state = s2 & input = D_MU_MF : next(state) = s1;
+    TRUE : TRUE;
+  esac;
+
+-- ============================================================
+-- CTL properties from the table, plus EF antecedent checks
+-- NuSMV uses SPEC for CTL formulas
+-- Interpretation:
+--   AG false                    -> fail
+--   AG true and EF false        -> vacuous
+--   AG true and EF true         -> pass
+-- ============================================================
+
+-- ===== Table column (LF,LU) =====
+-- R1_1 Attack and S, (LF,LU)
+SPEC AG ((input = D_LU_LF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_LU_LF & output = Safe)
+
+-- R1_2 Attack and W, (LF,LU)
+SPEC AG ((input = D_LU_LF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_LF & output = Warning)
+
+-- R1_3 Attack and A, (LF,LU)
+SPEC AG ((input = D_LU_LF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_LF & output = Alert)
+
+-- R2_1 Normal and S, (LF,LU)
+SPEC AG ((input = N_LU_LF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_LU_LF & output = Safe)
+
+-- R2_2 Normal and W, (LF,LU)
+SPEC AG ((input = N_LU_LF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_LU_LF & output = Warning)
+
+-- R2_3 Normal and A, (LF,LU)
+SPEC AG ((input = N_LU_LF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_LU_LF & output = Alert)
+
+-- ===== Table column (MF,LU) =====
+-- R1_1 Attack and S, (MF,LU)
+SPEC AG ((input = D_LU_MF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_LU_MF & output = Safe)
+
+-- R1_2 Attack and W, (MF,LU)
+SPEC AG ((input = D_LU_MF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_MF & output = Warning)
+
+-- R1_3 Attack and A, (MF,LU)
+SPEC AG ((input = D_LU_MF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_MF & output = Alert)
+
+-- R2_1 Normal and S, (MF,LU)
+SPEC AG ((input = N_LU_MF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_LU_MF & output = Safe)
+
+-- R2_2 Normal and W, (MF,LU)
+SPEC AG ((input = N_LU_MF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_LU_MF & output = Warning)
+
+-- R2_3 Normal and A, (MF,LU)
+SPEC AG ((input = N_LU_MF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_LU_MF & output = Alert)
+
+-- ===== Table column (HF,LU) =====
+-- R1_1 Attack and S, (HF,LU)
+SPEC AG ((input = D_LU_HF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_LU_HF & output = Safe)
+
+-- R1_2 Attack and W, (HF,LU)
+SPEC AG ((input = D_LU_HF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_HF & output = Warning)
+
+-- R1_3 Attack and A, (HF,LU)
+SPEC AG ((input = D_LU_HF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_LU_HF & output = Alert)
+
+-- R2_1 Normal and S, (HF,LU)
+SPEC AG ((input = N_LU_HF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_LU_HF & output = Safe)
+
+-- R2_2 Normal and W, (HF,LU)
+SPEC AG ((input = N_LU_HF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_LU_HF & output = Warning)
+
+-- R2_3 Normal and A, (HF,LU)
+SPEC AG ((input = N_LU_HF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_LU_HF & output = Alert)
+
+-- ===== Table column (LF,MU) =====
+-- R1_1 Attack and S, (LF,MU)
+SPEC AG ((input = D_MU_LF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_MU_LF & output = Safe)
+
+-- R1_2 Attack and W, (LF,MU)
+SPEC AG ((input = D_MU_LF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_LF & output = Warning)
+
+-- R1_3 Attack and A, (LF,MU)
+SPEC AG ((input = D_MU_LF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_LF & output = Alert)
+
+-- R2_1 Normal and S, (LF,MU)
+SPEC AG ((input = N_MU_LF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_MU_LF & output = Safe)
+
+-- R2_2 Normal and W, (LF,MU)
+SPEC AG ((input = N_MU_LF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_MU_LF & output = Warning)
+
+-- R2_3 Normal and A, (LF,MU)
+SPEC AG ((input = N_MU_LF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_MU_LF & output = Alert)
+
+-- ===== Table column (MF,MU) =====
+-- R1_1 Attack and S, (MF,MU)
+SPEC AG ((input = D_MU_MF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_MU_MF & output = Safe)
+
+-- R1_2 Attack and W, (MF,MU)
+SPEC AG ((input = D_MU_MF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_MF & output = Warning)
+
+-- R1_3 Attack and A, (MF,MU)
+SPEC AG ((input = D_MU_MF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_MF & output = Alert)
+
+-- R2_1 Normal and S, (MF,MU)
+SPEC AG ((input = N_MU_MF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_MU_MF & output = Safe)
+
+-- R2_2 Normal and W, (MF,MU)
+SPEC AG ((input = N_MU_MF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_MU_MF & output = Warning)
+
+-- R2_3 Normal and A, (MF,MU)
+SPEC AG ((input = N_MU_MF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_MU_MF & output = Alert)
+
+-- ===== Table column (HF,MU) =====
+-- R1_1 Attack and S, (HF,MU)
+SPEC AG ((input = D_MU_HF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_MU_HF & output = Safe)
+
+-- R1_2 Attack and W, (HF,MU)
+SPEC AG ((input = D_MU_HF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_HF & output = Warning)
+
+-- R1_3 Attack and A, (HF,MU)
+SPEC AG ((input = D_MU_HF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_MU_HF & output = Alert)
+
+-- R2_1 Normal and S, (HF,MU)
+SPEC AG ((input = N_MU_HF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_MU_HF & output = Safe)
+
+-- R2_2 Normal and W, (HF,MU)
+SPEC AG ((input = N_MU_HF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_MU_HF & output = Warning)
+
+-- R2_3 Normal and A, (HF,MU)
+SPEC AG ((input = N_MU_HF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_MU_HF & output = Alert)
+
+-- ===== Table column (LF,HU) =====
+-- R1_1 Attack and S, (LF,HU)
+SPEC AG ((input = D_HU_LF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_HU_LF & output = Safe)
+
+-- R1_2 Attack and W, (LF,HU)
+SPEC AG ((input = D_HU_LF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_LF & output = Warning)
+
+-- R1_3 Attack and A, (LF,HU)
+SPEC AG ((input = D_HU_LF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_LF & output = Alert)
+
+-- R2_1 Normal and S, (LF,HU)
+SPEC AG ((input = N_HU_LF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_HU_LF & output = Safe)
+
+-- R2_2 Normal and W, (LF,HU)
+SPEC AG ((input = N_HU_LF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_HU_LF & output = Warning)
+
+-- R2_3 Normal and A, (LF,HU)
+SPEC AG ((input = N_HU_LF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_HU_LF & output = Alert)
+
+-- ===== Table column (MF,HU) =====
+-- R1_1 Attack and S, (MF,HU)
+SPEC AG ((input = D_HU_MF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_HU_MF & output = Safe)
+
+-- R1_2 Attack and W, (MF,HU)
+SPEC AG ((input = D_HU_MF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_MF & output = Warning)
+
+-- R1_3 Attack and A, (MF,HU)
+SPEC AG ((input = D_HU_MF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_MF & output = Alert)
+
+-- R2_1 Normal and S, (MF,HU)
+SPEC AG ((input = N_HU_MF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_HU_MF & output = Safe)
+
+-- R2_2 Normal and W, (MF,HU)
+SPEC AG ((input = N_HU_MF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_HU_MF & output = Warning)
+
+-- R2_3 Normal and A, (MF,HU)
+SPEC AG ((input = N_HU_MF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_HU_MF & output = Alert)
+
+-- ===== Table column (HF,HU) =====
+-- R1_1 Attack and S, (HF,HU)
+SPEC AG ((input = D_HU_HF & output = Safe) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = D_HU_HF & output = Safe)
+
+-- R1_2 Attack and W, (HF,HU)
+SPEC AG ((input = D_HU_HF & output = Warning) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_HF & output = Warning)
+
+-- R1_3 Attack and A, (HF,HU)
+SPEC AG ((input = D_HU_HF & output = Alert) -> AX (output = Alert | output = TAlert))
+SPEC EF (input = D_HU_HF & output = Alert)
+
+-- R2_1 Normal and S, (HF,HU)
+SPEC AG ((input = N_HU_HF & output = Safe) -> AX (output = Safe))
+SPEC EF (input = N_HU_HF & output = Safe)
+
+-- R2_2 Normal and W, (HF,HU)
+SPEC AG ((input = N_HU_HF & output = Warning) -> AX (output = Safe))
+SPEC EF (input = N_HU_HF & output = Warning)
+
+-- R2_3 Normal and A, (HF,HU)
+SPEC AG ((input = N_HU_HF & output = Alert) -> AX (output = Warning | output = TWarning))
+SPEC EF (input = N_HU_HF & output = Alert)
+

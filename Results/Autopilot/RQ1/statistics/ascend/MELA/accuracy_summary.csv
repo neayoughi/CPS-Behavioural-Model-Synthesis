@@ -1,0 +1,4 @@
+method,mode,total_sequences,correct_steps,total_steps,accuracy
+MELA,pitchwheel_throttle,1,27,27,100.0
+MELA,pitchwheel,1,27,27,100.0
+MELA,throttle,1,27,27,100.0

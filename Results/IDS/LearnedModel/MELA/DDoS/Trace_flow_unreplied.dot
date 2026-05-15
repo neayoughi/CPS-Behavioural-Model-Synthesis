@@ -1,0 +1,18 @@
+digraph "Trace_Top-2" {
+s0 [label="s0|Safe", shape=record, style=rounded];
+s1 [label="s1|Warning", shape=record, style=rounded];
+s2 [label="s2|Alert", shape=record, style=rounded];
+s0 -> s0  [label="N_LU_LF"];
+s0 -> s0  [label="D_LU_LF"];
+s0 -> s1  [label="D_MU_MF"];
+s1 -> s1  [label="D_MU_MF"];
+s1 -> s1  [label="D_HU_MF"];
+s1 -> s2  [label="D_HU_HF"];
+s1 -> s1  [label="N_MU_MF"];
+s1 -> s1  [label="N_LU_MF"];
+s1 -> s0  [label="N_LU_LF"];
+s2 -> s2  [label="D_HU_HF"];
+s2 -> s1  [label="D_MU_MF"];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

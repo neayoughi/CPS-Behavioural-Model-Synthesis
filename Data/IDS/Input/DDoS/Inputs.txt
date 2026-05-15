@@ -1,0 +1,180 @@
+Time: 2024-01-18 13:32:58, Port: 80, Protocol: TCP, Packet Size: 479, Attack Type: Normal
+Time: 2024-01-18 13:33:09, Port: 80, Protocol: TCP, Packet Size: 176, Attack Type: Normal
+Time: 2024-01-18 13:33:20, Port: 80, Protocol: TCP, Packet Size: 434, Attack Type: Normal
+Time: 2024-01-18 13:33:31, Port: 80, Protocol: TCP, Packet Size: 313, Attack Type: Normal
+Time: 2024-01-18 13:33:42, Port: 80, Protocol: TCP, Packet Size: 254, Attack Type: Normal
+Time: 2024-01-18 13:33:53, Port: 80, Protocol: UDP, Packet Size: 479, Attack Type: Normal
+Time: 2024-01-18 13:34:04, Port: 80, Protocol: UDP, Packet Size: 176, Attack Type: Normal
+Time: 2024-01-18 13:34:15, Port: 80, Protocol: UDP, Packet Size: 434, Attack Type: Normal
+Time: 2024-01-18 13:34:26, Port: 80, Protocol: UDP, Packet Size: 313, Attack Type: Normal
+Time: 2024-01-18 13:34:38, Port: 80, Protocol: UDP, Packet Size: 254, Attack Type: Normal
+Time: 2024-01-18 13:34:49, Port: 22, Protocol: TCP, Packet Size: 479, Attack Type: Normal
+Time: 2024-01-18 13:35:00, Port: 22, Protocol: TCP, Packet Size: 176, Attack Type: Normal
+Time: 2024-01-18 13:35:11, Port: 22, Protocol: TCP, Packet Size: 434, Attack Type: Normal
+Time: 2024-01-18 13:35:22, Port: 22, Protocol: TCP, Packet Size: 313, Attack Type: Normal
+Time: 2024-01-18 13:35:33, Port: 22, Protocol: TCP, Packet Size: 254, Attack Type: Normal
+Time: 2024-01-18 13:35:44, Port: 22, Protocol: UDP, Packet Size: 479, Attack Type: Normal
+Time: 2024-01-18 13:35:55, Port: 22, Protocol: UDP, Packet Size: 176, Attack Type: Normal
+Time: 2024-01-18 13:36:06, Port: 22, Protocol: UDP, Packet Size: 434, Attack Type: Normal
+Time: 2024-01-18 13:36:17, Port: 22, Protocol: UDP, Packet Size: 313, Attack Type: Normal
+Time: 2024-01-18 13:36:28, Port: 22, Protocol: UDP, Packet Size: 254, Attack Type: Normal
+Time: 2024-01-18 13:36:39, Port: 80, Protocol: TCP, packet_size: 292, attack_type: DDOS
+Time: 2024-01-18 13:39:39, Port: 80, Protocol: TCP, packet_size: 477, attack_type: DDOS
+Time: 2024-01-18 13:42:39, Port: 80, Protocol: TCP, packet_size: 479, attack_type: DDOS
+Time: 2024-01-18 13:45:39, Port: 80, Protocol: TCP, packet_size: 115, attack_type: DDOS
+Time: 2024-01-18 13:48:39, Port: 80, Protocol: TCP, packet_size: 246, attack_type: DDOS
+Time: 2024-01-18 13:51:39, Port: 80, Protocol: UDP, packet_size: 292, attack_type: DDOS
+Time: 2024-01-18 13:54:39, Port: 80, Protocol: UDP, packet_size: 477, attack_type: DDOS
+Time: 2024-01-18 13:57:39, Port: 80, Protocol: UDP, packet_size: 479, attack_type: DDOS
+Time: 2024-01-18 14:00:39, Port: 80, Protocol: UDP, packet_size: 115, attack_type: DDOS
+Time: 2024-01-18 14:03:39, Port: 80, Protocol: UDP, packet_size: 246, attack_type: DDOS
+Time: 2024-01-18 14:06:39, Port: 22, Protocol: TCP, packet_size: 292, attack_type: DDOS
+Time: 2024-01-18 14:09:39, Port: 22, Protocol: TCP, packet_size: 477, attack_type: DDOS
+Time: 2024-01-18 14:12:39, Port: 22, Protocol: TCP, packet_size: 479, attack_type: DDOS
+Time: 2024-01-18 14:15:39, Port: 22, Protocol: TCP, packet_size: 115, attack_type: DDOS
+Time: 2024-01-18 14:18:39, Port: 22, Protocol: TCP, packet_size: 246, attack_type: DDOS
+Time: 2024-01-18 14:21:39, Port: 22, Protocol: UDP, packet_size: 292, attack_type: DDOS
+Time: 2024-01-18 14:24:39, Port: 22, Protocol: UDP, packet_size: 477, attack_type: DDOS
+Time: 2024-01-18 14:27:39, Port: 22, Protocol: UDP, packet_size: 479, attack_type: DDOS
+Time: 2024-01-18 14:30:39, Port: 22, Protocol: UDP, packet_size: 115, attack_type: DDOS
+Time: 2024-01-18 14:33:39, Port: 22, Protocol: UDP, packet_size: 246, attack_type: DDOS
+Time: 2024-01-18 14:36:39, Port: 80, Protocol: TCP, Packet Size: 273, Attack Type: Normal
+Time: 2024-01-18 14:36:50, Port: 80, Protocol: TCP, Packet Size: 280, Attack Type: Normal
+Time: 2024-01-18 14:37:02, Port: 80, Protocol: TCP, Packet Size: 310, Attack Type: Normal
+Time: 2024-01-18 14:37:13, Port: 80, Protocol: TCP, Packet Size: 138, Attack Type: Normal
+Time: 2024-01-18 14:37:24, Port: 80, Protocol: TCP, Packet Size: 68, Attack Type: Normal
+Time: 2024-01-18 14:37:35, Port: 80, Protocol: UDP, Packet Size: 273, Attack Type: Normal
+Time: 2024-01-18 14:37:46, Port: 80, Protocol: UDP, Packet Size: 280, Attack Type: Normal
+Time: 2024-01-18 14:37:57, Port: 80, Protocol: UDP, Packet Size: 310, Attack Type: Normal
+Time: 2024-01-18 14:38:08, Port: 80, Protocol: UDP, Packet Size: 138, Attack Type: Normal
+Time: 2024-01-18 14:38:19, Port: 80, Protocol: UDP, Packet Size: 68, Attack Type: Normal
+Time: 2024-01-18 14:38:30, Port: 22, Protocol: TCP, Packet Size: 273, Attack Type: Normal
+Time: 2024-01-18 14:38:41, Port: 22, Protocol: TCP, Packet Size: 280, Attack Type: Normal
+Time: 2024-01-18 14:38:52, Port: 22, Protocol: TCP, Packet Size: 310, Attack Type: Normal
+Time: 2024-01-18 14:39:03, Port: 22, Protocol: TCP, Packet Size: 138, Attack Type: Normal
+Time: 2024-01-18 14:39:14, Port: 22, Protocol: TCP, Packet Size: 68, Attack Type: Normal
+Time: 2024-01-18 14:39:25, Port: 22, Protocol: UDP, Packet Size: 273, Attack Type: Normal
+Time: 2024-01-18 14:39:36, Port: 22, Protocol: UDP, Packet Size: 280, Attack Type: Normal
+Time: 2024-01-18 14:39:48, Port: 22, Protocol: UDP, Packet Size: 310, Attack Type: Normal
+Time: 2024-01-18 14:39:59, Port: 22, Protocol: UDP, Packet Size: 138, Attack Type: Normal
+Time: 2024-01-18 14:40:10, Port: 22, Protocol: UDP, Packet Size: 68, Attack Type: Normal
+Time: 2024-01-18 14:40:21, Port: 80, Protocol: TCP, packet_size: 447, attack_type: DDOS
+Time: 2024-01-18 14:43:21, Port: 80, Protocol: TCP, packet_size: 497, attack_type: DDOS
+Time: 2024-01-18 14:46:21, Port: 80, Protocol: TCP, packet_size: 496, attack_type: DDOS
+Time: 2024-01-18 14:49:21, Port: 80, Protocol: TCP, packet_size: 453, attack_type: DDOS
+Time: 2024-01-18 14:52:21, Port: 80, Protocol: TCP, packet_size: 235, attack_type: DDOS
+Time: 2024-01-18 14:55:21, Port: 80, Protocol: UDP, packet_size: 447, attack_type: DDOS
+Time: 2024-01-18 14:58:21, Port: 80, Protocol: UDP, packet_size: 497, attack_type: DDOS
+Time: 2024-01-18 15:01:21, Port: 80, Protocol: UDP, packet_size: 496, attack_type: DDOS
+Time: 2024-01-18 15:04:21, Port: 80, Protocol: UDP, packet_size: 453, attack_type: DDOS
+Time: 2024-01-18 15:07:21, Port: 80, Protocol: UDP, packet_size: 235, attack_type: DDOS
+Time: 2024-01-18 15:10:21, Port: 22, Protocol: TCP, packet_size: 447, attack_type: DDOS
+Time: 2024-01-18 15:13:21, Port: 22, Protocol: TCP, packet_size: 497, attack_type: DDOS
+Time: 2024-01-18 15:16:21, Port: 22, Protocol: TCP, packet_size: 496, attack_type: DDOS
+Time: 2024-01-18 15:19:21, Port: 22, Protocol: TCP, packet_size: 453, attack_type: DDOS
+Time: 2024-01-18 15:22:21, Port: 22, Protocol: TCP, packet_size: 235, attack_type: DDOS
+Time: 2024-01-18 15:25:21, Port: 22, Protocol: UDP, packet_size: 447, attack_type: DDOS
+Time: 2024-01-18 15:28:21, Port: 22, Protocol: UDP, packet_size: 497, attack_type: DDOS
+Time: 2024-01-18 15:31:21, Port: 22, Protocol: UDP, packet_size: 496, attack_type: DDOS
+Time: 2024-01-18 15:34:21, Port: 22, Protocol: UDP, packet_size: 453, attack_type: DDOS
+Time: 2024-01-18 15:37:21, Port: 22, Protocol: UDP, packet_size: 235, attack_type: DDOS
+Time: 2024-01-18 15:40:21, Port: 80, Protocol: TCP, Packet Size: 283, Attack Type: Normal
+Time: 2024-01-18 15:40:32, Port: 80, Protocol: TCP, Packet Size: 266, Attack Type: Normal
+Time: 2024-01-18 15:40:43, Port: 80, Protocol: TCP, Packet Size: 259, Attack Type: Normal
+Time: 2024-01-18 15:40:54, Port: 80, Protocol: TCP, Packet Size: 196, Attack Type: Normal
+Time: 2024-01-18 15:41:05, Port: 80, Protocol: TCP, Packet Size: 289, Attack Type: Normal
+Time: 2024-01-18 15:41:16, Port: 80, Protocol: UDP, Packet Size: 283, Attack Type: Normal
+Time: 2024-01-18 15:41:27, Port: 80, Protocol: UDP, Packet Size: 266, Attack Type: Normal
+Time: 2024-01-18 15:41:38, Port: 80, Protocol: UDP, Packet Size: 259, Attack Type: Normal
+Time: 2024-01-18 15:41:49, Port: 80, Protocol: UDP, Packet Size: 196, Attack Type: Normal
+Time: 2024-01-18 15:42:00, Port: 80, Protocol: UDP, Packet Size: 289, Attack Type: Normal
+Time: 2024-01-18 15:42:11, Port: 22, Protocol: TCP, Packet Size: 283, Attack Type: Normal
+Time: 2024-01-18 15:42:23, Port: 22, Protocol: TCP, Packet Size: 266, Attack Type: Normal
+Time: 2024-01-18 15:42:34, Port: 22, Protocol: TCP, Packet Size: 259, Attack Type: Normal
+Time: 2024-01-18 15:42:45, Port: 22, Protocol: TCP, Packet Size: 196, Attack Type: Normal
+Time: 2024-01-18 15:42:56, Port: 22, Protocol: TCP, Packet Size: 289, Attack Type: Normal
+Time: 2024-01-18 15:43:07, Port: 22, Protocol: UDP, Packet Size: 283, Attack Type: Normal
+Time: 2024-01-18 15:43:18, Port: 22, Protocol: UDP, Packet Size: 266, Attack Type: Normal
+Time: 2024-01-18 15:43:29, Port: 22, Protocol: UDP, Packet Size: 259, Attack Type: Normal
+Time: 2024-01-18 15:43:40, Port: 22, Protocol: UDP, Packet Size: 196, Attack Type: Normal
+Time: 2024-01-18 15:43:51, Port: 22, Protocol: UDP, Packet Size: 289, Attack Type: Normal
+Time: 2024-01-18 15:44:02, Port: 80, Protocol: TCP, packet_size: 444, attack_type: DDOS
+Time: 2024-01-18 15:47:02, Port: 80, Protocol: TCP, packet_size: 198, attack_type: DDOS
+Time: 2024-01-18 15:50:02, Port: 80, Protocol: TCP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 15:53:02, Port: 80, Protocol: TCP, packet_size: 94, attack_type: DDOS
+Time: 2024-01-18 15:56:02, Port: 80, Protocol: TCP, packet_size: 373, attack_type: DDOS
+Time: 2024-01-18 15:59:02, Port: 80, Protocol: UDP, packet_size: 444, attack_type: DDOS
+Time: 2024-01-18 16:02:02, Port: 80, Protocol: UDP, packet_size: 198, attack_type: DDOS
+Time: 2024-01-18 16:05:02, Port: 80, Protocol: UDP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 16:08:02, Port: 80, Protocol: UDP, packet_size: 94, attack_type: DDOS
+Time: 2024-01-18 16:11:02, Port: 80, Protocol: UDP, packet_size: 373, attack_type: DDOS
+Time: 2024-01-18 16:14:02, Port: 22, Protocol: TCP, packet_size: 444, attack_type: DDOS
+Time: 2024-01-18 16:17:02, Port: 22, Protocol: TCP, packet_size: 198, attack_type: DDOS
+Time: 2024-01-18 16:20:02, Port: 22, Protocol: TCP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 16:23:02, Port: 22, Protocol: TCP, packet_size: 94, attack_type: DDOS
+Time: 2024-01-18 16:26:02, Port: 22, Protocol: TCP, packet_size: 373, attack_type: DDOS
+Time: 2024-01-18 16:29:02, Port: 22, Protocol: UDP, packet_size: 444, attack_type: DDOS
+Time: 2024-01-18 16:32:02, Port: 22, Protocol: UDP, packet_size: 198, attack_type: DDOS
+Time: 2024-01-18 16:35:02, Port: 22, Protocol: UDP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 16:38:02, Port: 22, Protocol: UDP, packet_size: 94, attack_type: DDOS
+Time: 2024-01-18 16:41:02, Port: 22, Protocol: UDP, packet_size: 373, attack_type: DDOS
+Time: 2024-01-18 16:44:02, Port: 80, Protocol: TCP, Packet Size: 349, Attack Type: Normal
+Time: 2024-01-18 16:44:13, Port: 80, Protocol: TCP, Packet Size: 216, Attack Type: Normal
+Time: 2024-01-18 16:44:24, Port: 80, Protocol: TCP, Packet Size: 478, Attack Type: Normal
+Time: 2024-01-18 16:44:35, Port: 80, Protocol: TCP, Packet Size: 224, Attack Type: Normal
+Time: 2024-01-18 16:44:46, Port: 80, Protocol: TCP, Packet Size: 161, Attack Type: Normal
+Time: 2024-01-18 16:44:58, Port: 80, Protocol: UDP, Packet Size: 349, Attack Type: Normal
+Time: 2024-01-18 16:45:09, Port: 80, Protocol: UDP, Packet Size: 216, Attack Type: Normal
+Time: 2024-01-18 16:45:20, Port: 80, Protocol: UDP, Packet Size: 478, Attack Type: Normal
+Time: 2024-01-18 16:45:31, Port: 80, Protocol: UDP, Packet Size: 224, Attack Type: Normal
+Time: 2024-01-18 16:45:42, Port: 80, Protocol: UDP, Packet Size: 161, Attack Type: Normal
+Time: 2024-01-18 16:45:53, Port: 22, Protocol: TCP, Packet Size: 349, Attack Type: Normal
+Time: 2024-01-18 16:46:04, Port: 22, Protocol: TCP, Packet Size: 216, Attack Type: Normal
+Time: 2024-01-18 16:46:15, Port: 22, Protocol: TCP, Packet Size: 478, Attack Type: Normal
+Time: 2024-01-18 16:46:26, Port: 22, Protocol: TCP, Packet Size: 224, Attack Type: Normal
+Time: 2024-01-18 16:46:37, Port: 22, Protocol: TCP, Packet Size: 161, Attack Type: Normal
+Time: 2024-01-18 16:46:48, Port: 22, Protocol: UDP, Packet Size: 349, Attack Type: Normal
+Time: 2024-01-18 16:46:59, Port: 22, Protocol: UDP, Packet Size: 216, Attack Type: Normal
+Time: 2024-01-18 16:47:10, Port: 22, Protocol: UDP, Packet Size: 478, Attack Type: Normal
+Time: 2024-01-18 16:47:21, Port: 22, Protocol: UDP, Packet Size: 224, Attack Type: Normal
+Time: 2024-01-18 16:47:32, Port: 22, Protocol: UDP, Packet Size: 161, Attack Type: Normal
+Time: 2024-01-18 16:47:44, Port: 80, Protocol: TCP, packet_size: 389, attack_type: DDOS
+Time: 2024-01-18 16:50:44, Port: 80, Protocol: TCP, packet_size: 258, attack_type: DDOS
+Time: 2024-01-18 16:53:44, Port: 80, Protocol: TCP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 16:56:44, Port: 80, Protocol: TCP, packet_size: 156, attack_type: DDOS
+Time: 2024-01-18 16:59:44, Port: 80, Protocol: TCP, packet_size: 135, attack_type: DDOS
+Time: 2024-01-18 17:02:44, Port: 80, Protocol: UDP, packet_size: 389, attack_type: DDOS
+Time: 2024-01-18 17:05:44, Port: 80, Protocol: UDP, packet_size: 258, attack_type: DDOS
+Time: 2024-01-18 17:08:44, Port: 80, Protocol: UDP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 17:11:44, Port: 80, Protocol: UDP, packet_size: 156, attack_type: DDOS
+Time: 2024-01-18 17:14:44, Port: 80, Protocol: UDP, packet_size: 135, attack_type: DDOS
+Time: 2024-01-18 17:17:44, Port: 22, Protocol: TCP, packet_size: 389, attack_type: DDOS
+Time: 2024-01-18 17:20:44, Port: 22, Protocol: TCP, packet_size: 258, attack_type: DDOS
+Time: 2024-01-18 17:23:44, Port: 22, Protocol: TCP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 17:26:44, Port: 22, Protocol: TCP, packet_size: 156, attack_type: DDOS
+Time: 2024-01-18 17:29:44, Port: 22, Protocol: TCP, packet_size: 135, attack_type: DDOS
+Time: 2024-01-18 17:32:44, Port: 22, Protocol: UDP, packet_size: 389, attack_type: DDOS
+Time: 2024-01-18 17:35:44, Port: 22, Protocol: UDP, packet_size: 258, attack_type: DDOS
+Time: 2024-01-18 17:38:44, Port: 22, Protocol: UDP, packet_size: 438, attack_type: DDOS
+Time: 2024-01-18 17:41:44, Port: 22, Protocol: UDP, packet_size: 156, attack_type: DDOS
+Time: 2024-01-18 17:44:44, Port: 22, Protocol: UDP, packet_size: 135, attack_type: DDOS
+Time: 2024-01-18 17:47:44, Port: 80, Protocol: TCP, Packet Size: 473, Attack Type: Normal
+Time: 2024-01-18 17:47:55, Port: 80, Protocol: TCP, Packet Size: 97, Attack Type: Normal
+Time: 2024-01-18 17:48:06, Port: 80, Protocol: TCP, Packet Size: 140, Attack Type: Normal
+Time: 2024-01-18 17:48:17, Port: 80, Protocol: TCP, Packet Size: 180, Attack Type: Normal
+Time: 2024-01-18 17:48:28, Port: 80, Protocol: TCP, Packet Size: 401, Attack Type: Normal
+Time: 2024-01-18 17:48:39, Port: 80, Protocol: UDP, Packet Size: 473, Attack Type: Normal
+Time: 2024-01-18 17:48:50, Port: 80, Protocol: UDP, Packet Size: 97, Attack Type: Normal
+Time: 2024-01-18 17:49:01, Port: 80, Protocol: UDP, Packet Size: 140, Attack Type: Normal
+Time: 2024-01-18 17:49:12, Port: 80, Protocol: UDP, Packet Size: 180, Attack Type: Normal
+Time: 2024-01-18 17:49:23, Port: 80, Protocol: UDP, Packet Size: 401, Attack Type: Normal
+Time: 2024-01-18 17:49:34, Port: 22, Protocol: TCP, Packet Size: 473, Attack Type: Normal
+Time: 2024-01-18 17:49:45, Port: 22, Protocol: TCP, Packet Size: 97, Attack Type: Normal
+Time: 2024-01-18 17:49:56, Port: 22, Protocol: TCP, Packet Size: 140, Attack Type: Normal
+Time: 2024-01-18 17:50:08, Port: 22, Protocol: TCP, Packet Size: 180, Attack Type: Normal
+Time: 2024-01-18 17:50:19, Port: 22, Protocol: TCP, Packet Size: 401, Attack Type: Normal
+Time: 2024-01-18 17:50:30, Port: 22, Protocol: UDP, Packet Size: 473, Attack Type: Normal
+Time: 2024-01-18 17:50:41, Port: 22, Protocol: UDP, Packet Size: 97, Attack Type: Normal
+Time: 2024-01-18 17:50:52, Port: 22, Protocol: UDP, Packet Size: 140, Attack Type: Normal
+Time: 2024-01-18 17:51:03, Port: 22, Protocol: UDP, Packet Size: 180, Attack Type: Normal
+Time: 2024-01-18 17:51:14, Port: 22, Protocol: UDP, Packet Size: 401, Attack Type: Normal

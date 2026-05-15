@@ -1,0 +1,144 @@
+-- Source DOT: <SOURCE_26APR>
+-- Initial state: s0
+-- Regular states: 40
+-- Regular transitions: 64
+-- Full expected alphabet for case 'pwheel': 3
+-- DOT labels missing but still declared in alphabet: none
+-- Missing state/input pairs disallowed: 56
+-- Output mapping:
+--   out_critical = "Critical"
+--   out_caution = "Caution"
+--   out_nominal = "Nominal"
+-- Input label mapping:
+--   p_low = "p:low" from DOT
+--   p_med = "p:med" from DOT
+--   p_high = "p:high" from DOT
+
+MODULE main
+
+IVAR
+  input_label : {p_low, p_med, p_high};
+
+VAR
+  state : {s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30, s31, s32, s33, s34, s35, s36, s37, s38, s39};
+
+DEFINE
+  out_critical := 0;
+  out_caution := 1;
+  out_nominal := 2;
+
+  output := case
+    state = s0 : out_critical;
+    state = s1 : out_critical;
+    state = s2 : out_critical;
+    state = s3 : out_critical;
+    state = s4 : out_critical;
+    state = s5 : out_critical;
+    state = s6 : out_critical;
+    state = s7 : out_critical;
+    state = s8 : out_critical;
+    state = s9 : out_critical;
+    state = s10 : out_caution;
+    state = s11 : out_critical;
+    state = s12 : out_caution;
+    state = s13 : out_critical;
+    state = s14 : out_caution;
+    state = s15 : out_critical;
+    state = s16 : out_caution;
+    state = s17 : out_critical;
+    state = s18 : out_caution;
+    state = s19 : out_critical;
+    state = s20 : out_caution;
+    state = s21 : out_critical;
+    state = s22 : out_caution;
+    state = s23 : out_caution;
+    state = s24 : out_caution;
+    state = s25 : out_caution;
+    state = s26 : out_caution;
+    state = s27 : out_caution;
+    state = s28 : out_caution;
+    state = s29 : out_caution;
+    state = s30 : out_caution;
+    state = s31 : out_nominal;
+    state = s32 : out_nominal;
+    state = s33 : out_nominal;
+    state = s34 : out_nominal;
+    state = s35 : out_nominal;
+    state = s36 : out_nominal;
+    state = s37 : out_nominal;
+    state = s38 : out_nominal;
+    state = s39 : out_nominal;
+    TRUE : out_critical;
+  esac;
+
+ASSIGN
+  init(state) := s0;
+
+TRANS
+  case
+    state = s0 & input_label = p_low : next(state) = s1;
+    state = s0 & input_label = p_med : next(state) = s1;
+    state = s0 & input_label = p_high : next(state) = s0;
+    state = s1 & input_label = p_low : next(state) = s2;
+    state = s1 & input_label = p_med : next(state) = s2;
+    state = s2 & input_label = p_low : next(state) = s3;
+    state = s2 & input_label = p_med : next(state) = s3;
+    state = s3 & input_label = p_low : next(state) = s4;
+    state = s3 & input_label = p_med : next(state) = s4;
+    state = s4 & input_label = p_low : next(state) = s5;
+    state = s4 & input_label = p_med : next(state) = s5;
+    state = s5 & input_label = p_low : next(state) = s6;
+    state = s5 & input_label = p_med : next(state) = s7;
+    state = s6 & input_label = p_low : next(state) = s8;
+    state = s7 & input_label = p_low : next(state) = s9;
+    state = s8 & input_label = p_low : next(state) = s10;
+    state = s9 & input_label = p_low : next(state) = s11;
+    state = s10 & input_label = p_low : next(state) = s10;
+    state = s10 & input_label = p_med : next(state) = s12;
+    state = s10 & input_label = p_high : next(state) = s12;
+    state = s11 & input_label = p_low : next(state) = s13;
+    state = s12 & input_label = p_med : next(state) = s14;
+    state = s12 & input_label = p_low : next(state) = s14;
+    state = s12 & input_label = p_high : next(state) = s14;
+    state = s13 & input_label = p_low : next(state) = s15;
+    state = s14 & input_label = p_med : next(state) = s16;
+    state = s14 & input_label = p_low : next(state) = s16;
+    state = s14 & input_label = p_high : next(state) = s16;
+    state = s15 & input_label = p_low : next(state) = s17;
+    state = s16 & input_label = p_med : next(state) = s18;
+    state = s16 & input_label = p_low : next(state) = s18;
+    state = s16 & input_label = p_high : next(state) = s18;
+    state = s17 & input_label = p_low : next(state) = s19;
+    state = s18 & input_label = p_med : next(state) = s20;
+    state = s18 & input_label = p_low : next(state) = s20;
+    state = s18 & input_label = p_high : next(state) = s20;
+    state = s19 & input_label = p_low : next(state) = s21;
+    state = s20 & input_label = p_med : next(state) = s22;
+    state = s20 & input_label = p_low : next(state) = s22;
+    state = s20 & input_label = p_high : next(state) = s22;
+    state = s21 & input_label = p_low : next(state) = s12;
+    state = s22 & input_label = p_med : next(state) = s23;
+    state = s22 & input_label = p_low : next(state) = s23;
+    state = s22 & input_label = p_high : next(state) = s0;
+    state = s23 & input_label = p_med : next(state) = s0;
+    state = s23 & input_label = p_low : next(state) = s24;
+    state = s24 & input_label = p_low : next(state) = s25;
+    state = s25 & input_label = p_low : next(state) = s26;
+    state = s26 & input_label = p_low : next(state) = s27;
+    state = s27 & input_label = p_low : next(state) = s28;
+    state = s28 & input_label = p_low : next(state) = s29;
+    state = s29 & input_label = p_low : next(state) = s30;
+    state = s30 & input_label = p_low : next(state) = s31;
+    state = s30 & input_label = p_high : next(state) = s10;
+    state = s31 & input_label = p_low : next(state) = s31;
+    state = s31 & input_label = p_med : next(state) = s32;
+    state = s32 & input_label = p_med : next(state) = s33;
+    state = s33 & input_label = p_med : next(state) = s34;
+    state = s34 & input_label = p_med : next(state) = s35;
+    state = s35 & input_label = p_med : next(state) = s36;
+    state = s36 & input_label = p_med : next(state) = s37;
+    state = s37 & input_label = p_med : next(state) = s38;
+    state = s38 & input_label = p_med : next(state) = s39;
+    state = s39 & input_label = p_med : next(state) = s12;
+    TRUE : FALSE;
+  esac;
