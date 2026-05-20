@@ -426,16 +426,3 @@ images/
 
 This repository provides scripts, trace creation and abstraction routines, evaluation code, learned models, and experimental artifacts that can be shared. The RabbitRun router implementation and proprietary internal data are not included.
 
-## Citation
-
-If you use this repository, please cite the related project paper:
-
-```bibtex
-@inproceedings{ayoughi2024mela,
-  title     = {Enhancing Automata Learning with Statistical Machine Learning: A Network Security Case Study},
-  author    = {Ayoughi, Negin and Nejati, Shiva and Sabetzadeh, Mehrdad and Saavedra, Patricio},
-  booktitle = {Proceedings of the ACM/IEEE 27th International Conference on Model Driven Engineering Languages and Systems},
-  pages     = {172--182},
-  year      = {2024}
-}
-```
