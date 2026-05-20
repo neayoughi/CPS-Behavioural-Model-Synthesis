@@ -4,7 +4,6 @@ This repository contains the implementation, data, learned models, and verificat
 
 MELA transforms numeric execution traces into symbolic traces with supervised trace abstraction, then learns Moore state machines from the abstract traces. The learned models can be checked for conformance with held-out traces and analyzed with NuSMV for requirement verification and behaviour exploration.
 
-Repository: [CPS-Behavioural-Model-Synthesis](https://github.com/neayoughi/CPS-Behavioural-Model-Synthesis)
 
 ## Overview
 
