@@ -126,7 +126,7 @@ CPS-Behavioural-Model-Synthesis/
 └── README.md
 ```
 
-**Note:** The folder name `Evalution` is kept to match the current repository structure.
+
 
 ## Requirements
 
@@ -388,25 +388,6 @@ For the autopilot, the CTL properties come from the requirement that the aircraf
 
 RQ2 also studies IDS behaviours in the `Tending Warning` and `Tending Alert` states. These results show how the IDS behaves under low-, medium-, and high-flow traffic conditions.
 
-## Figures
-
-Selected figures are stored in:
-
-```text
-Figures/IDS/
-Figures/Autopilot/
-images/
-```
-
-The `images/` folder contains README figures:
-
-```text
-images/
-├── mela_workflow.png
-├── ids_use_case.png
-├── ids_testbed.png
-└── autopilot_block_diagram.png
-```
 
 ## Naming Conventions
 
