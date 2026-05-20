@@ -8,7 +8,7 @@ Repository: [CPS-Behavioural-Model-Synthesis](https://github.com/neayoughi/CPS-B
 
 ## Overview
 
-![MELA workflow](image/mela_workflow.pdf)
+![MELA workflow](images/mela_workflow.pdf)
 
 MELA has six main steps:
 
@@ -25,7 +25,7 @@ This repository contains artifacts for two CPS case studies.
 
 ### 1. Network Intrusion Detection System
 
-![IDS use case](image/ids_use_case.png)
+![IDS use case](images/ids_use_case.png)
 
 The IDS case study models an IDS-enabled router developed by RabbitRun Technologies. The IDS observes network traffic and updates its state from flow-level features. The testbed represents local users, an IDS-enabled router, external users, normal traffic, DoS attacks, and DDoS attacks.
 
@@ -57,7 +57,7 @@ IDS learning sets:
 
 ### IDS Testbed
 
-![IDS testbed](image/ids_testbed.png)
+![IDS testbed](images/ids_testbed.png)
 
 The IDS testbed uses three virtual machines deployed on separate machines:
 
@@ -78,7 +78,7 @@ The RabbitRun router implementation is proprietary and is not included in this r
 
 ### 2. Autopilot System
 
-![Autopilot block diagram](image/autopilot_block_diagram.png)
+![Autopilot block diagram](images/autopilot_block_diagram.png)
 
 The autopilot case study uses a Simulink model of a De Havilland Beaver aircraft. The autopilot receives flight commands and adjusts the aircraft toward a target altitude.
 
