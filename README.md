@@ -8,7 +8,7 @@ Repository: [CPS-Behavioural-Model-Synthesis](https://github.com/neayoughi/CPS-B
 
 ## Overview
 
-![MELA workflow](image/mela_workflow.png)
+![MELA workflow](image/mela_workflow.pdf)
 
 MELA has six main steps:
 
