@@ -402,7 +402,4 @@ RQ2 also studies IDS behaviours in the `Tending Warning` and `Tending Alert` sta
 - `ascent`: autopilot ascent setting.
 - `descent`: autopilot descent setting.
 
-## Data Availability and Proprietary Material
-
-This repository provides scripts, trace creation and abstraction routines, evaluation code, learned models, and experimental artifacts that can be shared. The RabbitRun router implementation and proprietary internal data are not included.
 
