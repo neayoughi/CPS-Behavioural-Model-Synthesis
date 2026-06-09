@@ -1,9 +1,0 @@
-learning_set: descend
-configuration: throttle
-trace_file_path: Singu/Trace/descend/throttle.csv
-output_dot_path: Singu/StateMachine/descend/throttle_model.dot
-number_of_states: 126
-number_of_transitions: 169
-input_alphabet: ['t:high', 't:low']
-is_input_complete: False
-pdf_written: True

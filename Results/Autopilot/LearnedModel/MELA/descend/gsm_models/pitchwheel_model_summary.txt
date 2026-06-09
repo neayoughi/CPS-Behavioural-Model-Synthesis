@@ -1,9 +1,0 @@
-learning_set: descend
-configuration: pitchwheel
-trace_file_path: Singu/Trace/descend/pitchwheel.csv
-output_dot_path: Singu/StateMachine/descend/pitchwheel_model.dot
-number_of_states: 40
-number_of_transitions: 65
-input_alphabet: ['p:high', 'p:low', 'p:med']
-is_input_complete: False
-pdf_written: True
