@@ -1,29 +1,26 @@
--- Source DOT: <SOURCE_26APR>
+-- Source DOT: Results/Autopilot/LearnedModel/MELA/ascend/gsm_models/pitchwheel_throttle_model.dot
 -- Initial state: s0
 -- Regular states: 53
--- Regular transitions: 106
--- Full expected alphabet for case 'both': 9
--- DOT labels missing but still declared in alphabet: p_low_t_low, p_low_t_med, p_med_t_low, p_med_t_med, p_high_t_low, p_high_t_med
--- Missing state/input pairs disallowed: 371
+-- Regular transitions: 125
+-- Full expected alphabet for case 'pitchwheel_throttle': 6
+-- DOT labels missing but still declared in alphabet: p_low_t_high, p_med_t_high
+-- Missing state/input pairs disallowed: 193
 -- Output mapping:
 --   out_critical = "Critical"
 --   out_caution = "Caution"
 --   out_nominal = "Nominal"
 -- Input label mapping:
---   p_low_t_low = added expected label
---   p_low_t_med = added expected label
---   p_low_t_high = "p:low t:high" from DOT
---   p_med_t_low = added expected label
---   p_med_t_med = added expected label
---   p_med_t_high = "p:med t:high" from DOT
---   p_high_t_low = added expected label
---   p_high_t_med = added expected label
+--   p_low_t_low = "p:low t:low" from DOT
+--   p_low_t_high = added expected label
+--   p_med_t_low = "p:med t:low" from DOT
+--   p_med_t_high = added expected label
+--   p_high_t_low = "p:high t:low" from DOT
 --   p_high_t_high = "p:high t:high" from DOT
 
 MODULE main
 
-IVAR
-  input_label : {p_low_t_low, p_low_t_med, p_low_t_high, p_med_t_low, p_med_t_med, p_med_t_high, p_high_t_low, p_high_t_med, p_high_t_high};
+VAR
+  input_label : {p_low_t_low, p_low_t_high, p_med_t_low, p_med_t_high, p_high_t_low, p_high_t_high};
 
 VAR
   state : {s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30, s31, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41, s42, s43, s44, s45, s46, s47, s48, s49, s50, s51, s52};
@@ -95,111 +92,168 @@ ASSIGN
 
 TRANS
   case
-    state = s0 & input_label = p_low_t_high : next(state) = s0;
-    state = s0 & input_label = p_med_t_high : next(state) = s1;
+    state = s0 & input_label = p_low_t_low : next(state) = s0;
+    state = s0 & input_label = p_med_t_low : next(state) = s1;
+    state = s0 & input_label = p_high_t_low : next(state) = s1;
     state = s0 & input_label = p_high_t_high : next(state) = s1;
-    state = s1 & input_label = p_med_t_high : next(state) = s2;
+    state = s1 & input_label = p_med_t_low : next(state) = s2;
+    state = s1 & input_label = p_high_t_low : next(state) = s2;
     state = s1 & input_label = p_high_t_high : next(state) = s2;
-    state = s1 & input_label = p_low_t_high : next(state) = s2;
-    state = s2 & input_label = p_med_t_high : next(state) = s3;
+    state = s1 & input_label = p_low_t_low : next(state) = s2;
+    state = s2 & input_label = p_med_t_low : next(state) = s3;
+    state = s2 & input_label = p_high_t_low : next(state) = s3;
     state = s2 & input_label = p_high_t_high : next(state) = s3;
-    state = s2 & input_label = p_low_t_high : next(state) = s3;
-    state = s3 & input_label = p_med_t_high : next(state) = s4;
+    state = s2 & input_label = p_low_t_low : next(state) = s3;
+    state = s3 & input_label = p_med_t_low : next(state) = s4;
+    state = s3 & input_label = p_high_t_low : next(state) = s4;
     state = s3 & input_label = p_high_t_high : next(state) = s4;
-    state = s3 & input_label = p_low_t_high : next(state) = s4;
-    state = s4 & input_label = p_med_t_high : next(state) = s5;
+    state = s3 & input_label = p_low_t_low : next(state) = s4;
+    state = s4 & input_label = p_med_t_low : next(state) = s5;
+    state = s4 & input_label = p_high_t_low : next(state) = s5;
     state = s4 & input_label = p_high_t_high : next(state) = s5;
-    state = s4 & input_label = p_low_t_high : next(state) = s5;
-    state = s5 & input_label = p_med_t_high : next(state) = s6;
+    state = s4 & input_label = p_low_t_low : next(state) = s5;
+    state = s5 & input_label = p_med_t_low : next(state) = s6;
+    state = s5 & input_label = p_high_t_low : next(state) = s6;
     state = s5 & input_label = p_high_t_high : next(state) = s6;
-    state = s5 & input_label = p_low_t_high : next(state) = s7;
-    state = s6 & input_label = p_med_t_high : next(state) = s8;
+    state = s5 & input_label = p_low_t_low : next(state) = s7;
+    state = s6 & input_label = p_med_t_low : next(state) = s8;
+    state = s6 & input_label = p_high_t_low : next(state) = s8;
     state = s6 & input_label = p_high_t_high : next(state) = s8;
-    state = s7 & input_label = p_med_t_high : next(state) = s9;
-    state = s8 & input_label = p_med_t_high : next(state) = s10;
-    state = s8 & input_label = p_low_t_high : next(state) = s10;
+    state = s7 & input_label = p_med_t_low : next(state) = s9;
+    state = s8 & input_label = p_med_t_low : next(state) = s10;
+    state = s8 & input_label = p_low_t_low : next(state) = s10;
+    state = s8 & input_label = p_high_t_low : next(state) = s10;
     state = s8 & input_label = p_high_t_high : next(state) = s10;
-    state = s9 & input_label = p_med_t_high : next(state) = s11;
-    state = s10 & input_label = p_med_t_high : next(state) = s12;
-    state = s10 & input_label = p_low_t_high : next(state) = s12;
+    state = s9 & input_label = p_med_t_low : next(state) = s11;
+    state = s10 & input_label = p_med_t_low : next(state) = s12;
+    state = s10 & input_label = p_low_t_low : next(state) = s12;
+    state = s10 & input_label = p_high_t_low : next(state) = s12;
     state = s10 & input_label = p_high_t_high : next(state) = s12;
-    state = s11 & input_label = p_med_t_high : next(state) = s13;
-    state = s12 & input_label = p_med_t_high : next(state) = s14;
-    state = s12 & input_label = p_low_t_high : next(state) = s14;
+    state = s11 & input_label = p_med_t_low : next(state) = s13;
+    state = s12 & input_label = p_med_t_low : next(state) = s14;
+    state = s12 & input_label = p_low_t_low : next(state) = s14;
+    state = s12 & input_label = p_high_t_low : next(state) = s14;
     state = s12 & input_label = p_high_t_high : next(state) = s14;
-    state = s13 & input_label = p_med_t_high : next(state) = s15;
-    state = s14 & input_label = p_med_t_high : next(state) = s16;
-    state = s14 & input_label = p_low_t_high : next(state) = s16;
+    state = s13 & input_label = p_med_t_low : next(state) = s15;
+    state = s14 & input_label = p_med_t_low : next(state) = s16;
+    state = s14 & input_label = p_low_t_low : next(state) = s16;
+    state = s14 & input_label = p_high_t_low : next(state) = s16;
     state = s14 & input_label = p_high_t_high : next(state) = s16;
-    state = s15 & input_label = p_med_t_high : next(state) = s17;
-    state = s16 & input_label = p_med_t_high : next(state) = s18;
-    state = s16 & input_label = p_low_t_high : next(state) = s18;
+    state = s15 & input_label = p_med_t_low : next(state) = s17;
+    state = s16 & input_label = p_med_t_low : next(state) = s18;
+    state = s16 & input_label = p_low_t_low : next(state) = s18;
+    state = s16 & input_label = p_high_t_low : next(state) = s18;
     state = s16 & input_label = p_high_t_high : next(state) = s18;
-    state = s17 & input_label = p_med_t_high : next(state) = s19;
-    state = s18 & input_label = p_med_t_high : next(state) = s20;
-    state = s18 & input_label = p_low_t_high : next(state) = s20;
+    state = s17 & input_label = p_med_t_low : next(state) = s19;
+    state = s18 & input_label = p_med_t_low : next(state) = s20;
+    state = s18 & input_label = p_low_t_low : next(state) = s20;
     state = s18 & input_label = p_high_t_high : next(state) = s20;
-    state = s19 & input_label = p_med_t_high : next(state) = s21;
-    state = s20 & input_label = p_med_t_high : next(state) = s22;
-    state = s20 & input_label = p_low_t_high : next(state) = s22;
+    state = s19 & input_label = p_med_t_low : next(state) = s21;
+    state = s20 & input_label = p_med_t_low : next(state) = s22;
+    state = s20 & input_label = p_low_t_low : next(state) = s22;
     state = s20 & input_label = p_high_t_high : next(state) = s22;
-    state = s21 & input_label = p_med_t_high : next(state) = s23;
-    state = s21 & input_label = p_low_t_high : next(state) = s23;
-    state = s22 & input_label = p_med_t_high : next(state) = s24;
-    state = s22 & input_label = p_low_t_high : next(state) = s24;
+    state = s21 & input_label = p_med_t_low : next(state) = s23;
+    state = s21 & input_label = p_low_t_low : next(state) = s23;
+    state = s22 & input_label = p_med_t_low : next(state) = s24;
+    state = s22 & input_label = p_low_t_low : next(state) = s24;
     state = s22 & input_label = p_high_t_high : next(state) = s24;
-    state = s23 & input_label = p_med_t_high : next(state) = s25;
-    state = s23 & input_label = p_low_t_high : next(state) = s25;
-    state = s24 & input_label = p_med_t_high : next(state) = s26;
-    state = s24 & input_label = p_low_t_high : next(state) = s26;
+    state = s23 & input_label = p_med_t_low : next(state) = s25;
+    state = s23 & input_label = p_low_t_low : next(state) = s25;
+    state = s24 & input_label = p_med_t_low : next(state) = s26;
+    state = s24 & input_label = p_low_t_low : next(state) = s26;
     state = s24 & input_label = p_high_t_high : next(state) = s26;
-    state = s25 & input_label = p_med_t_high : next(state) = s27;
-    state = s25 & input_label = p_low_t_high : next(state) = s27;
-    state = s26 & input_label = p_med_t_high : next(state) = s28;
-    state = s26 & input_label = p_low_t_high : next(state) = s28;
+    state = s25 & input_label = p_med_t_low : next(state) = s27;
+    state = s25 & input_label = p_low_t_low : next(state) = s27;
+    state = s26 & input_label = p_med_t_low : next(state) = s28;
+    state = s26 & input_label = p_low_t_low : next(state) = s28;
     state = s26 & input_label = p_high_t_high : next(state) = s28;
-    state = s27 & input_label = p_med_t_high : next(state) = s29;
-    state = s27 & input_label = p_low_t_high : next(state) = s30;
-    state = s28 & input_label = p_med_t_high : next(state) = s31;
-    state = s28 & input_label = p_low_t_high : next(state) = s31;
+    state = s27 & input_label = p_med_t_low : next(state) = s29;
+    state = s27 & input_label = p_low_t_low : next(state) = s30;
+    state = s28 & input_label = p_med_t_low : next(state) = s31;
+    state = s28 & input_label = p_low_t_low : next(state) = s31;
     state = s28 & input_label = p_high_t_high : next(state) = s31;
-    state = s29 & input_label = p_med_t_high : next(state) = s32;
-    state = s29 & input_label = p_low_t_high : next(state) = s1;
-    state = s30 & input_label = p_med_t_high : next(state) = s33;
-    state = s30 & input_label = p_low_t_high : next(state) = s29;
-    state = s31 & input_label = p_med_t_high : next(state) = s21;
-    state = s31 & input_label = p_low_t_high : next(state) = s0;
+    state = s29 & input_label = p_med_t_low : next(state) = s32;
+    state = s29 & input_label = p_low_t_low : next(state) = s1;
+    state = s30 & input_label = p_med_t_low : next(state) = s33;
+    state = s30 & input_label = p_low_t_low : next(state) = s29;
+    state = s31 & input_label = p_med_t_low : next(state) = s21;
+    state = s31 & input_label = p_low_t_low : next(state) = s0;
     state = s31 & input_label = p_high_t_high : next(state) = s34;
-    state = s32 & input_label = p_med_t_high : next(state) = s34;
-    state = s33 & input_label = p_med_t_high : next(state) = s35;
-    state = s34 & input_label = p_med_t_high : next(state) = s34;
-    state = s34 & input_label = p_low_t_high : next(state) = s36;
+    state = s32 & input_label = p_med_t_low : next(state) = s34;
+    state = s33 & input_label = p_med_t_low : next(state) = s35;
+    state = s34 & input_label = p_med_t_low : next(state) = s34;
+    state = s34 & input_label = p_high_t_low : next(state) = s34;
+    state = s34 & input_label = p_low_t_low : next(state) = s36;
     state = s34 & input_label = p_high_t_high : next(state) = s36;
-    state = s35 & input_label = p_med_t_high : next(state) = s37;
-    state = s36 & input_label = p_low_t_high : next(state) = s38;
+    state = s35 & input_label = p_med_t_low : next(state) = s37;
+    state = s36 & input_label = p_low_t_low : next(state) = s38;
     state = s36 & input_label = p_high_t_high : next(state) = s38;
-    state = s36 & input_label = p_med_t_high : next(state) = s36;
-    state = s37 & input_label = p_med_t_high : next(state) = s39;
-    state = s38 & input_label = p_low_t_high : next(state) = s40;
+    state = s36 & input_label = p_med_t_low : next(state) = s36;
+    state = s36 & input_label = p_high_t_low : next(state) = s38;
+    state = s37 & input_label = p_med_t_low : next(state) = s39;
+    state = s38 & input_label = p_low_t_low : next(state) = s40;
     state = s38 & input_label = p_high_t_high : next(state) = s40;
-    state = s39 & input_label = p_med_t_high : next(state) = s41;
-    state = s40 & input_label = p_low_t_high : next(state) = s42;
+    state = s38 & input_label = p_high_t_low : next(state) = s40;
+    state = s39 & input_label = p_med_t_low : next(state) = s41;
+    state = s40 & input_label = p_low_t_low : next(state) = s42;
     state = s40 & input_label = p_high_t_high : next(state) = s42;
-    state = s41 & input_label = p_med_t_high : next(state) = s43;
-    state = s42 & input_label = p_low_t_high : next(state) = s44;
+    state = s40 & input_label = p_high_t_low : next(state) = s42;
+    state = s41 & input_label = p_med_t_low : next(state) = s43;
+    state = s42 & input_label = p_low_t_low : next(state) = s44;
     state = s42 & input_label = p_high_t_high : next(state) = s44;
-    state = s43 & input_label = p_med_t_high : next(state) = s36;
-    state = s44 & input_label = p_low_t_high : next(state) = s45;
+    state = s42 & input_label = p_high_t_low : next(state) = s44;
+    state = s43 & input_label = p_med_t_low : next(state) = s36;
+    state = s44 & input_label = p_low_t_low : next(state) = s45;
     state = s44 & input_label = p_high_t_high : next(state) = s45;
-    state = s45 & input_label = p_low_t_high : next(state) = s8;
+    state = s44 & input_label = p_high_t_low : next(state) = s45;
+    state = s45 & input_label = p_low_t_low : next(state) = s8;
     state = s45 & input_label = p_high_t_high : next(state) = s46;
+    state = s45 & input_label = p_high_t_low : next(state) = s46;
     state = s46 & input_label = p_high_t_high : next(state) = s42;
-    state = s46 & input_label = p_low_t_high : next(state) = s47;
-    state = s47 & input_label = p_low_t_high : next(state) = s48;
-    state = s48 & input_label = p_low_t_high : next(state) = s49;
-    state = s49 & input_label = p_low_t_high : next(state) = s50;
-    state = s50 & input_label = p_low_t_high : next(state) = s51;
-    state = s51 & input_label = p_low_t_high : next(state) = s52;
-    state = s52 & input_label = p_low_t_high : next(state) = s21;
+    state = s46 & input_label = p_low_t_low : next(state) = s47;
+    state = s47 & input_label = p_low_t_low : next(state) = s48;
+    state = s48 & input_label = p_low_t_low : next(state) = s49;
+    state = s49 & input_label = p_low_t_low : next(state) = s50;
+    state = s50 & input_label = p_low_t_low : next(state) = s51;
+    state = s51 & input_label = p_low_t_low : next(state) = s52;
+    state = s52 & input_label = p_low_t_low : next(state) = s21;
     TRUE : FALSE;
   esac;
+
+-- CTL requirements
+
+-- critical_to_caution__p_low_t_low
+CTLSPEC AG((output = out_critical & input_label = p_low_t_low) -> AF output = out_caution)
+
+-- critical_to_caution__p_low_t_high
+CTLSPEC AG((output = out_critical & input_label = p_low_t_high) -> AF output = out_caution)
+
+-- critical_to_caution__p_med_t_low
+CTLSPEC AG((output = out_critical & input_label = p_med_t_low) -> AF output = out_caution)
+
+-- critical_to_caution__p_med_t_high
+CTLSPEC AG((output = out_critical & input_label = p_med_t_high) -> AF output = out_caution)
+
+-- critical_to_caution__p_high_t_low
+CTLSPEC AG((output = out_critical & input_label = p_high_t_low) -> AF output = out_caution)
+
+-- critical_to_caution__p_high_t_high
+CTLSPEC AG((output = out_critical & input_label = p_high_t_high) -> AF output = out_caution)
+
+-- caution_to_nominal__p_low_t_low
+CTLSPEC AG((output = out_caution & input_label = p_low_t_low) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_low_t_high
+CTLSPEC AG((output = out_caution & input_label = p_low_t_high) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_med_t_low
+CTLSPEC AG((output = out_caution & input_label = p_med_t_low) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_med_t_high
+CTLSPEC AG((output = out_caution & input_label = p_med_t_high) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_high_t_low
+CTLSPEC AG((output = out_caution & input_label = p_high_t_low) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_high_t_high
+CTLSPEC AG((output = out_caution & input_label = p_high_t_high) -> AF output = out_nominal)

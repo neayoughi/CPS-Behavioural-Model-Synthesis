@@ -31,7 +31,7 @@ def read_accuracy_rows() -> pd.DataFrame:
         for method in methods:
             for configuration in configurations:
                 accuracy_file_path = (
-                    f"Results/RQ1/Autopilot/accuracy/"
+                    f"Results/Autopilot/RQ1/accuracy/"
                     f"{learning_set}/{method}/{configuration}_accuracy.csv"
                 )
                 path = project_path(accuracy_file_path)

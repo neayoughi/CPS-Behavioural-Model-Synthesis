@@ -7,7 +7,9 @@ from sklearn.tree import DecisionTreeClassifier, export_text
 
 
 learning_sets = ["ascend", "descend"]
-configurations = ["pitchwheel", "throttle", "pitchwheel_throttle"]
+# Final PitchWheel+Throttle artifacts combine the separate PitchWheel and
+# Throttle labels, so no separate combined decision tree is used.
+configurations = ["pitchwheel", "throttle"]
 
 target_column = "State"
 features_by_configuration = {

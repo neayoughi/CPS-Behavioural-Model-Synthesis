@@ -64,10 +64,10 @@ def learn_model(method: str, learning_set: str, configuration: str) -> None:
     trace_file_path = f"Data/Autopilot/Trace/{method}/{learning_set}/{configuration}.txt"
     trace_csv_path = f"Data/Autopilot/Trace/{method}/{learning_set}/{configuration}.csv"
     output_dot_path = (
-        f"Results/LearnedModel/Autopilot/{method}/{learning_set}/{configuration}_model.dot"
+        f"Results/Autopilot/LearnedModel/{method}/{learning_set}/gsm_models/{configuration}_model.dot"
     )
     model_summary_path = (
-        f"Results/LearnedModel/Autopilot/{method}/{learning_set}/{configuration}_model_summary.txt"
+        f"Results/Autopilot/LearnedModel/{method}/{learning_set}/gsm_models/{configuration}_model_summary.txt"
     )
 
     trace_csv = project_path(trace_csv_path)
@@ -85,7 +85,7 @@ def learn_model(method: str, learning_set: str, configuration: str) -> None:
         output_behavior="moore",
         transition_behavior="deterministic",
     )
-    learned_model = gsm.run(traces)
+    learned_model = gsm.run(traces, data_format="labeled_sequences")
     learned_model.save(file_path=output_dot.with_suffix(""), file_type="dot")
     pdf_written = render_pdf(output_dot)
 

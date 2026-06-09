@@ -1,0 +1,6 @@
+source_trace: Data/Autopilot/Trace/MELA/ascend/pitchwheel.txt
+num_samples: 191
+pta_states_reachable: 192
+pta_edges_reachable: 191
+dot_file: Results/Autopilot/RQ2/ascend/PTA/pta_models/MELA/pitchwheel/pta_moore.dot
+smv_file: Results/Autopilot/RQ2/ascend/PTA/generated_models/pitchwheel/pta_pitchwheel_model.smv

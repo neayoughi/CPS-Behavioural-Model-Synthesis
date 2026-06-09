@@ -10,7 +10,7 @@ configurations = ["pitchwheel", "throttle", "pitchwheel_throttle"]
 
 manual_splits = {
     "Pwheel_Level": ("Pwheel", -10.0, 10.0),
-    "Throttle_Level": ("Throttle", 0.3333, 0.6666),
+    "Throttle_Level": ("Throttle", 0.5),
 }
 
 
@@ -37,6 +37,14 @@ def to_level(series: pd.Series, split_1: float, split_2: float) -> pd.Series:
     return levels
 
 
+def to_binary_level(series: pd.Series, split: float) -> pd.Series:
+    values = pd.to_numeric(series, errors="coerce")
+    levels = pd.Series("", index=series.index, dtype=object)
+    levels.loc[values <= split] = "low"
+    levels.loc[values > split] = "high"
+    return levels
+
+
 def level_columns_for(configuration: str) -> list[str]:
     if configuration == "pitchwheel":
         return ["Pwheel_Level"]
@@ -58,8 +66,13 @@ def write_manual_abstraction(learning_set: str, configuration: str) -> None:
 
     df = pd.read_csv(input_path)
     for level_column in level_columns_for(configuration):
-        source_column, split_1, split_2 = manual_splits[level_column]
-        df[level_column] = to_level(df[source_column], split_1, split_2)
+        split_spec = manual_splits[level_column]
+        if level_column == "Throttle_Level":
+            source_column, split = split_spec
+            df[level_column] = to_binary_level(df[source_column], split)
+        else:
+            source_column, split_1, split_2 = split_spec
+            df[level_column] = to_level(df[source_column], split_1, split_2)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)

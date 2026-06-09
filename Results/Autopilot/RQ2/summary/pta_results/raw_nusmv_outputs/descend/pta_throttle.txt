@@ -1,0 +1,1251 @@
+*** This is NuSMV 2.7.0 (compiled on Thu Oct 24 13:10:12 2024)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2024, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+-- specification AG ((output = out_critical & input_label = t_low) -> AF output = out_caution)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 1.1 <-
+    input_label = t_low
+    state = q0
+    output = 0
+    out_nominal = 3
+    out_caution = 2
+    out_critical = 1
+    out_none = 0
+  -> State: 1.2 <-
+    state = q1
+    output = 1
+  -> State: 1.3 <-
+    state = q2
+  -> State: 1.4 <-
+    state = q3
+  -> State: 1.5 <-
+    state = q4
+  -> State: 1.6 <-
+    state = q5
+  -> State: 1.7 <-
+    state = q6
+  -> State: 1.8 <-
+    state = q7
+  -> State: 1.9 <-
+    state = q8
+    output = 2
+  -> State: 1.10 <-
+    state = q9
+  -> State: 1.11 <-
+    state = q10
+  -> State: 1.12 <-
+    state = q11
+  -> State: 1.13 <-
+    state = q12
+  -> State: 1.14 <-
+    state = q13
+  -> State: 1.15 <-
+    state = q14
+  -> State: 1.16 <-
+    state = q15
+  -> State: 1.17 <-
+    state = q16
+  -> State: 1.18 <-
+    state = q17
+  -> State: 1.19 <-
+    state = q18
+  -> State: 1.20 <-
+    state = q19
+  -> State: 1.21 <-
+    state = q20
+  -> State: 1.22 <-
+    state = q21
+  -> State: 1.23 <-
+    state = q22
+  -> State: 1.24 <-
+    state = q23
+  -> State: 1.25 <-
+    state = q24
+  -> State: 1.26 <-
+    state = q25
+  -> State: 1.27 <-
+    state = q26
+  -> State: 1.28 <-
+    state = q27
+  -> State: 1.29 <-
+    state = q28
+  -> State: 1.30 <-
+    state = q29
+    output = 1
+  -> State: 1.31 <-
+    state = q30
+  -> State: 1.32 <-
+    state = q31
+  -> State: 1.33 <-
+    state = q32
+  -> State: 1.34 <-
+    state = q33
+  -> State: 1.35 <-
+    state = q34
+  -> State: 1.36 <-
+    state = q35
+  -> State: 1.37 <-
+    state = q36
+  -> State: 1.38 <-
+    state = q37
+  -> State: 1.39 <-
+    state = q38
+  -> State: 1.40 <-
+    state = q39
+  -> State: 1.41 <-
+    state = q40
+  -> State: 1.42 <-
+    state = q41
+  -> State: 1.43 <-
+    state = q42
+  -> State: 1.44 <-
+    state = q43
+    output = 2
+  -> State: 1.45 <-
+    state = q44
+  -> State: 1.46 <-
+    state = q45
+  -> State: 1.47 <-
+    state = q46
+  -> State: 1.48 <-
+    state = q47
+  -> State: 1.49 <-
+    state = q48
+  -> State: 1.50 <-
+    state = q49
+  -> State: 1.51 <-
+    state = q50
+  -> State: 1.52 <-
+    state = q51
+  -> State: 1.53 <-
+    state = q52
+  -> State: 1.54 <-
+    state = q53
+  -> State: 1.55 <-
+    state = q54
+  -> State: 1.56 <-
+    state = q55
+  -> State: 1.57 <-
+    state = q56
+  -> State: 1.58 <-
+    state = q57
+    output = 3
+  -> State: 1.59 <-
+    state = q58
+  -> State: 1.60 <-
+    state = q59
+  -> State: 1.61 <-
+    state = q60
+  -> State: 1.62 <-
+    state = q61
+  -> State: 1.63 <-
+    state = q62
+  -> State: 1.64 <-
+    state = q63
+  -> State: 1.65 <-
+    state = q64
+  -> State: 1.66 <-
+    state = q65
+  -> State: 1.67 <-
+    state = q66
+  -> State: 1.68 <-
+    state = q67
+  -> State: 1.69 <-
+    state = q68
+  -> State: 1.70 <-
+    state = q69
+  -> State: 1.71 <-
+    state = q70
+  -> State: 1.72 <-
+    state = q71
+  -> State: 1.73 <-
+    input_label = t_high
+    state = q72
+  -> State: 1.74 <-
+    state = q73
+  -> State: 1.75 <-
+    state = q74
+  -> State: 1.76 <-
+    state = q75
+  -> State: 1.77 <-
+    state = q76
+  -> State: 1.78 <-
+    state = q77
+  -> State: 1.79 <-
+    state = q78
+  -> State: 1.80 <-
+    state = q79
+  -> State: 1.81 <-
+    state = q80
+  -> State: 1.82 <-
+    state = q81
+    output = 2
+  -> State: 1.83 <-
+    state = q82
+  -> State: 1.84 <-
+    state = q83
+  -> State: 1.85 <-
+    state = q84
+  -> State: 1.86 <-
+    state = q85
+  -> State: 1.87 <-
+    state = q86
+  -> State: 1.88 <-
+    state = q87
+  -> State: 1.89 <-
+    state = q88
+  -> State: 1.90 <-
+    state = q89
+  -> State: 1.91 <-
+    state = q90
+  -> State: 1.92 <-
+    state = q91
+  -> State: 1.93 <-
+    state = q92
+  -> State: 1.94 <-
+    state = q93
+  -> State: 1.95 <-
+    state = q94
+  -> State: 1.96 <-
+    state = q95
+    output = 3
+  -> State: 1.97 <-
+    state = q96
+  -> State: 1.98 <-
+    state = q97
+  -> State: 1.99 <-
+    state = q98
+  -> State: 1.100 <-
+    state = q99
+  -> State: 1.101 <-
+    state = q100
+  -> State: 1.102 <-
+    state = q101
+  -> State: 1.103 <-
+    state = q102
+  -> State: 1.104 <-
+    state = q103
+  -> State: 1.105 <-
+    state = q104
+  -> State: 1.106 <-
+    state = q105
+  -> State: 1.107 <-
+    state = q106
+  -> State: 1.108 <-
+    state = q107
+  -> State: 1.109 <-
+    state = q108
+  -> State: 1.110 <-
+    state = q109
+  -> State: 1.111 <-
+    state = q110
+  -> State: 1.112 <-
+    state = q111
+  -> State: 1.113 <-
+    state = q112
+  -> State: 1.114 <-
+    state = q113
+  -> State: 1.115 <-
+    state = q114
+  -> State: 1.116 <-
+    state = q115
+  -> State: 1.117 <-
+    state = q116
+  -> State: 1.118 <-
+    state = q117
+  -> State: 1.119 <-
+    state = q118
+    output = 2
+  -> State: 1.120 <-
+    state = q119
+  -> State: 1.121 <-
+    state = q120
+  -> State: 1.122 <-
+    state = q121
+  -> State: 1.123 <-
+    state = q122
+  -> State: 1.124 <-
+    state = q123
+  -> State: 1.125 <-
+    state = q124
+  -> State: 1.126 <-
+    state = q125
+  -> State: 1.127 <-
+    state = q126
+  -> State: 1.128 <-
+    state = q127
+  -> State: 1.129 <-
+    state = q128
+  -> State: 1.130 <-
+    state = q129
+  -> State: 1.131 <-
+    state = q130
+  -> State: 1.132 <-
+    state = q131
+  -> State: 1.133 <-
+    state = q132
+    output = 3
+  -> State: 1.134 <-
+    state = q133
+  -> State: 1.135 <-
+    state = q134
+  -> State: 1.136 <-
+    state = q135
+  -> State: 1.137 <-
+    state = q136
+  -> State: 1.138 <-
+    state = q137
+  -> State: 1.139 <-
+    state = q138
+  -> State: 1.140 <-
+    state = q139
+  -> State: 1.141 <-
+    state = q140
+  -> State: 1.142 <-
+    state = q141
+  -> State: 1.143 <-
+    state = q142
+  -> State: 1.144 <-
+    state = q143
+  -> State: 1.145 <-
+    state = q144
+  -> State: 1.146 <-
+    state = q145
+  -> State: 1.147 <-
+    state = q146
+  -> State: 1.148 <-
+    state = q147
+  -> State: 1.149 <-
+    state = q148
+  -> State: 1.150 <-
+    state = q149
+  -> State: 1.151 <-
+    state = q150
+  -> State: 1.152 <-
+    state = q151
+  -> State: 1.153 <-
+    state = q152
+  -> State: 1.154 <-
+    state = q153
+  -> State: 1.155 <-
+    state = q154
+  -> State: 1.156 <-
+    state = q155
+  -> State: 1.157 <-
+    state = q156
+    output = 2
+  -> State: 1.158 <-
+    state = q157
+  -> State: 1.159 <-
+    state = q158
+  -> State: 1.160 <-
+    state = q159
+  -> State: 1.161 <-
+    state = q160
+  -> State: 1.162 <-
+    state = q161
+  -> State: 1.163 <-
+    state = q162
+  -> State: 1.164 <-
+    state = q163
+  -> State: 1.165 <-
+    state = q164
+  -> State: 1.166 <-
+    state = q165
+  -> State: 1.167 <-
+    state = q166
+  -> State: 1.168 <-
+    state = q167
+  -> State: 1.169 <-
+    state = q168
+  -> State: 1.170 <-
+    state = q169
+  -> State: 1.171 <-
+    state = q170
+  -> State: 1.172 <-
+    state = q171
+  -> State: 1.173 <-
+    state = q172
+  -> State: 1.174 <-
+    state = q173
+  -> State: 1.175 <-
+    state = q174
+  -> State: 1.176 <-
+    state = q175
+  -> State: 1.177 <-
+    state = q176
+  -> State: 1.178 <-
+    state = q177
+    output = 1
+  -> State: 1.179 <-
+    state = q178
+  -> State: 1.180 <-
+    state = q179
+  -> State: 1.181 <-
+    state = q180
+  -> State: 1.182 <-
+    state = q181
+  -> State: 1.183 <-
+    state = q182
+  -> State: 1.184 <-
+    input_label = t_low
+    state = q183
+  -> State: 1.185 <-
+    state = q184
+  -> State: 1.186 <-
+    state = q185
+  -> State: 1.187 <-
+    state = q186
+  -> State: 1.188 <-
+    state = q187
+  -> State: 1.189 <-
+    state = q188
+  -> State: 1.190 <-
+    state = q189
+  -> State: 1.191 <-
+    state = q190
+  -- Loop starts here
+  -> State: 1.192 <-
+    input_label = no_input
+    state = q191
+  -> State: 1.193 <-
+-- specification EF (output = out_critical & input_label = t_low)  is true
+-- specification AG ((output = out_critical & input_label = t_high) -> AF output = out_caution)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 2.1 <-
+    input_label = t_low
+    state = q0
+    output = 0
+    out_nominal = 3
+    out_caution = 2
+    out_critical = 1
+    out_none = 0
+  -> State: 2.2 <-
+    state = q1
+    output = 1
+  -> State: 2.3 <-
+    state = q2
+  -> State: 2.4 <-
+    state = q3
+  -> State: 2.5 <-
+    state = q4
+  -> State: 2.6 <-
+    state = q5
+  -> State: 2.7 <-
+    state = q6
+  -> State: 2.8 <-
+    state = q7
+  -> State: 2.9 <-
+    state = q8
+    output = 2
+  -> State: 2.10 <-
+    state = q9
+  -> State: 2.11 <-
+    state = q10
+  -> State: 2.12 <-
+    state = q11
+  -> State: 2.13 <-
+    state = q12
+  -> State: 2.14 <-
+    state = q13
+  -> State: 2.15 <-
+    state = q14
+  -> State: 2.16 <-
+    state = q15
+  -> State: 2.17 <-
+    state = q16
+  -> State: 2.18 <-
+    state = q17
+  -> State: 2.19 <-
+    state = q18
+  -> State: 2.20 <-
+    state = q19
+  -> State: 2.21 <-
+    state = q20
+  -> State: 2.22 <-
+    state = q21
+  -> State: 2.23 <-
+    state = q22
+  -> State: 2.24 <-
+    state = q23
+  -> State: 2.25 <-
+    state = q24
+  -> State: 2.26 <-
+    state = q25
+  -> State: 2.27 <-
+    state = q26
+  -> State: 2.28 <-
+    state = q27
+  -> State: 2.29 <-
+    state = q28
+  -> State: 2.30 <-
+    state = q29
+    output = 1
+  -> State: 2.31 <-
+    state = q30
+  -> State: 2.32 <-
+    state = q31
+  -> State: 2.33 <-
+    state = q32
+  -> State: 2.34 <-
+    state = q33
+  -> State: 2.35 <-
+    state = q34
+  -> State: 2.36 <-
+    state = q35
+  -> State: 2.37 <-
+    state = q36
+  -> State: 2.38 <-
+    state = q37
+  -> State: 2.39 <-
+    state = q38
+  -> State: 2.40 <-
+    state = q39
+  -> State: 2.41 <-
+    state = q40
+  -> State: 2.42 <-
+    state = q41
+  -> State: 2.43 <-
+    state = q42
+  -> State: 2.44 <-
+    state = q43
+    output = 2
+  -> State: 2.45 <-
+    state = q44
+  -> State: 2.46 <-
+    state = q45
+  -> State: 2.47 <-
+    state = q46
+  -> State: 2.48 <-
+    state = q47
+  -> State: 2.49 <-
+    state = q48
+  -> State: 2.50 <-
+    state = q49
+  -> State: 2.51 <-
+    state = q50
+  -> State: 2.52 <-
+    state = q51
+  -> State: 2.53 <-
+    state = q52
+  -> State: 2.54 <-
+    state = q53
+  -> State: 2.55 <-
+    state = q54
+  -> State: 2.56 <-
+    state = q55
+  -> State: 2.57 <-
+    state = q56
+  -> State: 2.58 <-
+    state = q57
+    output = 3
+  -> State: 2.59 <-
+    state = q58
+  -> State: 2.60 <-
+    state = q59
+  -> State: 2.61 <-
+    state = q60
+  -> State: 2.62 <-
+    state = q61
+  -> State: 2.63 <-
+    state = q62
+  -> State: 2.64 <-
+    state = q63
+  -> State: 2.65 <-
+    state = q64
+  -> State: 2.66 <-
+    state = q65
+  -> State: 2.67 <-
+    state = q66
+  -> State: 2.68 <-
+    state = q67
+  -> State: 2.69 <-
+    state = q68
+  -> State: 2.70 <-
+    state = q69
+  -> State: 2.71 <-
+    state = q70
+  -> State: 2.72 <-
+    state = q71
+  -> State: 2.73 <-
+    input_label = t_high
+    state = q72
+  -> State: 2.74 <-
+    state = q73
+  -> State: 2.75 <-
+    state = q74
+  -> State: 2.76 <-
+    state = q75
+  -> State: 2.77 <-
+    state = q76
+  -> State: 2.78 <-
+    state = q77
+  -> State: 2.79 <-
+    state = q78
+  -> State: 2.80 <-
+    state = q79
+  -> State: 2.81 <-
+    state = q80
+  -> State: 2.82 <-
+    state = q81
+    output = 2
+  -> State: 2.83 <-
+    state = q82
+  -> State: 2.84 <-
+    state = q83
+  -> State: 2.85 <-
+    state = q84
+  -> State: 2.86 <-
+    state = q85
+  -> State: 2.87 <-
+    state = q86
+  -> State: 2.88 <-
+    state = q87
+  -> State: 2.89 <-
+    state = q88
+  -> State: 2.90 <-
+    state = q89
+  -> State: 2.91 <-
+    state = q90
+  -> State: 2.92 <-
+    state = q91
+  -> State: 2.93 <-
+    state = q92
+  -> State: 2.94 <-
+    state = q93
+  -> State: 2.95 <-
+    state = q94
+  -> State: 2.96 <-
+    state = q95
+    output = 3
+  -> State: 2.97 <-
+    state = q96
+  -> State: 2.98 <-
+    state = q97
+  -> State: 2.99 <-
+    state = q98
+  -> State: 2.100 <-
+    state = q99
+  -> State: 2.101 <-
+    state = q100
+  -> State: 2.102 <-
+    state = q101
+  -> State: 2.103 <-
+    state = q102
+  -> State: 2.104 <-
+    state = q103
+  -> State: 2.105 <-
+    state = q104
+  -> State: 2.106 <-
+    state = q105
+  -> State: 2.107 <-
+    state = q106
+  -> State: 2.108 <-
+    state = q107
+  -> State: 2.109 <-
+    state = q108
+  -> State: 2.110 <-
+    state = q109
+  -> State: 2.111 <-
+    state = q110
+  -> State: 2.112 <-
+    state = q111
+  -> State: 2.113 <-
+    state = q112
+  -> State: 2.114 <-
+    state = q113
+  -> State: 2.115 <-
+    state = q114
+  -> State: 2.116 <-
+    state = q115
+  -> State: 2.117 <-
+    state = q116
+  -> State: 2.118 <-
+    state = q117
+  -> State: 2.119 <-
+    state = q118
+    output = 2
+  -> State: 2.120 <-
+    state = q119
+  -> State: 2.121 <-
+    state = q120
+  -> State: 2.122 <-
+    state = q121
+  -> State: 2.123 <-
+    state = q122
+  -> State: 2.124 <-
+    state = q123
+  -> State: 2.125 <-
+    state = q124
+  -> State: 2.126 <-
+    state = q125
+  -> State: 2.127 <-
+    state = q126
+  -> State: 2.128 <-
+    state = q127
+  -> State: 2.129 <-
+    state = q128
+  -> State: 2.130 <-
+    state = q129
+  -> State: 2.131 <-
+    state = q130
+  -> State: 2.132 <-
+    state = q131
+  -> State: 2.133 <-
+    state = q132
+    output = 3
+  -> State: 2.134 <-
+    state = q133
+  -> State: 2.135 <-
+    state = q134
+  -> State: 2.136 <-
+    state = q135
+  -> State: 2.137 <-
+    state = q136
+  -> State: 2.138 <-
+    state = q137
+  -> State: 2.139 <-
+    state = q138
+  -> State: 2.140 <-
+    state = q139
+  -> State: 2.141 <-
+    state = q140
+  -> State: 2.142 <-
+    state = q141
+  -> State: 2.143 <-
+    state = q142
+  -> State: 2.144 <-
+    state = q143
+  -> State: 2.145 <-
+    state = q144
+  -> State: 2.146 <-
+    state = q145
+  -> State: 2.147 <-
+    state = q146
+  -> State: 2.148 <-
+    state = q147
+  -> State: 2.149 <-
+    state = q148
+  -> State: 2.150 <-
+    state = q149
+  -> State: 2.151 <-
+    state = q150
+  -> State: 2.152 <-
+    state = q151
+  -> State: 2.153 <-
+    state = q152
+  -> State: 2.154 <-
+    state = q153
+  -> State: 2.155 <-
+    state = q154
+  -> State: 2.156 <-
+    state = q155
+  -> State: 2.157 <-
+    state = q156
+    output = 2
+  -> State: 2.158 <-
+    state = q157
+  -> State: 2.159 <-
+    state = q158
+  -> State: 2.160 <-
+    state = q159
+  -> State: 2.161 <-
+    state = q160
+  -> State: 2.162 <-
+    state = q161
+  -> State: 2.163 <-
+    state = q162
+  -> State: 2.164 <-
+    state = q163
+  -> State: 2.165 <-
+    state = q164
+  -> State: 2.166 <-
+    state = q165
+  -> State: 2.167 <-
+    state = q166
+  -> State: 2.168 <-
+    state = q167
+  -> State: 2.169 <-
+    state = q168
+  -> State: 2.170 <-
+    state = q169
+  -> State: 2.171 <-
+    state = q170
+  -> State: 2.172 <-
+    state = q171
+  -> State: 2.173 <-
+    state = q172
+  -> State: 2.174 <-
+    state = q173
+  -> State: 2.175 <-
+    state = q174
+  -> State: 2.176 <-
+    state = q175
+  -> State: 2.177 <-
+    state = q176
+  -> State: 2.178 <-
+    state = q177
+    output = 1
+  -> State: 2.179 <-
+    state = q178
+  -> State: 2.180 <-
+    state = q179
+  -> State: 2.181 <-
+    state = q180
+  -> State: 2.182 <-
+    state = q181
+  -> State: 2.183 <-
+    state = q182
+  -> State: 2.184 <-
+    input_label = t_low
+    state = q183
+  -> State: 2.185 <-
+    state = q184
+  -> State: 2.186 <-
+    state = q185
+  -> State: 2.187 <-
+    state = q186
+  -> State: 2.188 <-
+    state = q187
+  -> State: 2.189 <-
+    state = q188
+  -> State: 2.190 <-
+    state = q189
+  -> State: 2.191 <-
+    state = q190
+  -- Loop starts here
+  -> State: 2.192 <-
+    input_label = no_input
+    state = q191
+  -> State: 2.193 <-
+-- specification EF (output = out_critical & input_label = t_high)  is true
+-- specification AG ((output = out_caution & input_label = t_low) -> AF output = out_nominal)  is true
+-- specification EF (output = out_caution & input_label = t_low)  is true
+-- specification AG ((output = out_caution & input_label = t_high) -> AF output = out_nominal)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 3.1 <-
+    input_label = t_low
+    state = q0
+    output = 0
+    out_nominal = 3
+    out_caution = 2
+    out_critical = 1
+    out_none = 0
+  -> State: 3.2 <-
+    state = q1
+    output = 1
+  -> State: 3.3 <-
+    state = q2
+  -> State: 3.4 <-
+    state = q3
+  -> State: 3.5 <-
+    state = q4
+  -> State: 3.6 <-
+    state = q5
+  -> State: 3.7 <-
+    state = q6
+  -> State: 3.8 <-
+    state = q7
+  -> State: 3.9 <-
+    state = q8
+    output = 2
+  -> State: 3.10 <-
+    state = q9
+  -> State: 3.11 <-
+    state = q10
+  -> State: 3.12 <-
+    state = q11
+  -> State: 3.13 <-
+    state = q12
+  -> State: 3.14 <-
+    state = q13
+  -> State: 3.15 <-
+    state = q14
+  -> State: 3.16 <-
+    state = q15
+  -> State: 3.17 <-
+    state = q16
+  -> State: 3.18 <-
+    state = q17
+  -> State: 3.19 <-
+    state = q18
+  -> State: 3.20 <-
+    state = q19
+  -> State: 3.21 <-
+    state = q20
+  -> State: 3.22 <-
+    state = q21
+  -> State: 3.23 <-
+    state = q22
+  -> State: 3.24 <-
+    state = q23
+  -> State: 3.25 <-
+    state = q24
+  -> State: 3.26 <-
+    state = q25
+  -> State: 3.27 <-
+    state = q26
+  -> State: 3.28 <-
+    state = q27
+  -> State: 3.29 <-
+    state = q28
+  -> State: 3.30 <-
+    state = q29
+    output = 1
+  -> State: 3.31 <-
+    state = q30
+  -> State: 3.32 <-
+    state = q31
+  -> State: 3.33 <-
+    state = q32
+  -> State: 3.34 <-
+    state = q33
+  -> State: 3.35 <-
+    state = q34
+  -> State: 3.36 <-
+    state = q35
+  -> State: 3.37 <-
+    state = q36
+  -> State: 3.38 <-
+    state = q37
+  -> State: 3.39 <-
+    state = q38
+  -> State: 3.40 <-
+    state = q39
+  -> State: 3.41 <-
+    state = q40
+  -> State: 3.42 <-
+    state = q41
+  -> State: 3.43 <-
+    state = q42
+  -> State: 3.44 <-
+    state = q43
+    output = 2
+  -> State: 3.45 <-
+    state = q44
+  -> State: 3.46 <-
+    state = q45
+  -> State: 3.47 <-
+    state = q46
+  -> State: 3.48 <-
+    state = q47
+  -> State: 3.49 <-
+    state = q48
+  -> State: 3.50 <-
+    state = q49
+  -> State: 3.51 <-
+    state = q50
+  -> State: 3.52 <-
+    state = q51
+  -> State: 3.53 <-
+    state = q52
+  -> State: 3.54 <-
+    state = q53
+  -> State: 3.55 <-
+    state = q54
+  -> State: 3.56 <-
+    state = q55
+  -> State: 3.57 <-
+    state = q56
+  -> State: 3.58 <-
+    state = q57
+    output = 3
+  -> State: 3.59 <-
+    state = q58
+  -> State: 3.60 <-
+    state = q59
+  -> State: 3.61 <-
+    state = q60
+  -> State: 3.62 <-
+    state = q61
+  -> State: 3.63 <-
+    state = q62
+  -> State: 3.64 <-
+    state = q63
+  -> State: 3.65 <-
+    state = q64
+  -> State: 3.66 <-
+    state = q65
+  -> State: 3.67 <-
+    state = q66
+  -> State: 3.68 <-
+    state = q67
+  -> State: 3.69 <-
+    state = q68
+  -> State: 3.70 <-
+    state = q69
+  -> State: 3.71 <-
+    state = q70
+  -> State: 3.72 <-
+    state = q71
+  -> State: 3.73 <-
+    input_label = t_high
+    state = q72
+  -> State: 3.74 <-
+    state = q73
+  -> State: 3.75 <-
+    state = q74
+  -> State: 3.76 <-
+    state = q75
+  -> State: 3.77 <-
+    state = q76
+  -> State: 3.78 <-
+    state = q77
+  -> State: 3.79 <-
+    state = q78
+  -> State: 3.80 <-
+    state = q79
+  -> State: 3.81 <-
+    state = q80
+  -> State: 3.82 <-
+    state = q81
+    output = 2
+  -> State: 3.83 <-
+    state = q82
+  -> State: 3.84 <-
+    state = q83
+  -> State: 3.85 <-
+    state = q84
+  -> State: 3.86 <-
+    state = q85
+  -> State: 3.87 <-
+    state = q86
+  -> State: 3.88 <-
+    state = q87
+  -> State: 3.89 <-
+    state = q88
+  -> State: 3.90 <-
+    state = q89
+  -> State: 3.91 <-
+    state = q90
+  -> State: 3.92 <-
+    state = q91
+  -> State: 3.93 <-
+    state = q92
+  -> State: 3.94 <-
+    state = q93
+  -> State: 3.95 <-
+    state = q94
+  -> State: 3.96 <-
+    state = q95
+    output = 3
+  -> State: 3.97 <-
+    state = q96
+  -> State: 3.98 <-
+    state = q97
+  -> State: 3.99 <-
+    state = q98
+  -> State: 3.100 <-
+    state = q99
+  -> State: 3.101 <-
+    state = q100
+  -> State: 3.102 <-
+    state = q101
+  -> State: 3.103 <-
+    state = q102
+  -> State: 3.104 <-
+    state = q103
+  -> State: 3.105 <-
+    state = q104
+  -> State: 3.106 <-
+    state = q105
+  -> State: 3.107 <-
+    state = q106
+  -> State: 3.108 <-
+    state = q107
+  -> State: 3.109 <-
+    state = q108
+  -> State: 3.110 <-
+    state = q109
+  -> State: 3.111 <-
+    state = q110
+  -> State: 3.112 <-
+    state = q111
+  -> State: 3.113 <-
+    state = q112
+  -> State: 3.114 <-
+    state = q113
+  -> State: 3.115 <-
+    state = q114
+  -> State: 3.116 <-
+    state = q115
+  -> State: 3.117 <-
+    state = q116
+  -> State: 3.118 <-
+    state = q117
+  -> State: 3.119 <-
+    state = q118
+    output = 2
+  -> State: 3.120 <-
+    state = q119
+  -> State: 3.121 <-
+    state = q120
+  -> State: 3.122 <-
+    state = q121
+  -> State: 3.123 <-
+    state = q122
+  -> State: 3.124 <-
+    state = q123
+  -> State: 3.125 <-
+    state = q124
+  -> State: 3.126 <-
+    state = q125
+  -> State: 3.127 <-
+    state = q126
+  -> State: 3.128 <-
+    state = q127
+  -> State: 3.129 <-
+    state = q128
+  -> State: 3.130 <-
+    state = q129
+  -> State: 3.131 <-
+    state = q130
+  -> State: 3.132 <-
+    state = q131
+  -> State: 3.133 <-
+    state = q132
+    output = 3
+  -> State: 3.134 <-
+    state = q133
+  -> State: 3.135 <-
+    state = q134
+  -> State: 3.136 <-
+    state = q135
+  -> State: 3.137 <-
+    state = q136
+  -> State: 3.138 <-
+    state = q137
+  -> State: 3.139 <-
+    state = q138
+  -> State: 3.140 <-
+    state = q139
+  -> State: 3.141 <-
+    state = q140
+  -> State: 3.142 <-
+    state = q141
+  -> State: 3.143 <-
+    state = q142
+  -> State: 3.144 <-
+    state = q143
+  -> State: 3.145 <-
+    state = q144
+  -> State: 3.146 <-
+    state = q145
+  -> State: 3.147 <-
+    state = q146
+  -> State: 3.148 <-
+    state = q147
+  -> State: 3.149 <-
+    state = q148
+  -> State: 3.150 <-
+    state = q149
+  -> State: 3.151 <-
+    state = q150
+  -> State: 3.152 <-
+    state = q151
+  -> State: 3.153 <-
+    state = q152
+  -> State: 3.154 <-
+    state = q153
+  -> State: 3.155 <-
+    state = q154
+  -> State: 3.156 <-
+    state = q155
+  -> State: 3.157 <-
+    state = q156
+    output = 2
+  -> State: 3.158 <-
+    state = q157
+  -> State: 3.159 <-
+    state = q158
+  -> State: 3.160 <-
+    state = q159
+  -> State: 3.161 <-
+    state = q160
+  -> State: 3.162 <-
+    state = q161
+  -> State: 3.163 <-
+    state = q162
+  -> State: 3.164 <-
+    state = q163
+  -> State: 3.165 <-
+    state = q164
+  -> State: 3.166 <-
+    state = q165
+  -> State: 3.167 <-
+    state = q166
+  -> State: 3.168 <-
+    state = q167
+  -> State: 3.169 <-
+    state = q168
+  -> State: 3.170 <-
+    state = q169
+  -> State: 3.171 <-
+    state = q170
+  -> State: 3.172 <-
+    state = q171
+  -> State: 3.173 <-
+    state = q172
+  -> State: 3.174 <-
+    state = q173
+  -> State: 3.175 <-
+    state = q174
+  -> State: 3.176 <-
+    state = q175
+  -> State: 3.177 <-
+    state = q176
+  -> State: 3.178 <-
+    state = q177
+    output = 1
+  -> State: 3.179 <-
+    state = q178
+  -> State: 3.180 <-
+    state = q179
+  -> State: 3.181 <-
+    state = q180
+  -> State: 3.182 <-
+    state = q181
+  -> State: 3.183 <-
+    state = q182
+  -> State: 3.184 <-
+    input_label = t_low
+    state = q183
+  -> State: 3.185 <-
+    state = q184
+  -> State: 3.186 <-
+    state = q185
+  -> State: 3.187 <-
+    state = q186
+  -> State: 3.188 <-
+    state = q187
+  -> State: 3.189 <-
+    state = q188
+  -> State: 3.190 <-
+    state = q189
+  -> State: 3.191 <-
+    state = q190
+  -- Loop starts here
+  -> State: 3.192 <-
+    input_label = no_input
+    state = q191
+  -> State: 3.193 <-
+-- specification EF (output = out_caution & input_label = t_high)  is true
