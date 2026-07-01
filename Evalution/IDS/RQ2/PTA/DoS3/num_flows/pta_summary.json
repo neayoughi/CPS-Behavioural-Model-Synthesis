@@ -1,0 +1,9 @@
+{
+  "source_files": [
+    "/Users/c-nayoughi/Documents/Optimization/pythonProject/Automata/MELA/DoS3/Trace_1st.txt"
+  ],
+  "num_samples": 1529,
+  "pta_states_reachable": 1530,
+  "pta_edges_reachable": 1529,
+  "dot_file": "/Users/c-nayoughi/Documents/Optimization/pythonProject/Automata/out/DoS3/1st/pta_moore.dot"
+}
