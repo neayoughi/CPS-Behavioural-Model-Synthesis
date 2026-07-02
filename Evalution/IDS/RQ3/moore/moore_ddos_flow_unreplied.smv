@@ -1,0 +1,374 @@
+MODULE main
+
+VAR
+  state : {s0, s1, s2};
+  input : {D_HU_HF, D_HU_LF, D_HU_MF, D_LU_HF, D_LU_LF, D_LU_MF, D_MU_HF, D_MU_LF, D_MU_MF, NO_INPUT, N_HU_HF, N_HU_LF, N_HU_MF, N_LU_HF, N_LU_LF, N_LU_MF, N_MU_HF, N_MU_LF, N_MU_MF};
+
+DEFINE
+  Alert := 0;
+  None := 1;
+  Safe := 2;
+  TAlert := 3;
+  TWarning := 4;
+  Warning := 5;
+
+  output := case
+    state = s0 : Safe;
+    state = s1 : Warning;
+    state = s2 : Alert;
+  esac;
+
+ASSIGN
+  init(state) := s0;
+
+INVAR
+  case
+    state = s0 : (input = D_LU_LF | input = D_MU_MF | input = N_LU_LF);
+    state = s1 : (input = D_HU_HF | input = D_HU_MF | input = D_MU_MF | input = N_LU_LF | input = N_LU_MF | input = N_MU_MF);
+    state = s2 : (input = D_HU_HF | input = D_MU_MF);
+  esac;
+
+TRANS
+  case
+    state = s0 & input = N_LU_LF : next(state) = s0;
+    state = s0 & input = D_LU_LF : next(state) = s0;
+    state = s0 & input = D_MU_MF : next(state) = s1;
+    state = s1 & input = D_MU_MF : next(state) = s1;
+    state = s1 & input = D_HU_MF : next(state) = s1;
+    state = s1 & input = D_HU_HF : next(state) = s2;
+    state = s1 & input = N_MU_MF : next(state) = s1;
+    state = s1 & input = N_LU_MF : next(state) = s1;
+    state = s1 & input = N_LU_LF : next(state) = s0;
+    state = s2 & input = D_HU_HF : next(state) = s2;
+    state = s2 & input = D_MU_MF : next(state) = s1;
+    TRUE : FALSE;
+  esac;
+
+-- (LU,LF) P1 AG
+SPEC AG ((input = D_LU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,LF) P1 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Safe)
+-- (LU,LF) P2 AG
+SPEC AG ((input = D_LU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,LF) P2 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Warning)
+-- (LU,LF) P3 AG
+SPEC AG ((input = D_LU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,LF) P3 EF-vacuity
+SPEC EF (input = D_LU_LF & output = Alert)
+-- (LU,LF) P4 AG
+SPEC AG ((input = N_LU_LF & output = Safe) -> AX (output = Safe))
+-- (LU,LF) P4 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Safe)
+-- (LU,LF) P5 AG
+SPEC AG ((input = N_LU_LF & output = Warning) -> AX (output = Safe))
+-- (LU,LF) P5 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Warning)
+-- (LU,LF) P6 AG
+SPEC AG ((input = N_LU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,LF) P6 EF-vacuity
+SPEC EF (input = N_LU_LF & output = Alert)
+-- (LU,MF) P1 AG
+SPEC AG ((input = D_LU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,MF) P1 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Safe)
+-- (LU,MF) P2 AG
+SPEC AG ((input = D_LU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,MF) P2 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Warning)
+-- (LU,MF) P3 AG
+SPEC AG ((input = D_LU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,MF) P3 EF-vacuity
+SPEC EF (input = D_LU_MF & output = Alert)
+-- (LU,MF) P4 AG
+SPEC AG ((input = N_LU_MF & output = Safe) -> AX (output = Safe))
+-- (LU,MF) P4 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Safe)
+-- (LU,MF) P5 AG
+SPEC AG ((input = N_LU_MF & output = Warning) -> AX (output = Safe))
+-- (LU,MF) P5 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Warning)
+-- (LU,MF) P6 AG
+SPEC AG ((input = N_LU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,MF) P6 EF-vacuity
+SPEC EF (input = N_LU_MF & output = Alert)
+-- (LU,HF) P1 AG
+SPEC AG ((input = D_LU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (LU,HF) P1 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Safe)
+-- (LU,HF) P2 AG
+SPEC AG ((input = D_LU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (LU,HF) P2 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Warning)
+-- (LU,HF) P3 AG
+SPEC AG ((input = D_LU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (LU,HF) P3 EF-vacuity
+SPEC EF (input = D_LU_HF & output = Alert)
+-- (LU,HF) P4 AG
+SPEC AG ((input = N_LU_HF & output = Safe) -> AX (output = Safe))
+-- (LU,HF) P4 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Safe)
+-- (LU,HF) P5 AG
+SPEC AG ((input = N_LU_HF & output = Warning) -> AX (output = Safe))
+-- (LU,HF) P5 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Warning)
+-- (LU,HF) P6 AG
+SPEC AG ((input = N_LU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (LU,HF) P6 EF-vacuity
+SPEC EF (input = N_LU_HF & output = Alert)
+-- (MU,LF) P1 AG
+SPEC AG ((input = D_MU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,LF) P1 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Safe)
+-- (MU,LF) P2 AG
+SPEC AG ((input = D_MU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,LF) P2 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Warning)
+-- (MU,LF) P3 AG
+SPEC AG ((input = D_MU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,LF) P3 EF-vacuity
+SPEC EF (input = D_MU_LF & output = Alert)
+-- (MU,LF) P4 AG
+SPEC AG ((input = N_MU_LF & output = Safe) -> AX (output = Safe))
+-- (MU,LF) P4 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Safe)
+-- (MU,LF) P5 AG
+SPEC AG ((input = N_MU_LF & output = Warning) -> AX (output = Safe))
+-- (MU,LF) P5 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Warning)
+-- (MU,LF) P6 AG
+SPEC AG ((input = N_MU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,LF) P6 EF-vacuity
+SPEC EF (input = N_MU_LF & output = Alert)
+-- (MU,MF) P1 AG
+SPEC AG ((input = D_MU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,MF) P1 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Safe)
+-- (MU,MF) P2 AG
+SPEC AG ((input = D_MU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,MF) P2 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Warning)
+-- (MU,MF) P3 AG
+SPEC AG ((input = D_MU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,MF) P3 EF-vacuity
+SPEC EF (input = D_MU_MF & output = Alert)
+-- (MU,MF) P4 AG
+SPEC AG ((input = N_MU_MF & output = Safe) -> AX (output = Safe))
+-- (MU,MF) P4 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Safe)
+-- (MU,MF) P5 AG
+SPEC AG ((input = N_MU_MF & output = Warning) -> AX (output = Safe))
+-- (MU,MF) P5 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Warning)
+-- (MU,MF) P6 AG
+SPEC AG ((input = N_MU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,MF) P6 EF-vacuity
+SPEC EF (input = N_MU_MF & output = Alert)
+-- (MU,HF) P1 AG
+SPEC AG ((input = D_MU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (MU,HF) P1 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Safe)
+-- (MU,HF) P2 AG
+SPEC AG ((input = D_MU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (MU,HF) P2 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Warning)
+-- (MU,HF) P3 AG
+SPEC AG ((input = D_MU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (MU,HF) P3 EF-vacuity
+SPEC EF (input = D_MU_HF & output = Alert)
+-- (MU,HF) P4 AG
+SPEC AG ((input = N_MU_HF & output = Safe) -> AX (output = Safe))
+-- (MU,HF) P4 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Safe)
+-- (MU,HF) P5 AG
+SPEC AG ((input = N_MU_HF & output = Warning) -> AX (output = Safe))
+-- (MU,HF) P5 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Warning)
+-- (MU,HF) P6 AG
+SPEC AG ((input = N_MU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (MU,HF) P6 EF-vacuity
+SPEC EF (input = N_MU_HF & output = Alert)
+-- (HU,LF) P1 AG
+SPEC AG ((input = D_HU_LF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,LF) P1 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Safe)
+-- (HU,LF) P2 AG
+SPEC AG ((input = D_HU_LF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,LF) P2 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Warning)
+-- (HU,LF) P3 AG
+SPEC AG ((input = D_HU_LF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,LF) P3 EF-vacuity
+SPEC EF (input = D_HU_LF & output = Alert)
+-- (HU,LF) P4 AG
+SPEC AG ((input = N_HU_LF & output = Safe) -> AX (output = Safe))
+-- (HU,LF) P4 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Safe)
+-- (HU,LF) P5 AG
+SPEC AG ((input = N_HU_LF & output = Warning) -> AX (output = Safe))
+-- (HU,LF) P5 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Warning)
+-- (HU,LF) P6 AG
+SPEC AG ((input = N_HU_LF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,LF) P6 EF-vacuity
+SPEC EF (input = N_HU_LF & output = Alert)
+-- (HU,MF) P1 AG
+SPEC AG ((input = D_HU_MF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,MF) P1 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Safe)
+-- (HU,MF) P2 AG
+SPEC AG ((input = D_HU_MF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,MF) P2 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Warning)
+-- (HU,MF) P3 AG
+SPEC AG ((input = D_HU_MF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,MF) P3 EF-vacuity
+SPEC EF (input = D_HU_MF & output = Alert)
+-- (HU,MF) P4 AG
+SPEC AG ((input = N_HU_MF & output = Safe) -> AX (output = Safe))
+-- (HU,MF) P4 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Safe)
+-- (HU,MF) P5 AG
+SPEC AG ((input = N_HU_MF & output = Warning) -> AX (output = Safe))
+-- (HU,MF) P5 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Warning)
+-- (HU,MF) P6 AG
+SPEC AG ((input = N_HU_MF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,MF) P6 EF-vacuity
+SPEC EF (input = N_HU_MF & output = Alert)
+-- (HU,HF) P1 AG
+SPEC AG ((input = D_HU_HF & output = Safe) -> AX ((output = Warning | output = TWarning)))
+-- (HU,HF) P1 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Safe)
+-- (HU,HF) P2 AG
+SPEC AG ((input = D_HU_HF & output = Warning) -> AX ((output = Alert | output = TAlert)))
+-- (HU,HF) P2 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Warning)
+-- (HU,HF) P3 AG
+SPEC AG ((input = D_HU_HF & output = Alert) -> AX ((output = Alert | output = TAlert)))
+-- (HU,HF) P3 EF-vacuity
+SPEC EF (input = D_HU_HF & output = Alert)
+-- (HU,HF) P4 AG
+SPEC AG ((input = N_HU_HF & output = Safe) -> AX (output = Safe))
+-- (HU,HF) P4 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Safe)
+-- (HU,HF) P5 AG
+SPEC AG ((input = N_HU_HF & output = Warning) -> AX (output = Safe))
+-- (HU,HF) P5 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Warning)
+-- (HU,HF) P6 AG
+SPEC AG ((input = N_HU_HF & output = Alert) -> AX ((output = Warning | output = TWarning)))
+-- (HU,HF) P6 EF-vacuity
+SPEC EF (input = N_HU_HF & output = Alert)
+
+-- MAPPINGS
+-- state_map: {"s0": "s0", "s1": "s1", "s2": "s2"}
+-- input_map: {"D_HU_HF": "D_HU_HF", "D_HU_LF": "D_HU_LF", "D_HU_MF": "D_HU_MF", "D_LU_HF": "D_LU_HF", "D_LU_LF": "D_LU_LF", "D_LU_MF": "D_LU_MF", "D_MU_HF": "D_MU_HF", "D_MU_LF": "D_MU_LF", "D_MU_MF": "D_MU_MF", "NO_INPUT": "NO_INPUT", "N_HU_HF": "N_HU_HF", "N_HU_LF": "N_HU_LF", "N_HU_MF": "N_HU_MF", "N_LU_HF": "N_LU_HF", "N_LU_LF": "N_LU_LF", "N_LU_MF": "N_LU_MF", "N_MU_HF": "N_MU_HF", "N_MU_LF": "N_MU_LF", "N_MU_MF": "N_MU_MF"}
+-- output_map: {"Alert": "Alert", "None": "None", "Safe": "Safe", "TAlert": "TAlert", "TWarning": "TWarning", "Warning": "Warning"}
+
+-- ============================================================
+-- Added CTL properties for TW/TA behavior table
+-- Symbol map:
+--   TW = TWarning, TA = TAlert, W = Warning, A = Alert, S = Safe
+-- Result interpretation:
+--   AG true and EF true  => Pass
+--   AG true and EF false => Vacuous
+--   AG false             => Fail
+-- ============================================================
+
+
+-- ===== Low level =====
+
+-- QC1_Low_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- QC2_Low_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_LU_LF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TWarning)
+
+-- QC3_Low_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- QC4_Low_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_LU_LF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_Low_EF: antecedent reachability check
+SPEC EF (input = D_LU_LF & output = TAlert)
+
+-- QC5_Low_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_LU_LF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_Low_EF: antecedent reachability check
+SPEC EF (input = N_LU_LF & output = TWarning)
+
+-- QC6_Low_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_LU_LF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_Low_EF: antecedent reachability check
+SPEC EF (input = N_LU_LF & output = TAlert)
+
+-- ===== Med level =====
+
+-- QC1_Med_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- QC2_Med_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_MU_MF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TWarning)
+
+-- QC3_Med_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- QC4_Med_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_MU_MF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_Med_EF: antecedent reachability check
+SPEC EF (input = D_MU_MF & output = TAlert)
+
+-- QC5_Med_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_MU_MF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_Med_EF: antecedent reachability check
+SPEC EF (input = N_MU_MF & output = TWarning)
+
+-- QC6_Med_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_MU_MF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_Med_EF: antecedent reachability check
+SPEC EF (input = N_MU_MF & output = TAlert)
+
+-- ===== High level =====
+
+-- QC1_High_AG: AG(Attack & TW -> AX(TW | W))
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TWarning | output = Warning))
+-- QC1_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- QC2_High_AG: AG(Attack & TW -> AX(TA | A))
+SPEC AG ((input = D_HU_HF & output = TWarning) -> AX (output = TAlert | output = Alert))
+-- QC2_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TWarning)
+
+-- QC3_High_AG: AG(Attack & TA -> AX(TW | W))
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TWarning | output = Warning))
+-- QC3_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- QC4_High_AG: AG(Attack & TA -> AX(TA | A))
+SPEC AG ((input = D_HU_HF & output = TAlert) -> AX (output = TAlert | output = Alert))
+-- QC4_High_EF: antecedent reachability check
+SPEC EF (input = D_HU_HF & output = TAlert)
+
+-- QC5_High_AG: AG(Normal & TW -> AX(TW | S))
+SPEC AG ((input = N_HU_HF & output = TWarning) -> AX (output = TWarning | output = Safe))
+-- QC5_High_EF: antecedent reachability check
+SPEC EF (input = N_HU_HF & output = TWarning)
+
+-- QC6_High_AG: AG(Normal & TA -> AX(TA | W | TW))
+SPEC AG ((input = N_HU_HF & output = TAlert) -> AX (output = TAlert | output = Warning | output = TWarning))
+-- QC6_High_EF: antecedent reachability check
+SPEC EF (input = N_HU_HF & output = TAlert)
