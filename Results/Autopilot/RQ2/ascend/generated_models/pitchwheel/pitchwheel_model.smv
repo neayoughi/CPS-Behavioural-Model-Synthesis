@@ -1,8 +1,8 @@
--- Source DOT: <SOURCE_26APR>
+-- Source DOT: Results/Autopilot/LearnedModel/MELA/ascend/gsm_models/pitchwheel_model.dot
 -- Initial state: s0
 -- Regular states: 53
 -- Regular transitions: 106
--- Full expected alphabet for case 'pwheel': 3
+-- Full expected alphabet for case 'pitchwheel': 3
 -- DOT labels missing but still declared in alphabet: none
 -- Missing state/input pairs disallowed: 53
 -- Output mapping:
@@ -16,7 +16,7 @@
 
 MODULE main
 
-IVAR
+VAR
   input_label : {p_low, p_med, p_high};
 
 VAR
@@ -197,3 +197,41 @@ TRANS
     state = s52 & input_label = p_low : next(state) = s21;
     TRUE : FALSE;
   esac;
+
+-- CTL requirements
+
+-- critical_to_caution__p_low__AG
+CTLSPEC AG((output = out_critical & input_label = p_low) -> AF output = out_caution)
+
+-- critical_to_caution__p_low__EF
+CTLSPEC EF(output = out_critical & input_label = p_low)
+
+-- critical_to_caution__p_med__AG
+CTLSPEC AG((output = out_critical & input_label = p_med) -> AF output = out_caution)
+
+-- critical_to_caution__p_med__EF
+CTLSPEC EF(output = out_critical & input_label = p_med)
+
+-- critical_to_caution__p_high__AG
+CTLSPEC AG((output = out_critical & input_label = p_high) -> AF output = out_caution)
+
+-- critical_to_caution__p_high__EF
+CTLSPEC EF(output = out_critical & input_label = p_high)
+
+-- caution_to_nominal__p_low__AG
+CTLSPEC AG((output = out_caution & input_label = p_low) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_low__EF
+CTLSPEC EF(output = out_caution & input_label = p_low)
+
+-- caution_to_nominal__p_med__AG
+CTLSPEC AG((output = out_caution & input_label = p_med) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_med__EF
+CTLSPEC EF(output = out_caution & input_label = p_med)
+
+-- caution_to_nominal__p_high__AG
+CTLSPEC AG((output = out_caution & input_label = p_high) -> AF output = out_nominal)
+
+-- caution_to_nominal__p_high__EF
+CTLSPEC EF(output = out_caution & input_label = p_high)

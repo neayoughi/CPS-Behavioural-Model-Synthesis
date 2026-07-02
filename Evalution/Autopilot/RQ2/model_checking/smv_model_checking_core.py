@@ -19,8 +19,8 @@ def find_project_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_project_root(Path(__file__))
 ROOT = PROJECT_ROOT
-SMV_ROOT = PROJECT_ROOT / "Results" / "RQ2" / "Autopilot"
-LEARNED_MODEL_ROOT = PROJECT_ROOT / "Results" / "LearnedModel" / "Autopilot"
+SMV_ROOT = PROJECT_ROOT / "Results" / "Autopilot" / "RQ2"
+LEARNED_MODEL_ROOT = PROJECT_ROOT / "Results" / "Autopilot" / "LearnedModel"
 
 KNOWN_NUSMV_PATHS = [
     Path(os.environ["NUSMV_BIN"]) if os.environ.get("NUSMV_BIN") else None,
@@ -34,13 +34,10 @@ CASE_DEFS = {
         "case_type": "combined_input",
         "input_labels": [
             "p_low_t_low",
-            "p_low_t_med",
             "p_low_t_high",
             "p_med_t_low",
-            "p_med_t_med",
             "p_med_t_high",
             "p_high_t_low",
-            "p_high_t_med",
             "p_high_t_high",
         ],
     },
@@ -50,7 +47,7 @@ CASE_DEFS = {
     },
     "throttle": {
         "case_type": "t_only",
-        "input_labels": ["t_low", "t_med", "t_high"],
+        "input_labels": ["t_low", "t_high"],
     },
 }
 

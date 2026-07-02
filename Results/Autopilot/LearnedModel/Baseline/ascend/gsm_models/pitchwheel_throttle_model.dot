@@ -1,4 +1,4 @@
-digraph gsm_both_manual_full_history_from_default_selfloop_reduced {
+digraph pitchwheel_throttle_model {
 s0 [label="s0|Nominal", shape=record, style=rounded];
 s1 [label="s1|Critical", shape=record, style=rounded];
 s2 [label="s2|Nominal", shape=record, style=rounded];

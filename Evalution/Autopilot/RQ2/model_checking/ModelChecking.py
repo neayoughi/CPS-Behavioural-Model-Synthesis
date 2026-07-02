@@ -17,7 +17,7 @@ def find_project_root(start: Path) -> Path:
 
 
 project_root = find_project_root(Path(__file__))
-code_root = project_root / "Code" / "Autopilot"
+code_root = Path(__file__).resolve().parent
 
 
 def project_path(relative_path: str) -> Path:

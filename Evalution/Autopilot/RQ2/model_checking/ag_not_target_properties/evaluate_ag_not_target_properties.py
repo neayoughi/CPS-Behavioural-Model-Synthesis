@@ -18,23 +18,26 @@ def find_project_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_project_root(Path(__file__))
 ROOT = PROJECT_ROOT
-SMV_ROOT = PROJECT_ROOT / "Results" / "RQ2" / "Autopilot"
+SMV_ROOT = PROJECT_ROOT / "Results" / "Autopilot" / "RQ2"
 OUT_DIR = SMV_ROOT / "summaries" / "ag_not_target_property_check"
 CHECKER_DIR = OUT_DIR / "generated_checker_models"
 
 ASCENT_INPUTS = [
     ("(L,L)", "p_low_t_low"),
-    ("(L,M)", "p_low_t_med"),
     ("(L,H)", "p_low_t_high"),
+    ("(M,L)", "p_med_t_low"),
+    ("(M,H)", "p_med_t_high"),
+    ("(H,L)", "p_high_t_low"),
+    ("(H,H)", "p_high_t_high"),
 ]
 
 DESCENT_INPUTS = [
+    ("(L,L)", "p_low_t_low"),
+    ("(L,H)", "p_low_t_high"),
     ("(M,L)", "p_med_t_low"),
-    ("(H,L)", "p_high_t_low"),
-    ("(M,M)", "p_med_t_med"),
-    ("(H,M)", "p_high_t_med"),
-    ("(H,H)", "p_high_t_high"),
     ("(M,H)", "p_med_t_high"),
+    ("(H,L)", "p_high_t_low"),
+    ("(H,H)", "p_high_t_high"),
 ]
 
 RULES = [

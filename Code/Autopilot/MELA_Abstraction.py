@@ -11,18 +11,18 @@ configurations = ["pitchwheel", "throttle", "pitchwheel_throttle"]
 mela_splits = {
     "ascend": {
         "pitchwheel": {"Pwheel_Level": ("Pwheel", 5.006334, 9.039527)},
-        "throttle": {"Throttle_Level": ("Throttle", 0.498360, 0.944576)},
+        "throttle": {"Throttle_Level": ("Throttle", 0.944576)},
         "pitchwheel_throttle": {
-            "Pwheel_Level": ("Pwheel", 5.006334, 10.728691),
-            "Throttle_Level": ("Throttle", 0.402556, 0.495788),
+            "Pwheel_Level": ("Pwheel", 5.006334, 9.039527),
+            "Throttle_Level": ("Throttle", 0.944576),
         },
     },
     "descend": {
         "pitchwheel": {"Pwheel_Level": ("Pwheel", 4.137257, 19.958631)},
-        "throttle": {"Throttle_Level": ("Throttle", 0.481133, 0.806384)},
+        "throttle": {"Throttle_Level": ("Throttle", 0.806384)},
         "pitchwheel_throttle": {
-            "Pwheel_Level": ("Pwheel", 4.137257, 20.046238),
-            "Throttle_Level": ("Throttle", 0.497785, 0.804406),
+            "Pwheel_Level": ("Pwheel", 4.137257, 19.958631),
+            "Throttle_Level": ("Throttle", 0.806384),
         },
     },
 }
@@ -51,6 +51,14 @@ def to_level(series: pd.Series, split_1: float, split_2: float) -> pd.Series:
     return levels
 
 
+def to_binary_level(series: pd.Series, split: float) -> pd.Series:
+    values = pd.to_numeric(series, errors="coerce")
+    levels = pd.Series("", index=series.index, dtype=object)
+    levels.loc[values <= split] = "low"
+    levels.loc[values > split] = "high"
+    return levels
+
+
 def write_mela_abstraction(learning_set: str, configuration: str) -> None:
     input_file_path = f"Data/Autopilot/Learning set/MELA/{learning_set}/{configuration}.csv"
     output_file_path = f"Data/Autopilot/Abstraction/MELA/{learning_set}/{configuration}.csv"
@@ -63,8 +71,13 @@ def write_mela_abstraction(learning_set: str, configuration: str) -> None:
         return
 
     df = pd.read_csv(input_path)
-    for level_column, (source_column, split_1, split_2) in mela_splits[learning_set][configuration].items():
-        df[level_column] = to_level(df[source_column], split_1, split_2)
+    for level_column, split_spec in mela_splits[learning_set][configuration].items():
+        if level_column == "Throttle_Level":
+            source_column, split = split_spec
+            df[level_column] = to_binary_level(df[source_column], split)
+        else:
+            source_column, split_1, split_2 = split_spec
+            df[level_column] = to_level(df[source_column], split_1, split_2)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)

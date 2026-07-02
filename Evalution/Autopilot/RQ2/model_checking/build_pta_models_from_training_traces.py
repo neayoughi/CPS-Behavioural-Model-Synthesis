@@ -20,10 +20,10 @@ def find_project_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_project_root(Path(__file__))
 ROOT = PROJECT_ROOT
-LEARNED_MODEL_ROOT = PROJECT_ROOT / "Results" / "LearnedModel" / "Autopilot"
+LEARNED_MODEL_ROOT = PROJECT_ROOT / "Results" / "Autopilot" / "LearnedModel"
 ASCEND_TRAINING_ROOT = LEARNED_MODEL_ROOT / "MELA" / "ascend"
 DESCEND_TRAINING_ROOT = LEARNED_MODEL_ROOT / "MELA" / "descend"
-PTA_ROOT = PROJECT_ROOT / "Results" / "RQ2" / "Autopilot"
+PTA_ROOT = PROJECT_ROOT / "Results" / "Autopilot" / "RQ2"
 TRACE_COPY_ROOT = PTA_ROOT
 PROVIDED_PTA_BUILDER = Path(__file__).resolve().parent / "build_moore_pta_with_aalpy.py"
 
