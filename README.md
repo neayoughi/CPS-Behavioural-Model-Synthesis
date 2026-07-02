@@ -404,7 +404,7 @@ RQ3 also studies IDS behaviours in the `Tending Warning` and `Tending Alert` sta
 ## Naming Conventions
 
 - `MELA`: ML-based abstraction with passive automata learning.
-- `BASELINE`: expertise-based abstraction with passive automata learning.
+- `ABLATION`(BASELINE): expertise-based abstraction with passive automata learning.
 - `num_flows`: IDS flow-count configuration.
 - `num_unreplied`: IDS unreplied-flow configuration.
 - `flow_unreplied`: IDS joint flow and unreplied-flow configuration.
