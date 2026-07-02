@@ -189,11 +189,13 @@ Data/IDS/
 Results/IDS/
 ├── LearnedModel/
 ├── RQ1/
-└── RQ2/
+├── RQ2/
+└── RQ3/
 
 Evalution/IDS/
 ├── RQ1/
-└── RQ2/
+├── RQ2/
+└── RQ3/
 ```
 
 - `Data/IDS/Input`: IDS input data used for trace construction.
@@ -203,7 +205,11 @@ Evalution/IDS/
 - `Data/IDS/Trace`: symbolic traces used for learning.
 - `Results/IDS/LearnedModel`: learned Moore machines.
 - `Results/IDS/RQ1`: complexity and conformance results.
-- `Results/IDS/RQ2`: model-checking and behaviour-exploration results.
+- `Results/IDS/RQ2`: model-checking results.
+- `Results/IDS/RQ3`: behaviour exploration results for IDS models.
+- `Evalution/IDS/RQ1`: scripts and data used for RQ1 evaluation.
+- `Evalution/IDS/RQ2`: scripts and data used for RQ2 model checking.
+- `Evalution/IDS/RQ3`: scripts and data used for RQ3 behaviour exploration.
 
 ### Autopilot
 
@@ -327,6 +333,11 @@ python Evalution/IDS/RQ1/RQ1.py
 ```text
 Results/IDS/RQ2/
 ```
+7. Inspect RQ3 behaviour-exploration outputs under:
+   
+```text
+Results/IDS/RQ3/
+```
 
 ### Autopilot Workflow
 
@@ -378,7 +389,7 @@ Metrics:
 
 In the reported experiments, MELA produced smaller and more accurate automata than BASELINE on average. The paper reports an average 49% reduction in the number of states and transitions and an average 41.71% improvement in accuracy compared with expertise-based abstractions.
 
-### RQ2: Verification and Behaviour Exploration
+### RQ2: Verification 
 
 RQ2 uses MELA-generated automata that meet the accuracy threshold. The learned Moore machines are translated to NuSMV and checked against CTL properties.
 
@@ -386,7 +397,8 @@ For the IDS, the CTL properties come from the expected staged response to attack
 
 For the autopilot, the CTL properties come from the requirement that the aircraft moves toward the target altitude in a staged manner from `Critical` to `Caution` and then to `Nominal`.
 
-RQ2 also studies IDS behaviours in the `Tending Warning` and `Tending Alert` states. These results show how the IDS behaves under low-, medium-, and high-flow traffic conditions.
+### RQ3: Behaviour Exploration 
+RQ3 also studies IDS behaviours in the `Tending Warning` and `Tending Alert` states. These results show how the IDS behaves under low-, medium-, and high-flow traffic conditions.
 
 
 ## Naming Conventions
