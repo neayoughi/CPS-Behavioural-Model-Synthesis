@@ -1,0 +1,568 @@
+*** This is NuSMV 2.6.0 (compiled on Wed Oct 14 15:36:56 2015)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+-- specification AG ((input = DL & output = Safe) -> AX (output = Warning | output = TWarning))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -- Loop starts here
+  -> State: 1.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 1.2 <-
+-- specification EF (input = DL & output = Safe)  is true
+-- specification AG ((input = DL & output = Warning) -> AX (output = Alert | output = TAlert))  is true
+-- specification EF (input = DL & output = Warning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 2.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DL & output = Alert) -> AX (output = Alert | output = TAlert))  is true
+-- specification EF (input = DL & output = Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 3.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NL & output = Safe) -> AX output = Safe)  is true
+-- specification EF (input = NL & output = Safe)  is true
+-- specification AG ((input = NL & output = Warning) -> AX output = Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 4.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 4.2 <-
+    input = DM
+  -> State: 4.3 <-
+    state = s1
+    input = NL
+    output = 5
+  -> State: 4.4 <-
+    state = s2
+    input = NM
+-- specification EF (input = NL & output = Warning)  is true
+-- specification AG ((input = NL & output = Alert) -> AX (output = Warning | output = TWarning))  is true
+-- specification EF (input = NL & output = Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 5.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DM & output = Safe) -> AX (output = Warning | output = TWarning))  is true
+-- specification EF (input = DM & output = Safe)  is true
+-- specification AG ((input = DM & output = Warning) -> AX (output = Alert | output = TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 6.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 6.2 <-
+    input = DM
+  -> State: 6.3 <-
+    state = s1
+    output = 5
+  -> State: 6.4 <-
+    input = NM
+-- specification EF (input = DM & output = Warning)  is true
+-- specification AG ((input = DM & output = Alert) -> AX (output = Alert | output = TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 7.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 7.2 <-
+    input = DM
+  -> State: 7.3 <-
+    state = s1
+    input = DH
+    output = 5
+  -> State: 7.4 <-
+    state = s2
+  -> State: 7.5 <-
+    state = s3
+    input = DM
+    output = 0
+  -> State: 7.6 <-
+    state = s1
+    input = NM
+    output = 5
+-- specification EF (input = DM & output = Alert)  is true
+-- specification AG ((input = NM & output = Safe) -> AX output = Safe)  is true
+-- specification EF (input = NM & output = Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 8.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NM & output = Warning) -> AX output = Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 9.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 9.2 <-
+    input = DM
+  -- Loop starts here
+  -> State: 9.3 <-
+    state = s1
+    input = NM
+    output = 5
+  -> State: 9.4 <-
+-- specification EF (input = NM & output = Warning)  is true
+-- specification AG ((input = NM & output = Alert) -> AX (output = Warning | output = TWarning))  is true
+-- specification EF (input = NM & output = Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 10.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = Safe) -> AX (output = Warning | output = TWarning))  is true
+-- specification EF (input = DH & output = Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 11.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = Warning) -> AX (output = Alert | output = TAlert))  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 12.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+  -> State: 12.2 <-
+    input = DM
+  -> State: 12.3 <-
+    state = s1
+    input = DH
+    output = 5
+  -> State: 12.4 <-
+    state = s2
+    input = NM
+-- specification EF (input = DH & output = Warning)  is true
+-- specification AG ((input = DH & output = Alert) -> AX (output = Alert | output = TAlert))  is true
+-- specification EF (input = DH & output = Alert)  is true
+-- specification AG ((input = NH & output = Safe) -> AX output = Safe)  is true
+-- specification EF (input = NH & output = Safe)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 13.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NH & output = Warning) -> AX output = Safe)  is true
+-- specification EF (input = NH & output = Warning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 14.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NH & output = Alert) -> AX (output = Warning | output = TWarning))  is true
+-- specification EF (input = NH & output = Alert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 15.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DL & output = TWarning) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DL & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 16.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DL & output = TWarning) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DL & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 17.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DL & output = TAlert) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DL & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 18.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DL & output = TAlert) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DL & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 19.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NL & output = TWarning) -> AX (output = TWarning | output = Safe))  is true
+-- specification EF (input = NL & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 20.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NL & output = TAlert) -> AX ((output = TAlert | output = Warning) | output = TWarning))  is true
+-- specification EF (input = NL & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 21.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DM & output = TWarning) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DM & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 22.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DM & output = TWarning) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DM & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 23.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DM & output = TAlert) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DM & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 24.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DM & output = TAlert) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DM & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 25.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NM & output = TWarning) -> AX (output = TWarning | output = Safe))  is true
+-- specification EF (input = NM & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 26.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NM & output = TAlert) -> AX ((output = TAlert | output = Warning) | output = TWarning))  is true
+-- specification EF (input = NM & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 27.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = TWarning) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DH & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 28.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = TWarning) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DH & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 29.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = TAlert) -> AX (output = TWarning | output = Warning))  is true
+-- specification EF (input = DH & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 30.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = DH & output = TAlert) -> AX (output = TAlert | output = Alert))  is true
+-- specification EF (input = DH & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 31.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NH & output = TWarning) -> AX (output = TWarning | output = Safe))  is true
+-- specification EF (input = NH & output = TWarning)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 32.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
+-- specification AG ((input = NH & output = TAlert) -> AX ((output = TAlert | output = Warning) | output = TWarning))  is true
+-- specification EF (input = NH & output = TAlert)  is false
+-- as demonstrated by the following execution sequence
+Trace Description: CTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 33.1 <-
+    state = s0
+    input = DL
+    output = 2
+    Warning = 5
+    TWarning = 4
+    TAlert = 3
+    Safe = 2
+    None = 1
+    Alert = 0
